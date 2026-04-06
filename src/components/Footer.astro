@@ -25,7 +25,7 @@ const links = {
 
     <div class="footer-brand">
       <a href="/" class="logo">
-        <span class="logo-snap">Snap</span><span class="logo-skill">Skill</span>
+        <img src="/logo.jpeg" alt="SnapSkill" class="footer-logo-img" />
       </a>
       <p>AI consulting, implementation, and capability building for enterprises that are serious about results.</p>
       <div class="social-links">
@@ -80,13 +80,13 @@ const links = {
 
   .footer-brand .logo {
     display: inline-block;
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 800;
     margin-bottom: var(--space-sm);
   }
-  .footer-brand .logo-snap  { color: white; }
-  .footer-brand .logo-skill { color: var(--color-accent); }
+  .footer-logo-img {
+    height: 32px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
 
   .footer-brand p {
     font-size: 0.9rem;
