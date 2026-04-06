@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<BaseLayout
+  title="About Us"
+  description="SnapSkill began with a shared conviction — that high-quality mentorship should be within everyone's reach. Meet the team turning aspirations into achievements."
+>
+  <Nav />
+  <main>
+
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="about-hero-bg" aria-hidden="true"></div>
+    <div class="container about-hero-inner">
+      <h1>Turning Aspirations Into<br><span class="text-primary">Achievements</span></h1>
+      <p class="hero-sub">Uncover your true potential with expert mentorship to achieve your dreams with confidence.</p>
+      <a href="/contact" class="btn btn--primary">Start now</a>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="story section">
+    <div class="container story-inner">
+      <div class="story-image">
+        <img src="/pooja.jpeg" alt="Pooja Chaurasia, Founder of SnapSkill" class="founder-img" onerror="this.style.display='none'" />
+      </div>
+      <div class="story-text">
+        <h2>Our Story</h2>
+        <p>What began as a shared conviction — that high-quality mentorship should be within everyone's reach — has grown into a thriving learning community. At our core, we're just a group of professionals united by dedication, empathy, and the belief that every learner deserves tailored guidance.</p>
+        <p>Here, you'll find a supportive environment to grow, explore, and thrive at your own pace.</p>
+        <p class="founder-credit">&mdash; Pooja Chaurasia</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="quote-section">
+    <div class="container">
+      <blockquote class="pull-quote">
+        "We believe that quality mentorship should be a right accessible to all"
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Mission / Vision / About -->
+  <section class="pillars section section--tinted">
+    <div class="container">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <span class="pillar-num">1</span>
+          <h3>Our Mission</h3>
+          <p>To empower learners through expert mentorship and structured guidance by those who have walked that path already.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">2</span>
+          <h3>Our Vision</h3>
+          <p>To make quality mentorship accessible to every individual aiming for career success.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">3</span>
+          <h3>About Us</h3>
+          <p>We are a small yet dedicated team of professionals who truly care about your success. Our aim is simple: to make learning accessible, personalised, and practical for everyone — no matter their background or experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container" style="max-width:640px;text-align:center">
+      <h2>Ready to start your AI journey?<br>We are here to partner you in your success!</h2>
+      <div style="margin-top:var(--space-lg)">
+        <a href="/contact" class="btn btn--primary">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section { padding: var(--space-2xl) 0; }
+  .section--tinted { background: var(--color-surface); }
+
+  /* Hero */
+  .about-hero {
+    position: relative; padding: var(--space-2xl) 0;
+    text-align: center; overflow: hidden;
+  }
+  .about-hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #f5e6ff 0%, #ffecd2 30%, #e0f0ff 60%, #f5e6ff 100%);
+    opacity: 0.5;
+  }
+  .about-hero-inner { position: relative; z-index: 1; }
+  .about-hero h1 { margin-bottom: var(--space-md); }
+  .hero-sub { font-size: 1.1rem; max-width: 520px; margin: 0 auto var(--space-lg); }
+
+  /* Story */
+  .story-inner {
+    display: grid; grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-xl); align-items: center;
+  }
+  .founder-img {
+    width: 100%; border-radius: var(--radius-lg);
+    object-fit: cover; aspect-ratio: 4/5;
+  }
+  .story-text h2 { margin-bottom: var(--space-md); }
+  .story-text p { font-size: 1rem; margin-bottom: var(--space-sm); }
+  .founder-credit {
+    font-family: var(--font-heading); font-size: 1.1rem;
+    font-weight: 700; color: var(--color-dark); margin-top: var(--space-md);
+  }
+
+  /* Quote */
+  .quote-section { padding: var(--space-xl) 0; border-bottom: 1px solid var(--color-border); }
+  .pull-quote {
+    font-family: var(--font-heading); font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 700; color: var(--color-dark); text-align: center;
+    max-width: 700px; margin: 0 auto;
+    border: none; background: none; padding: 0; font-style: normal;
+  }
+
+  /* Pillars */
+  .pillars-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md);
+  }
+  .pillar-card {
+    padding: var(--space-lg); background: white;
+    border-radius: var(--radius-lg); border: 1px solid var(--color-border);
+  }
+  .pillar-num {
+    display: block; font-family: var(--font-heading);
+    font-size: 1.5rem; font-weight: 800; color: var(--color-primary);
+    margin-bottom: var(--space-sm); padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--color-border);
+  }
+  .pillar-card h3 { margin-bottom: var(--space-sm); }
+  .pillar-card p { font-size: 0.93rem; margin: 0; }
+
+  @media (max-width: 960px) {
+    .story-inner { grid-template-columns: 1fr; }
+    .founder-img { max-width: 360px; margin: 0 auto; }
+  }
+  @media (max-width: 600px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+  }
+</style>
