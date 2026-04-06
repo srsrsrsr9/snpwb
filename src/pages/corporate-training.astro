@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<BaseLayout
+  title="Corporate AI Training Programs"
+  description="Custom AI training for enterprise teams. Built around your tools, your workflows, and your people — not generic slides."
+>
+  <Nav />
+  <main>
+
+  <!-- Hero -->
+  <section class="ct-hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="badge badge--accent">Corporate Training</p>
+          <h1>AI training that fits<br>your <span class="text-primary">actual business.</span></h1>
+          <p class="hero-sub">Off-the-shelf AI courses teach generic skills. We design programs around your team's real tools, real data, and real workflows — so learning translates into output from week one.</p>
+          <div class="hero-actions">
+            <a href="/contact" class="btn btn--primary">Talk to us about your team</a>
+            <a href="/lms" class="btn btn--outline">Explore our LMS</a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          {[
+            { n: '2,000+', label: 'Professionals trained' },
+            { n: '15+',    label: 'Industries served' },
+            { n: '92%',    label: 'Satisfaction score' },
+            { n: '3 wks',  label: 'Avg. time to first cohort' },
+          ].map(s => (
+            <div class="stat-box">
+              <strong>{s.n}</strong>
+              <span>{s.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The problem -->
+  <section class="problem section section--tinted">
+    <div class="container problem-inner">
+      <div class="problem-text">
+        <p class="badge">The Problem</p>
+        <h2>Generic AI training doesn't stick.</h2>
+        <p>Your team sits through a two-day workshop on "AI fundamentals." They learn what a large language model is. They go back to their desks and nothing changes.</p>
+        <p>The issue isn't motivation — it's relevance. When training isn't connected to real tasks, real tools, and real workflows, it evaporates within weeks.</p>
+        <p>We build programs the other way around: starting with what your team actually does, then designing AI skills that make them measurably better at it.</p>
+      </div>
+      <div class="problem-vs">
+        <div class="vs-col vs-col--bad">
+          <h3>Generic training</h3>
+          <ul>
+            <li>One-size-fits-all curriculum</li>
+            <li>Theoretical examples only</li>
+            <li>No connection to your tools</li>
+            <li>Forgotten in 2 weeks</li>
+            <li>No behaviour change measurement</li>
+          </ul>
+        </div>
+        <div class="vs-divider">vs</div>
+        <div class="vs-col vs-col--good">
+          <h3>SnapSkill approach</h3>
+          <ul>
+            <li>Built around your actual workflows</li>
+            <li>Your data, your tools, your scenarios</li>
+            <li>Role-specific skill tracks</li>
+            <li>Reinforced over 4–8 weeks</li>
+            <li>Output-based completion criteria</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section class="programs section">
+    <div class="container">
+      <div class="section-header">
+        <p class="badge">Our Programs</p>
+        <h2>Training for every layer<br>of your organisation.</h2>
+      </div>
+
+      <div class="programs-grid">
+        {[
+          {
+            tag: 'For Leadership',
+            title: 'AI for Executives',
+            duration: '1 day intensive',
+            format: 'In-person or virtual',
+            desc: 'Strategic AI literacy for C-suite and senior leaders. Covers AI opportunity assessment, risk governance, build vs buy decisions, and how to evaluate AI vendor claims.',
+            outcomes: ['AI opportunity mapping for your business', 'Risk and governance framework', 'Confident AI investment decision-making'],
+          },
+          {
+            tag: 'For Managers',
+            title: 'AI-Enabled Management',
+            duration: '4-week program',
+            format: 'Blended: live + async',
+            desc: 'For people managers who need to redesign workflows, evaluate AI tools for their teams, and manage human-AI collaboration effectively.',
+            outcomes: ['Workflow redesign using AI tools', 'Team AI readiness assessment', 'Change management for AI adoption'],
+          },
+          {
+            tag: 'For Practitioners',
+            title: 'AI Skills Bootcamp',
+            duration: '6-week cohort',
+            format: 'Live sessions + projects',
+            desc: 'Hands-on AI capability building for analysts, engineers, product managers, and domain specialists. Built around real tools and real deliverables.',
+            outcomes: ['Prompt engineering for your domain', 'AI tool proficiency certification', 'Capstone project using your actual work'],
+          },
+          {
+            tag: 'Custom',
+            title: 'Bespoke Programs',
+            duration: 'Designed to spec',
+            format: 'Any format',
+            desc: 'Fully custom programs for specific functions — sales AI, HR automation, finance analytics, customer service AI. We design from scratch around your context.',
+            outcomes: ['Function-specific AI skills', 'Custom scenario and case study development', 'Train-the-trainer option available'],
+          },
+        ].map(p => (
+          <div class="program-card">
+            <div class="program-header">
+              <p class="badge">{p.tag}</p>
+              <h3>{p.title}</h3>
+              <div class="program-meta">
+                <span>⏱ {p.duration}</span>
+                <span>📍 {p.format}</span>
+              </div>
+            </div>
+            <p class="program-desc">{p.desc}</p>
+            <div class="program-outcomes">
+              <p class="outcomes-label">Key outcomes</p>
+              <ul>
+                {p.outcomes.map(o => <li>{o}</li>)}
+              </ul>
+            </div>
+            <a href="/contact" class="btn btn--outline program-cta">Enquire →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="process section section--dark">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <p class="badge">Our Process</p>
+        <h2 style="color:white">How we design and deliver.</h2>
+      </div>
+      <div class="process-steps">
+        {[
+          { n: '01', title: 'Discovery call',        body: 'We understand your team, tools, current skills, and what "better" looks like for you.' },
+          { n: '02', title: 'Skill gap assessment',  body: 'Optional pre-assessment to baseline current AI literacy across your team.' },
+          { n: '03', title: 'Program design',        body: 'We build a custom curriculum using your tools, your workflows, and real scenarios from your industry.' },
+          { n: '04', title: 'Pilot cohort',          body: 'We run a first cohort with a small group, gather feedback, and refine before scaling.' },
+          { n: '05', title: 'Full rollout',           body: 'Program runs across your organisation with facilitator support and progress tracking.' },
+          { n: '06', title: 'Impact measurement',    body: 'Post-program assessment and manager feedback to quantify behaviour change.' },
+        ].map(s => (
+          <div class="process-step">
+            <div class="step-n">{s.n}</div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container" style="max-width:640px;text-align:center">
+      <h2>Let's design something<br>that actually works.</h2>
+      <p style="margin:var(--space-sm) 0 var(--space-lg)">Tell us about your team — size, roles, current AI maturity — and we'll come back with a program design within 48 hours.</p>
+      <a href="/contact" class="btn btn--primary">Start the conversation</a>
+    </div>
+  </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section { padding: var(--space-2xl) 0; }
+  .section--tinted { background: var(--color-surface); }
+  .section--dark   { background: var(--color-dark); }
+  .section-header  { text-align: center; margin-bottom: var(--space-xl); max-width: 600px; margin-inline: auto; }
+  .section-header .badge { margin-bottom: var(--space-sm); }
+  .section-header h2 { margin: var(--space-xs) 0 var(--space-sm); }
+  .section-header--light p { color: rgba(255,255,255,0.65); }
+
+  /* Hero */
+  .ct-hero { padding: var(--space-2xl) 0 var(--space-xl); border-bottom: 1px solid var(--color-border); }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center; }
+  .hero-text .badge { margin-bottom: var(--space-md); }
+  .hero-text h1 { margin-bottom: var(--space-md); }
+  .hero-sub { font-size: 1.05rem; max-width: 480px; margin-bottom: var(--space-lg); }
+  .hero-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+  .stat-box { padding: var(--space-md); border: 2px solid var(--color-border); border-radius: var(--radius-md); text-align: center; }
+  .stat-box strong { display: block; font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--color-primary); }
+  .stat-box span   { font-size: 0.85rem; }
+
+  /* Problem */
+  .problem-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: start; }
+  .problem-text .badge { margin-bottom: var(--space-sm); }
+  .problem-text h2 { margin-bottom: var(--space-md); }
+  .problem-text p  { margin-bottom: var(--space-sm); font-size: 0.95rem; }
+  .problem-vs { display: flex; gap: var(--space-sm); align-items: stretch; }
+  .vs-col { flex: 1; padding: var(--space-md); border-radius: var(--radius-md); }
+  .vs-col--bad  { background: #fff5f5; border: 1px solid #fecaca; }
+  .vs-col--good { background: #f0fff4; border: 1px solid #a7f3d0; }
+  .vs-col h3 { font-size: 0.9rem; margin-bottom: var(--space-sm); }
+  .vs-col--bad  h3 { color: #b91c1c; }
+  .vs-col--good h3 { color: #065f46; }
+  .vs-col ul { padding-left: var(--space-md); }
+  .vs-col li { font-size: 0.85rem; margin-bottom: 6px; }
+  .vs-col--bad  li { color: #7f1d1d; }
+  .vs-col--good li { color: #064e3b; }
+  .vs-divider { display: flex; align-items: center; font-family: var(--font-heading); font-weight: 800; color: var(--color-body); font-size: 0.9rem; }
+
+  /* Programs */
+  .programs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+  .program-card { padding: var(--space-lg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: white; display: flex; flex-direction: column; gap: var(--space-sm); transition: var(--transition); }
+  .program-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .program-header .badge { margin-bottom: var(--space-xs); }
+  .program-header h3 { margin-bottom: var(--space-xs); }
+  .program-meta { display: flex; gap: var(--space-md); font-size: 0.82rem; color: var(--color-body); }
+  .program-desc { font-size: 0.9rem; }
+  .program-outcomes { background: var(--color-surface); border-radius: var(--radius-sm); padding: var(--space-sm); flex: 1; }
+  .outcomes-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-xs); color: var(--color-body); }
+  .program-outcomes ul { padding-left: var(--space-md); }
+  .program-outcomes li { font-size: 0.85rem; margin-bottom: 4px; }
+  .program-cta { align-self: flex-start; }
+
+  /* Process */
+  .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+  .process-step { padding: var(--space-md); border-radius: var(--radius-md); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+  .step-n { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 800; color: var(--color-accent); opacity: 0.6; margin-bottom: var(--space-xs); }
+  .process-step h3 { color: white; font-size: 1rem; margin-bottom: var(--space-xs); }
+  .process-step p  { color: rgba(255,255,255,0.6); font-size: 0.88rem; margin: 0; }
+
+  @media (max-width: 960px) {
+    .hero-inner     { grid-template-columns: 1fr; }
+    .problem-inner  { grid-template-columns: 1fr; }
+    .programs-grid  { grid-template-columns: 1fr; }
+    .process-steps  { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .hero-stats    { grid-template-columns: 1fr 1fr; }
+    .problem-vs    { flex-direction: column; }
+    .vs-divider    { justify-content: center; }
+    .process-steps { grid-template-columns: 1fr; }
+    .hero-actions  { flex-direction: column; }
+  }
+</style>

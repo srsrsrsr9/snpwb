@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Nav from '../../components/Nav.astro'
+import Footer from '../../components/Footer.astro'
+import { getCollection } from 'astro:content'
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft)
+const sorted   = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+
+const categoryLabels = {
+  'thought-leadership': 'Thought Leadership',
+  'career':             'Career',
+  'case-study':         'Case Study',
+}
+
+const categories = ['all', 'thought-leadership', 'career', 'case-study']
+const featured   = sorted[0]
+const rest       = sorted.slice(1)
+---
+
+<BaseLayout title="Insights" description="Practical perspectives on AI implementation, enterprise adoption, and building real AI capability.">
+  <Nav />
+  <main>
+
+  <!-- Header -->
+  <section class="blog-hero">
+    <div class="container">
+      <p class="badge">Insights</p>
+      <h1>AI perspectives that<br>don't waste your time.</h1>
+      <p class="hero-sub">Practical thinking on enterprise AI — implementation, adoption, and what actually works.</p>
+    </div>
+  </section>
+
+  <!-- Featured post -->
+  {featured && (
+    <section class="featured-section">
+      <div class="container">
+        <p class="section-label">Latest</p>
+        <a href={`/blog/${featured.id}`} class="featured-card">
+          <div class="featured-meta">
+            <span class="badge">{categoryLabels[featured.data.category]}</span>
+            <time datetime={featured.data.pubDate.toISOString()}>
+              {featured.data.pubDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
+            </time>
+          </div>
+          <h2 class="featured-title">{featured.data.title}</h2>
+          <p class="featured-desc">{featured.data.description}</p>
+          <div class="featured-footer">
+            <span class="featured-author">{featured.data.author}</span>
+            <span class="read-link">Read article →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- All posts grid -->
+  {rest.length > 0 && (
+    <section class="posts-section section">
+      <div class="container">
+        <p class="section-label">All articles</p>
+        <div class="posts-grid">
+          {rest.map(post => (
+            <article class="post-card">
+              <div class="post-meta">
+                <span class="badge">{categoryLabels[post.data.category]}</span>
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                </time>
+              </div>
+              <h2 class="post-title">
+                <a href={`/blog/${post.id}`}>{post.data.title}</a>
+              </h2>
+              <p class="post-desc">{post.data.description}</p>
+              <div class="post-footer">
+                <span class="post-author">{post.data.author}</span>
+                <a href={`/blog/${post.id}`} class="read-link">Read →</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Newsletter CTA -->
+  <section class="section section--tinted">
+    <div class="container" style="max-width:560px;text-align:center">
+      <h2>Stay ahead of enterprise AI.</h2>
+      <p style="margin:var(--space-sm) 0 var(--space-lg)">We publish two to three articles a month on what's actually working in enterprise AI implementation.</p>
+      <a href="mailto:support@snapskill.in?subject=Newsletter subscription" class="btn btn--primary btn--sm">Subscribe</a>
+    </div>
+  </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section { padding: var(--space-2xl) 0; }
+  .section--tinted { background: var(--color-surface); }
+  .btn--sm { font-size: 0.85rem; padding: 0.55em 1.4em; }
+
+  /* Hero */
+  .blog-hero { padding: var(--space-xl) 0 var(--space-lg); border-bottom: 1px solid var(--color-border); }
+  .blog-hero .badge { margin-bottom: var(--space-sm); }
+  .blog-hero h1 { margin: var(--space-xs) 0 var(--space-sm); }
+  .hero-sub { font-size: 1.1rem; max-width: 480px; }
+
+  .section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-body); margin-bottom: var(--space-md); }
+
+  /* Featured */
+  .featured-section { padding: var(--space-xl) 0; border-bottom: 1px solid var(--color-border); }
+  .featured-card {
+    display: block; text-decoration: none;
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--color-dark) 0%, #151d4a 100%);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+  }
+  .featured-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .featured-meta { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md); }
+  .featured-meta time { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+  .featured-title { font-size: clamp(1.5rem, 3vw, 2.25rem); color: white; margin-bottom: var(--space-sm); max-width: 720px; }
+  .featured-desc  { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin-bottom: var(--space-lg); }
+  .featured-footer { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-md); border-top: 1px solid rgba(255,255,255,0.1); }
+  .featured-author { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+  .read-link { font-size: 0.9rem; font-weight: 600; color: var(--color-accent); }
+
+  /* Grid */
+  .posts-section { padding: var(--space-xl) 0; }
+  .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+
+  .post-card { padding: var(--space-lg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: white; display: flex; flex-direction: column; gap: var(--space-sm); transition: var(--transition); }
+  .post-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+  .post-meta { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; }
+  .post-meta time { font-size: 0.8rem; color: var(--color-body); }
+
+  .post-title { font-size: 1.1rem; }
+  .post-title a { color: var(--color-dark); text-decoration: none; }
+  .post-title a:hover { color: var(--color-primary); }
+
+  .post-desc   { font-size: 0.88rem; flex: 1; margin: 0; }
+
+  .post-footer { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-sm); border-top: 1px solid var(--color-border); margin-top: auto; }
+  .post-author { font-size: 0.8rem; }
+  .post-footer .read-link { color: var(--color-primary); }
+
+  @media (max-width: 900px)  { .posts-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px)  { .posts-grid { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,157 @@
+---
+const year = new Date().getFullYear()
+
+const links = {
+  'Services': [
+    { label: 'AI Consulting',      href: '/services#consulting' },
+    { label: 'Implementation',     href: '/services#implementation' },
+    { label: 'Training Programs',  href: '/programs' },
+  ],
+  'Company': [
+    { label: 'About',    href: '/about' },
+    { label: 'Insights', href: '/blog' },
+    { label: 'Contact',  href: '/contact' },
+  ],
+  'Legal': [
+    { label: 'Privacy Policy',    href: '/privacy-policy' },
+    { label: 'Terms & Conditions', href: '/terms-and-conditions' },
+    { label: 'Refund Policy',     href: '/refund-policy' },
+  ],
+}
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+      <a href="/" class="logo">
+        <span class="logo-snap">Snap</span><span class="logo-skill">Skill</span>
+      </a>
+      <p>AI consulting, implementation, and capability building for enterprises that are serious about results.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/company/snapskill" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@SnapSkill-TheLearningplace" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+        </a>
+        <a href="https://www.instagram.com/snapskill.thelearningplace/" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="footer-nav">
+      {Object.entries(links).map(([group, items]) => (
+        <div class="footer-nav-group">
+          <h4>{group}</h4>
+          <ul>
+            {items.map(item => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© {year} SnapSkill. All rights reserved.</p>
+      <p class="footer-email"><a href="mailto:support@snapskill.in">support@snapskill.in</a></p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-dark);
+    color: rgba(255,255,255,0.65);
+    margin-top: var(--space-2xl);
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: var(--space-xl);
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .footer-brand .logo {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: var(--space-sm);
+  }
+  .footer-brand .logo-snap  { color: white; }
+  .footer-brand .logo-skill { color: var(--color-accent); }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 280px;
+    margin-bottom: var(--space-md);
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--space-sm);
+  }
+  .social-links a {
+    color: rgba(255,255,255,0.5);
+    transition: var(--transition);
+  }
+  .social-links a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+
+  .footer-nav-group h4 {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer-nav-group ul { list-style: none; padding: 0; }
+  .footer-nav-group li { margin-bottom: var(--space-xs); }
+  .footer-nav-group a {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    transition: var(--transition);
+  }
+  .footer-nav-group a:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: var(--space-md);
+  }
+  .footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.5); }
+  .footer-bottom a:hover { color: white; }
+
+  @media (max-width: 768px) {
+    .footer-inner { grid-template-columns: 1fr; gap: var(--space-lg); }
+    .footer-nav { grid-template-columns: repeat(2, 1fr); }
+    .footer-bottom .container { flex-direction: column; gap: var(--space-xs); text-align: center; }
+  }
+</style>

@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Nav from '../../components/Nav.astro'
+import Footer from '../../components/Footer.astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft)
+  return posts.map(post => ({ params: { slug: post.id }, props: { post } }))
+}
+
+const { post } = Astro.props
+const { Content } = await post.render()
+
+const categoryLabels = {
+  'thought-leadership': 'Thought Leadership',
+  'career':             'Career',
+  'case-study':         'Case Study',
+}
+
+const formattedDate = post.data.pubDate.toLocaleDateString('en-IN', {
+  day: 'numeric', month: 'long', year: 'numeric'
+})
+
+// Related posts (same category, excluding current)
+const allPosts   = await getCollection('blog', ({ data }) => !data.draft)
+const related    = allPosts
+  .filter(p => p.id !== post.id && p.data.category === post.data.category)
+  .slice(0, 3)
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <Nav />
+  <main>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="/blog">Insights</a>
+      <span aria-hidden="true">›</span>
+      <span class="badge">{categoryLabels[post.data.category]}</span>
+    </div>
+  </nav>
+
+  <!-- Post header -->
+  <header class="post-header">
+    <div class="container prose">
+      <h1>{post.data.title}</h1>
+      <p class="post-description">{post.data.description}</p>
+      <div class="post-meta">
+        <div class="author-chip">
+          <div class="author-avatar" aria-hidden="true">{post.data.author.charAt(0)}</div>
+          <div>
+            <p class="author-name">{post.data.author}</p>
+            <time datetime={post.data.pubDate.toISOString()} class="post-date">{formattedDate}</time>
+          </div>
+        </div>
+        {post.data.tags.length > 0 && (
+          <div class="post-tags">
+            {post.data.tags.map(tag => <span class="tag">{tag}</span>)}
+          </div>
+        )}
+      </div>
+    </div>
+  </header>
+
+  <!-- Accent line -->
+  <div class="post-accent-line" aria-hidden="true"></div>
+
+  <!-- Body + Sidebar layout -->
+  <div class="post-layout container">
+
+    <!-- Article body -->
+    <article class="post-body">
+      <Content />
+    </article>
+
+    <!-- Sticky sidebar -->
+    <aside class="post-sidebar">
+      <div class="sidebar-card">
+        <h3>Need help with AI implementation?</h3>
+        <p>Talk to us about your specific situation — no sales decks, no discovery treadmill.</p>
+        <a href="/contact" class="btn btn--primary" style="width:100%;justify-content:center;">Start a conversation</a>
+      </div>
+
+      <div class="sidebar-card sidebar-card--outline">
+        <h3>Our programs</h3>
+        <ul class="sidebar-links">
+          <li><a href="/lms">SnapSkill LMS →</a></li>
+          <li><a href="/corporate-training">Corporate Training →</a></li>
+          <li><a href="/blog">More insights →</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Related posts -->
+  {related.length > 0 && (
+    <section class="related section section--tinted">
+      <div class="container">
+        <p class="section-label">More from SnapSkill</p>
+        <div class="related-grid">
+          {related.map(p => (
+            <a href={`/blog/${p.id}`} class="related-card">
+              <span class="badge">{categoryLabels[p.data.category]}</span>
+              <h3>{p.data.title}</h3>
+              <p>{p.data.description}</p>
+              <span class="read-link">Read →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Bottom CTA -->
+  <section class="section section--dark">
+    <div class="container" style="max-width:580px;text-align:center">
+      <h2 style="color:white">Enjoyed this? Get more in your inbox.</h2>
+      <p style="color:rgba(255,255,255,0.65);margin:var(--space-sm) 0 var(--space-lg)">Two to three articles a month on enterprise AI implementation — what's working and what's not.</p>
+      <div style="display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap">
+        <a href="mailto:support@snapskill.in?subject=Newsletter" class="btn btn--accent">Subscribe by email</a>
+        <a href="/blog" class="btn btn--outline" style="border-color:rgba(255,255,255,0.3);color:white">More articles</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section { padding: var(--space-2xl) 0; }
+  .section--tinted { background: var(--color-surface); }
+  .section--dark   { background: var(--color-dark); }
+
+  /* Breadcrumb */
+  .breadcrumb { padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
+  .breadcrumb .container { display: flex; align-items: center; gap: var(--space-xs); font-size: 0.85rem; }
+  .breadcrumb a { color: var(--color-body); }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  .breadcrumb span[aria-hidden] { color: var(--color-border); }
+
+  /* Post header */
+  .post-header { padding: var(--space-xl) 0 var(--space-lg); background: var(--color-surface); border-bottom: 1px solid var(--color-border); }
+  .post-header h1 { font-size: clamp(1.8rem, 4vw, 2.75rem); margin-bottom: var(--space-sm); }
+  .post-description { font-size: 1.1rem; max-width: 640px; margin-bottom: var(--space-lg); }
+  .post-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); }
+  .author-chip { display: flex; align-items: center; gap: var(--space-sm); }
+  .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+  .author-name { font-size: 0.9rem; font-weight: 600; color: var(--color-dark); margin: 0; }
+  .post-date   { font-size: 0.82rem; color: var(--color-body); }
+  .post-tags   { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+  .tag { font-size: 0.78rem; padding: 0.25em 0.75em; border-radius: 100px; background: white; border: 1px solid var(--color-border); }
+
+  /* Accent line */
+  .post-accent-line { height: 4px; background: linear-gradient(90deg, var(--color-primary), var(--color-accent)); }
+
+  /* Layout */
+  .post-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--space-xl);
+    align-items: start;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  /* Body prose */
+  .post-body { min-width: 0; }
+  .post-body :global(h2) { margin: var(--space-xl) 0 var(--space-md); padding-top: var(--space-md); border-top: 1px solid var(--color-border); font-size: 1.6rem; }
+  .post-body :global(h3) { margin: var(--space-lg) 0 var(--space-sm); }
+  .post-body :global(h4) { margin: var(--space-md) 0 var(--space-xs); }
+  .post-body :global(p)  { margin-bottom: var(--space-md); font-size: 1.02rem; line-height: 1.8; }
+  .post-body :global(ul), .post-body :global(ol) { margin-bottom: var(--space-md); }
+  .post-body :global(li) { margin-bottom: var(--space-xs); font-size: 1rem; line-height: 1.75; }
+  .post-body :global(blockquote) { margin: var(--space-lg) 0; }
+  .post-body :global(hr) { margin: var(--space-xl) 0; }
+  .post-body :global(strong) { color: var(--color-dark); }
+
+  /* Sidebar */
+  .post-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: var(--space-md); }
+  .sidebar-card { padding: var(--space-md); border-radius: var(--radius-md); background: var(--color-surface); border: 1px solid var(--color-border); }
+  .sidebar-card--outline { background: white; border: 2px solid var(--color-border); }
+  .sidebar-card h3 { font-size: 1rem; margin-bottom: var(--space-xs); }
+  .sidebar-card p  { font-size: 0.88rem; margin-bottom: var(--space-md); }
+  .sidebar-links { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-xs); }
+  .sidebar-links a { font-size: 0.9rem; font-weight: 600; color: var(--color-primary); }
+
+  /* Related */
+  .related { padding: var(--space-xl) 0; }
+  .section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-body); margin-bottom: var(--space-md); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+  .related-card { display: flex; flex-direction: column; gap: var(--space-xs); padding: var(--space-lg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: white; text-decoration: none; transition: var(--transition); }
+  .related-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .related-card h3 { font-size: 1rem; color: var(--color-dark); margin: 0; }
+  .related-card p  { font-size: 0.85rem; flex: 1; margin: 0; }
+  .read-link { font-size: 0.88rem; font-weight: 600; color: var(--color-primary); }
+
+  .prose { max-width: var(--prose-width); margin-inline: auto; }
+
+  @media (max-width: 900px) {
+    .post-layout  { grid-template-columns: 1fr; }
+    .post-sidebar { position: static; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>
