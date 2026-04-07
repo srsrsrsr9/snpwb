@@ -83,13 +83,13 @@ const links = {
     text-decoration: none;
   }
 
-  /* Invert the logo for dark background — works for logos that are dark-on-white */
+  /* mix-blend-mode: screen makes the white JPEG background disappear on the dark footer */
   .footer-logo-img {
     height: 36px;
     width: auto;
     display: block;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    mix-blend-mode: screen;
   }
 
   .footer-brand p {
