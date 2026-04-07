@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+
+const lastUpdated = 'April 2025'
+---
+
+<BaseLayout
+  title="Terms & Conditions"
+  description="Terms and conditions governing use of SnapSkill's website, LMS platform, and services."
+>
+  <Nav />
+  <main>
+
+  <section class="legal-hero">
+    <div class="container">
+      <p class="badge">Legal</p>
+      <h1>Terms &amp; Conditions</h1>
+      <p class="hero-meta">Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <div class="legal-layout container">
+    <aside class="legal-sidebar">
+      <div class="toc">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li><a href="#acceptance">Acceptance of Terms</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#accounts">Accounts &amp; Access</a></li>
+          <li><a href="#lms-terms">LMS Platform Terms</a></li>
+          <li><a href="#training-terms">Training Programme Terms</a></li>
+          <li><a href="#payment">Payment &amp; Billing</a></li>
+          <li><a href="#ip">Intellectual Property</a></li>
+          <li><a href="#prohibited">Prohibited Use</a></li>
+          <li><a href="#limitation">Limitation of Liability</a></li>
+          <li><a href="#termination">Termination</a></li>
+          <li><a href="#governing-law">Governing Law</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <article class="legal-body">
+      <p class="intro">These Terms &amp; Conditions govern your use of SnapSkill's website (snapskill.in), LMS platform, corporate training programmes, and consulting services. By accessing or using our services, you agree to be bound by these terms. Please read them carefully before proceeding.</p>
+
+      <section id="acceptance">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By using any SnapSkill service, you confirm that you are at least 18 years old, have the authority to enter into a binding agreement on behalf of yourself or your organisation, and agree to comply with these terms.</p>
+        <p>If you do not agree to these terms, please do not use our services. Continued use after any changes to these terms constitutes acceptance of the revised terms.</p>
+      </section>
+
+      <section id="services">
+        <h2>2. Our Services</h2>
+        <p>SnapSkill provides the following services, each subject to specific terms within this document:</p>
+        <ul>
+          <li><strong>AI Strategy &amp; Consulting</strong>: Advisory services for enterprise AI implementation</li>
+          <li><strong>AI Implementation</strong>: End-to-end delivery of AI projects from pilot to production</li>
+          <li><strong>Corporate Training Programmes</strong>: Custom AI training designed for enterprise teams</li>
+          <li><strong>SnapSkill LMS</strong>: A cloud-based learning management system for enterprise upskilling</li>
+        </ul>
+        <p>We reserve the right to modify, suspend, or discontinue any service at any time with reasonable notice to affected users.</p>
+      </section>
+
+      <section id="accounts">
+        <h2>3. Accounts &amp; Access</h2>
+        <p>To use certain services (such as the LMS platform), you may be required to create an account. You agree to:</p>
+        <ul>
+          <li>Provide accurate and complete registration information</li>
+          <li>Keep your login credentials confidential and not share them with others</li>
+          <li>Notify us immediately of any unauthorised access to your account</li>
+          <li>Take responsibility for all activity that occurs under your account</li>
+        </ul>
+        <p>We reserve the right to suspend or terminate accounts that violate these terms or are used for fraudulent or abusive purposes.</p>
+      </section>
+
+      <section id="lms-terms">
+        <h2>4. LMS Platform Terms</h2>
+        <p><strong>For organisations (administrators):</strong> When an organisation subscribes to the SnapSkill LMS, the organisation is responsible for all users enrolled under its account, ensuring appropriate data privacy compliance for its learners, and managing access rights appropriately.</p>
+        <p><strong>For learners:</strong> Access to the LMS is typically granted by your employer or training provider. You agree to use the platform only for legitimate learning purposes, not to share course materials or certificates obtained through fraudulent means, and not to attempt to circumvent test controls or integrity measures (including anti-tab-switching detection and auto-submit mechanisms).</p>
+        <p><strong>Certificates:</strong> Certificates issued through the SnapSkill LMS are awarded based on genuine completion of course or test requirements. Fraudulent completion will result in certificate revocation.</p>
+      </section>
+
+      <section id="training-terms">
+        <h2>5. Corporate Training Programme Terms</h2>
+        <p>Specific terms for training programmes are set out in the relevant Statement of Work or engagement letter. General terms include:</p>
+        <ul>
+          <li>Programme delivery is subject to minimum participant numbers unless otherwise agreed</li>
+          <li>Rescheduling requests must be made at least 5 business days before the session date</li>
+          <li>Custom programme content developed for a client remains the intellectual property of SnapSkill unless explicitly transferred in writing</li>
+          <li>Recording of live sessions by participants is not permitted without prior written consent</li>
+        </ul>
+      </section>
+
+      <section id="payment">
+        <h2>6. Payment &amp; Billing</h2>
+        <ul>
+          <li>All prices are in Indian Rupees (INR) unless otherwise stated</li>
+          <li>Invoices are due within the payment terms specified on each invoice (typically 14–30 days)</li>
+          <li>Late payments may incur interest charges at 1.5% per month on the outstanding balance</li>
+          <li>Subscription fees for the LMS are billed in advance for the period chosen (monthly or annual)</li>
+          <li>We do not store payment card details — payments are processed securely by third-party payment providers</li>
+        </ul>
+        <p>For our refund policy, please refer to our <a href="/refund-policy">Refund Policy</a>.</p>
+      </section>
+
+      <section id="ip">
+        <h2>7. Intellectual Property</h2>
+        <p>All content on our website, LMS platform, and training materials — including text, graphics, logos, course content, question banks, and software — is the intellectual property of SnapSkill or its licensors and is protected by applicable intellectual property laws.</p>
+        <p>You may not reproduce, distribute, modify, create derivative works from, or commercially exploit any SnapSkill content without prior written permission.</p>
+        <p>For consulting engagements, deliverable ownership is defined in the relevant Statement of Work. Unless otherwise agreed, client data and pre-existing client IP remain the property of the client, while methodologies, frameworks, and tools developed by SnapSkill remain ours.</p>
+      </section>
+
+      <section id="prohibited">
+        <h2>8. Prohibited Use</h2>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Use our services for any unlawful purpose or in violation of applicable laws</li>
+          <li>Attempt to gain unauthorised access to any part of our systems or another user's account</li>
+          <li>Transmit malware, viruses, or any harmful code</li>
+          <li>Scrape, harvest, or extract data from our platform without authorisation</li>
+          <li>Use our platform to send unsolicited communications</li>
+          <li>Impersonate SnapSkill, our staff, or other users</li>
+          <li>Interfere with or disrupt the integrity or performance of our services</li>
+        </ul>
+        <p>Violation of these prohibitions may result in immediate termination of access and, where applicable, legal action.</p>
+      </section>
+
+      <section id="limitation">
+        <h2>9. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, SnapSkill shall not be liable for:</p>
+        <ul>
+          <li>Indirect, incidental, consequential, or punitive damages arising from use of our services</li>
+          <li>Loss of data, revenue, or business opportunity</li>
+          <li>Interruptions or errors in service availability</li>
+        </ul>
+        <p>Our total liability for any claim arising from these terms shall not exceed the fees paid by you to SnapSkill in the 12 months preceding the claim.</p>
+        <p>These limitations do not apply to liability arising from gross negligence, wilful misconduct, or matters that cannot be excluded under applicable law.</p>
+      </section>
+
+      <section id="termination">
+        <h2>10. Termination</h2>
+        <p>Either party may terminate a service agreement with written notice as specified in the relevant engagement terms. We may terminate or suspend your access immediately, without notice, if we reasonably believe you have materially violated these terms.</p>
+        <p>On termination, you must cease use of any SnapSkill materials and, where applicable, delete confidential information provided to you during the engagement.</p>
+      </section>
+
+      <section id="governing-law">
+        <h2>11. Governing Law</h2>
+        <p>These terms are governed by the laws of India. Any disputes arising from or relating to these terms shall be subject to the exclusive jurisdiction of the courts located in Hyderabad, Telangana, India.</p>
+        <p>We encourage parties to attempt to resolve disputes amicably before resorting to legal proceedings.</p>
+      </section>
+
+      <section id="contact">
+        <h2>12. Contact Us</h2>
+        <p>For questions about these terms or to report a potential violation, please contact us:</p>
+        <div class="contact-block">
+          <p><strong>SnapSkill</strong><br>
+          Email: <a href="mailto:support@snapskill.in">support@snapskill.in</a></p>
+        </div>
+      </section>
+    </article>
+  </div>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal-hero {
+    padding: var(--space-xl) 0 var(--space-lg);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .legal-hero .badge { margin-bottom: var(--space-sm); }
+  .legal-hero h1 { margin: var(--space-xs) 0 var(--space-xs); }
+  .hero-meta { font-size: 0.85rem; color: var(--color-body); }
+
+  .legal-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .legal-sidebar { position: sticky; top: 88px; }
+  .toc { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-md); }
+  .toc-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-body); margin-bottom: var(--space-sm); }
+  .toc ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+  .toc a { font-size: 0.85rem; color: var(--color-body); text-decoration: none; transition: var(--transition); display: block; padding: 3px 0; }
+  .toc a:hover { color: var(--color-primary); }
+
+  .legal-body { min-width: 0; }
+  .intro { font-size: 1rem; color: var(--color-dark); background: rgba(0,123,255,0.05); border-left: 4px solid var(--color-primary); padding: var(--space-md); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: var(--space-lg); }
+
+  .legal-body section { margin-bottom: var(--space-xl); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--color-border); }
+  .legal-body section:last-child { border-bottom: none; }
+
+  .legal-body h2 { font-size: 1.4rem; margin-bottom: var(--space-md); color: var(--color-dark); }
+  .legal-body h3 { font-size: 1rem; margin: var(--space-md) 0 var(--space-xs); color: var(--color-dark); }
+  .legal-body p  { font-size: 0.95rem; line-height: 1.8; margin-bottom: var(--space-sm); }
+  .legal-body ul { margin-bottom: var(--space-sm); }
+  .legal-body li { font-size: 0.95rem; line-height: 1.75; margin-bottom: var(--space-xs); }
+
+  .contact-block {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-top: var(--space-sm);
+  }
+  .contact-block p { margin: 0; font-size: 0.95rem; }
+
+  @media (max-width: 900px) {
+    .legal-layout { grid-template-columns: 1fr; }
+    .legal-sidebar { position: static; }
+    .toc { display: none; }
+  }
+</style>

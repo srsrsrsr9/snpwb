@@ -6,63 +6,205 @@ import Footer from '../components/Footer.astro'
 
 <BaseLayout
   title="About Us"
-  description="SnapSkill began with a shared conviction — that high-quality mentorship should be within everyone's reach. Meet the team turning aspirations into achievements."
+  description="SnapSkill was built on a single conviction: that enterprise AI should deliver real business outcomes, not impressive demos. Meet the team making that happen."
 >
   <Nav />
   <main>
 
   <!-- Hero -->
   <section class="about-hero">
-    <div class="about-hero-bg" aria-hidden="true"></div>
+    <div class="about-hero-bg" aria-hidden="true">
+      <div class="hero-orb hero-orb--1"></div>
+      <div class="hero-orb hero-orb--2"></div>
+      <div class="hero-grid"></div>
+    </div>
     <div class="container about-hero-inner">
-      <h1>Turning Aspirations Into<br><span class="text-primary">Achievements</span></h1>
-      <p class="hero-sub">Uncover your true potential with expert mentorship to achieve your dreams with confidence.</p>
-      <a href="/contact" class="btn btn--primary">Start now</a>
-    </div>
-  </section>
-
-  <!-- Our Story -->
-  <section class="story section">
-    <div class="container story-inner">
-      <div class="story-image">
-        <img src="/pooja.jpeg" alt="Pooja Chaurasia, Founder of SnapSkill" class="founder-img" onerror="this.style.display='none'" />
+      <div class="hero-eyebrow">
+        <span class="live-dot" aria-hidden="true"></span>
+        AI Consulting · Implementation · Capability Building
       </div>
-      <div class="story-text">
-        <h2>Our Story</h2>
-        <p>What began as a shared conviction — that high-quality mentorship should be within everyone's reach — has grown into a thriving learning community. At our core, we're just a group of professionals united by dedication, empathy, and the belief that every learner deserves tailored guidance.</p>
-        <p>Here, you'll find a supportive environment to grow, explore, and thrive at your own pace.</p>
-        <p class="founder-credit">&mdash; Pooja Chaurasia</p>
+      <h1>We help enterprises ship AI<br><span class="text-accent">that actually works.</span></h1>
+      <p class="hero-sub">Not slides. Not pilot purgatory. Production-grade AI with the outcomes to prove it.</p>
+      <div class="hero-actions">
+        <a href="/contact" class="btn btn--accent">Talk to us</a>
+        <a href="/blog" class="btn btn--outline btn--outline-light">Read our thinking →</a>
       </div>
     </div>
   </section>
 
-  <!-- Quote -->
-  <section class="quote-section">
-    <div class="container">
-      <blockquote class="pull-quote">
-        "We believe that quality mentorship should be a right accessible to all"
-      </blockquote>
+  <!-- Founder Statement -->
+  <section class="founder section">
+    <div class="container founder-inner">
+      <div class="founder-image-wrap">
+        <img
+          src="/pooja.jpeg"
+          alt="Pooja Chaurasia, Founder of SnapSkill"
+          class="founder-img"
+          onerror="this.style.display='none'"
+        />
+        <div class="founder-tag">
+          <div class="ft-avatar">P</div>
+          <div>
+            <div class="ft-name">Pooja Chaurasia</div>
+            <div class="ft-role">Founder, SnapSkill</div>
+          </div>
+        </div>
+      </div>
+      <div class="founder-text">
+        <p class="section-eyebrow">Why SnapSkill Exists</p>
+        <h2>The AI opportunity is real.<br>But most organisations are wasting it.</h2>
+        <blockquote class="founder-quote">
+          "I spent years watching companies pour resources into AI initiatives that never shipped anything meaningful. The technology wasn't the problem — it rarely is. The problem was a gap between technical execution and business reality. No one was connecting the dots between a working model and a workflow that actually changed how people do their jobs. SnapSkill exists to close that gap. We help enterprises implement AI that delivers measurable outcomes — not demos, not proofs-of-concept, not internal showcases. Real production systems that change P&L. That's the only thing that matters."
+          <footer class="quote-footer">— Pooja Chaurasia, Founder</footer>
+        </blockquote>
+      </div>
     </div>
   </section>
 
-  <!-- Mission / Vision / About -->
-  <section class="pillars section section--tinted">
+  <!-- Stats band -->
+  <section class="stats-band">
+    <div class="container stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">85<span>%</span></div>
+        <div class="stat-label">Pilot-to-production rate<br><small>(vs 27% industry avg)</small></div>
+      </div>
+      <div class="stat-sep" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-num">2,000<span>+</span></div>
+        <div class="stat-label">Professionals trained<br><small>across enterprise cohorts</small></div>
+      </div>
+      <div class="stat-sep" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-num">40<span>+</span></div>
+        <div class="stat-label">Organisations served<br><small>across industries</small></div>
+      </div>
+      <div class="stat-sep" aria-hidden="true"></div>
+      <div class="stat-item">
+        <div class="stat-num">10–16<span>wk</span></div>
+        <div class="stat-label">Median time to production<br><small>for a first use case</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="what-we-do section section--tinted">
     <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">What We Do</p>
+        <h2>Three things. Done properly.</h2>
+        <p>Most firms try to do everything. We focus on the three things that determine whether enterprise AI succeeds or fails.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="svc-card">
+          <div class="svc-icon" aria-hidden="true">
+            <div class="si-inner si-inner--blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+          </div>
+          <h3>AI Strategy & Consulting</h3>
+          <p>We start with your P&L, not a technology demo. We identify which AI use cases will move the needle, audit your data readiness, and build a roadmap leadership believes in — and can fund.</p>
+          <ul class="svc-list">
+            <li>Use case prioritisation matrix</li>
+            <li>Data & infrastructure readiness audit</li>
+            <li>Build vs buy vs partner analysis</li>
+            <li>AI governance framework</li>
+          </ul>
+        </div>
+        <div class="svc-card svc-card--featured">
+          <div class="svc-icon" aria-hidden="true">
+            <div class="si-inner si-inner--accent">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+          </div>
+          <h3>AI Implementation</h3>
+          <p>We take your highest-value use case from POC to production in 10–16 weeks — with integrations, compliance, and change management built in from day one. Not retrofitted at the end.</p>
+          <ul class="svc-list">
+            <li>Discovery → Data audit → Build → Pilot → Production</li>
+            <li>Legacy system integration by default</li>
+            <li>Business KPI tracking throughout</li>
+            <li>Knowledge transfer to your team</li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon" aria-hidden="true">
+            <div class="si-inner si-inner--blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+          </div>
+          <h3>Capability Building</h3>
+          <p>We upskill your teams to own and operate AI long after the engagement ends. Role-specific programmes for executives, managers, and practitioners — built around your actual tools and workflows.</p>
+          <ul class="svc-list">
+            <li>AI literacy for leadership (1 day)</li>
+            <li>AI-enabled management (4 weeks)</li>
+            <li>Practitioner bootcamp (6 weeks)</li>
+            <li>Train-the-trainer for sustainability</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How we're different -->
+  <section class="different section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Our Approach</p>
+        <h2>We've seen why AI fails.<br>We build to prevent it.</h2>
+      </div>
+
+      <div class="diff-grid">
+        {[
+          {
+            num: '01',
+            title: 'Business-first, always',
+            body: 'Every engagement starts with one question: what business problem costs you the most money? We never lead with technology. We lead with your P&L.',
+          },
+          {
+            num: '02',
+            title: 'Production is the only measure',
+            body: 'A pilot that never ships is a failed project, no matter how impressive the demo. Our success metric is production deployment and measurable business impact.',
+          },
+          {
+            num: '03',
+            title: 'Integration by default',
+            body: 'We design for your real stack from day one — your ERP, your CRM, your compliance requirements. Integration is never a phase 2 problem.',
+          },
+          {
+            num: '04',
+            title: 'We build your capability, not your dependency',
+            body: 'We leave you with an internal team that understands, operates, and evolves your AI systems. When we exit, you\'re stronger — not reliant on us.',
+          },
+        ].map(d => (
+          <div class="diff-card">
+            <div class="diff-num">{d.num}</div>
+            <h3>{d.title}</h3>
+            <p>{d.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission / Vision / Values -->
+  <section class="pillars section section--dark">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <p class="section-eyebrow section-eyebrow--light">What Drives Us</p>
+        <h2 style="color:white">Mission. Vision. What we believe.</h2>
+      </div>
       <div class="pillars-grid">
         <div class="pillar-card">
-          <span class="pillar-num">1</span>
-          <h3>Our Mission</h3>
-          <p>To empower learners through expert mentorship and structured guidance by those who have walked that path already.</p>
+          <div class="pillar-icon">Mission</div>
+          <p>To help enterprises implement AI that delivers measurable business outcomes — by starting with the right problems, building for production, and investing in the people who will sustain it.</p>
         </div>
         <div class="pillar-card">
-          <span class="pillar-num">2</span>
-          <h3>Our Vision</h3>
-          <p>To make quality mentorship accessible to every individual aiming for career success.</p>
+          <div class="pillar-icon">Vision</div>
+          <p>A world where the gap between AI potential and AI reality closes — where organisations that invest seriously in implementation get the outcomes the technology genuinely offers.</p>
         </div>
         <div class="pillar-card">
-          <span class="pillar-num">3</span>
-          <h3>About Us</h3>
-          <p>We are a small yet dedicated team of professionals who truly care about your success. Our aim is simple: to make learning accessible, personalised, and practical for everyone — no matter their background or experience.</p>
+          <div class="pillar-icon">We believe</div>
+          <p>That AI is a business transformation challenge, not a technology problem. The organisations that win with AI won't be those with the best models — they'll be the ones with the highest pilot-to-production conversion rate.</p>
         </div>
       </div>
     </div>
@@ -71,9 +213,11 @@ import Footer from '../components/Footer.astro'
   <!-- CTA -->
   <section class="section">
     <div class="container" style="max-width:640px;text-align:center">
-      <h2>Ready to start your AI journey?<br>We are here to partner you in your success!</h2>
-      <div style="margin-top:var(--space-lg)">
-        <a href="/contact" class="btn btn--primary">Contact us</a>
+      <h2>Ready to move from pilot to production?</h2>
+      <p style="margin:var(--space-sm) 0 var(--space-lg)">Tell us where your AI initiative stands. We'll give you an honest assessment of what it would take to make it work.</p>
+      <div style="display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap">
+        <a href="/contact" class="btn btn--primary">Talk to us</a>
+        <a href="/blog" class="btn btn--outline">Read our insights →</a>
       </div>
     </div>
   </section>
@@ -85,68 +229,280 @@ import Footer from '../components/Footer.astro'
 <style>
   .section { padding: var(--space-2xl) 0; }
   .section--tinted { background: var(--color-surface); }
+  .section--dark   { background: var(--color-dark); }
+
+  .section-header { text-align: center; margin-bottom: var(--space-xl); max-width: 600px; margin-inline: auto; }
+  .section-header p { margin-top: var(--space-xs); }
+
+  .section-eyebrow {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+    display: block;
+  }
+  .section-eyebrow--light { color: var(--color-accent); }
 
   /* Hero */
   .about-hero {
-    position: relative; padding: var(--space-2xl) 0;
-    text-align: center; overflow: hidden;
+    position: relative;
+    background: var(--color-dark);
+    padding: var(--space-2xl) 0;
+    overflow: hidden;
+    text-align: center;
   }
-  .about-hero-bg {
+  .about-hero-bg { position: absolute; inset: 0; pointer-events: none; }
+  .hero-grid {
     position: absolute; inset: 0;
-    background: linear-gradient(135deg, #f5e6ff 0%, #ffecd2 30%, #e0f0ff 60%, #f5e6ff 100%);
-    opacity: 0.5;
+    background-image:
+      linear-gradient(rgba(0,123,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,123,255,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
   }
-  .about-hero-inner { position: relative; z-index: 1; }
-  .about-hero h1 { margin-bottom: var(--space-md); }
-  .hero-sub { font-size: 1.1rem; max-width: 520px; margin: 0 auto var(--space-lg); }
+  .hero-orb {
+    position: absolute; border-radius: 50%; filter: blur(90px);
+  }
+  .hero-orb--1 { width: 500px; height: 500px; background: rgba(0,123,255,0.18); top: -150px; left: -100px; }
+  .hero-orb--2 { width: 350px; height: 350px; background: rgba(255,195,0,0.1); bottom: -50px; right: 5%; }
 
-  /* Story */
-  .story-inner {
-    display: grid; grid-template-columns: 1fr 1.5fr;
-    gap: var(--space-xl); align-items: center;
+  .about-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
   }
+  .live-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 0 3px rgba(16,185,129,0.25);
+    flex-shrink: 0;
+    animation: livePulse 2s infinite;
+  }
+  @keyframes livePulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(16,185,129,0.25); }
+    50%       { box-shadow: 0 0 0 7px rgba(16,185,129,0.08); }
+  }
+
+  .about-hero h1 { color: white; margin-bottom: var(--space-md); }
+  .hero-sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.1rem;
+    max-width: 480px;
+    margin: 0 auto var(--space-lg);
+  }
+  .hero-actions {
+    display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap;
+  }
+  .btn--outline-light {
+    border-color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8);
+    background: transparent;
+  }
+  .btn--outline-light:hover { border-color: white; color: white; background: transparent; }
+
+  /* Founder */
+  .founder-inner {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+  .founder-image-wrap { position: relative; }
   .founder-img {
-    width: 100%; border-radius: var(--radius-lg);
-    object-fit: cover; aspect-ratio: 4/5;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    aspect-ratio: 4/5;
+    display: block;
   }
-  .story-text h2 { margin-bottom: var(--space-md); }
-  .story-text p { font-size: 1rem; margin-bottom: var(--space-sm); }
-  .founder-credit {
-    font-family: var(--font-heading); font-size: 1.1rem;
-    font-weight: 700; color: var(--color-dark); margin-top: var(--space-md);
+  .founder-tag {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    right: 20px;
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+  }
+  .ft-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--color-primary); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .ft-name { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--color-dark); }
+  .ft-role { font-size: 0.78rem; color: var(--color-body); }
+
+  .founder-text { padding-top: var(--space-sm); }
+  .founder-text h2 { margin: var(--space-xs) 0 var(--space-lg); }
+
+  .founder-quote {
+    font-style: normal;
+    background: var(--color-surface);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: var(--space-lg);
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--color-dark);
+    margin: 0;
+  }
+  .quote-footer {
+    display: block;
+    margin-top: var(--space-md);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--color-body);
   }
 
-  /* Quote */
-  .quote-section { padding: var(--space-xl) 0; border-bottom: 1px solid var(--color-border); }
-  .pull-quote {
-    font-family: var(--font-heading); font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    font-weight: 700; color: var(--color-dark); text-align: center;
-    max-width: 700px; margin: 0 auto;
-    border: none; background: none; padding: 0; font-style: normal;
+  /* Stats band */
+  .stats-band {
+    background: var(--color-dark);
+    padding: var(--space-lg) 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
+  .stats-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+  }
+  .stat-num span { font-size: 1.5rem; color: var(--color-accent); }
+  .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 4px; line-height: 1.5; }
+  .stat-label small { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+  .stat-sep { width: 1px; height: 60px; background: rgba(255,255,255,0.08); flex-shrink: 0; }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+  .svc-card {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: white;
+    transition: var(--transition);
+  }
+  .svc-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+  .svc-card--featured {
+    background: var(--color-dark);
+    border-color: transparent;
+  }
+  .svc-card--featured h3 { color: white; }
+  .svc-card--featured p  { color: rgba(255,255,255,0.65); }
+  .svc-card--featured .svc-list li { color: rgba(255,255,255,0.55); }
+  .svc-card--featured .svc-list li::before { background: var(--color-accent); }
+
+  .svc-icon { margin-bottom: var(--space-md); }
+  .si-inner {
+    width: 48px; height: 48px; border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .si-inner--blue   { background: var(--color-primary); }
+  .si-inner--accent { background: var(--color-accent); }
+
+  .svc-card h3 { font-size: 1.2rem; margin-bottom: var(--space-xs); }
+  .svc-card p  { font-size: 0.9rem; margin-bottom: var(--space-md); }
+  .svc-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .svc-list li { font-size: 0.85rem; padding-left: 16px; position: relative; color: var(--color-body); }
+  .svc-list li::before {
+    content: '';
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary);
+  }
+
+  /* How we're different */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+  .diff-card {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    transition: var(--transition);
+  }
+  .diff-card:hover { box-shadow: var(--shadow-md); background: white; }
+  .diff-num {
+    font-family: var(--font-heading);
+    font-size: 2rem; font-weight: 800;
+    color: var(--color-primary); opacity: 0.3;
+    line-height: 1; margin-bottom: var(--space-sm);
+  }
+  .diff-card h3 { font-size: 1.1rem; color: var(--color-dark); margin-bottom: var(--space-xs); }
+  .diff-card p  { font-size: 0.9rem; margin: 0; }
 
   /* Pillars */
   .pillars-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
   }
   .pillar-card {
-    padding: var(--space-lg); background: white;
-    border-radius: var(--radius-lg); border: 1px solid var(--color-border);
+    padding: var(--space-lg);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg);
   }
-  .pillar-num {
-    display: block; font-family: var(--font-heading);
-    font-size: 1.5rem; font-weight: 800; color: var(--color-primary);
-    margin-bottom: var(--space-sm); padding-bottom: var(--space-sm);
-    border-bottom: 2px solid var(--color-border);
+  .pillar-icon {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
-  .pillar-card h3 { margin-bottom: var(--space-sm); }
-  .pillar-card p { font-size: 0.93rem; margin: 0; }
+  .pillar-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); margin: 0; }
 
-  @media (max-width: 960px) {
-    .story-inner { grid-template-columns: 1fr; }
-    .founder-img { max-width: 360px; margin: 0 auto; }
+  @media (max-width: 1024px) {
+    .founder-inner { grid-template-columns: 320px 1fr; }
+  }
+  @media (max-width: 900px) {
+    .founder-inner   { grid-template-columns: 1fr; }
+    .founder-img     { max-width: 380px; margin: 0 auto; aspect-ratio: 3/4; }
+    .founder-tag     { position: static; margin-top: var(--space-sm); box-shadow: none; }
+    .services-grid   { grid-template-columns: 1fr; }
+    .diff-grid       { grid-template-columns: 1fr; }
+    .pillars-grid    { grid-template-columns: 1fr; }
+    .stats-inner     { justify-content: center; gap: var(--space-lg); }
+    .stat-sep        { display: none; }
   }
   @media (max-width: 600px) {
-    .pillars-grid { grid-template-columns: 1fr; }
+    .hero-actions    { flex-direction: column; align-items: center; }
+    .stats-inner     { grid-template-columns: repeat(2,1fr); display: grid; }
   }
 </style>

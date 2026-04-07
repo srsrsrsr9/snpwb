@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<BaseLayout
+  title="Contact Us"
+  description="Talk to SnapSkill about AI implementation, corporate training, or the LMS platform. No sales decks, no discovery treadmill — just an honest conversation."
+>
+  <Nav />
+  <main>
+
+  <!-- Hero -->
+  <section class="contact-hero">
+    <div class="container">
+      <p class="badge">Contact</p>
+      <h1>Let's have an honest<br><span class="text-primary">conversation.</span></h1>
+      <p class="hero-sub">No canned discovery calls. No 30-slide pitch decks. Tell us where you are and what you're trying to do — we'll tell you if and how we can help.</p>
+    </div>
+  </section>
+
+  <!-- Contact grid -->
+  <section class="contact-section section">
+    <div class="container contact-inner">
+
+      <!-- Left: channels -->
+      <div class="contact-channels">
+
+        <div class="channel-card channel-card--featured">
+          <div class="channel-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8a16 16 0 0 0 7.91 7.91l.72-.72a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <h3>Request a callback</h3>
+            <p>Book a 30-minute call via Calendly. We'll come prepared with questions — not slides.</p>
+            <a href="https://calendly.com/snapskill" target="_blank" rel="noopener" class="btn btn--accent channel-btn">Schedule a call →</a>
+          </div>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-icon channel-icon--light" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h3>Email us directly</h3>
+            <p>For implementation enquiries, training requests, LMS demos, or anything else.</p>
+            <a href="mailto:support@snapskill.in" class="channel-link">support@snapskill.in →</a>
+          </div>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-icon channel-icon--light" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div>
+            <h3>Connect on LinkedIn</h3>
+            <p>Follow our company page for insights on enterprise AI implementation.</p>
+            <a href="https://www.linkedin.com/company/snapskill" target="_blank" rel="noopener" class="channel-link">SnapSkill on LinkedIn →</a>
+          </div>
+        </div>
+
+        <div class="response-note">
+          <div class="rn-dot" aria-hidden="true"></div>
+          <p>We typically respond within <strong>one business day</strong>. For urgent implementation queries, email is fastest.</p>
+        </div>
+      </div>
+
+      <!-- Right: what to expect -->
+      <div class="contact-info">
+        <h2>What happens when you reach out</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <strong>We read everything you send.</strong>
+              <p>Every inquiry goes directly to the team. No ticketing system, no auto-response questionnaire.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <strong>We come prepared.</strong>
+              <p>Before the first call, we'll have done our homework on your company, your industry, and your likely AI challenges.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <strong>We tell you the truth.</strong>
+              <p>If your use case isn't ready for AI, we'll say so. If a simpler approach would work, we'll recommend it. We'd rather earn a long-term relationship than a short-term engagement.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <strong>You get a clear next step.</strong>
+              <p>No ambiguous follow-up. Every conversation ends with a specific proposal, a defined next action, or an honest "this isn't the right fit."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-topics">
+          <p class="topics-label">Common reasons people reach out</p>
+          <div class="topics-grid">
+            <div class="topic-chip">AI strategy &amp; roadmap</div>
+            <div class="topic-chip">Pilot that's stuck</div>
+            <div class="topic-chip">Production implementation</div>
+            <div class="topic-chip">Corporate AI training</div>
+            <div class="topic-chip">LMS platform demo</div>
+            <div class="topic-chip">Data readiness audit</div>
+            <div class="topic-chip">Capability building programme</div>
+            <div class="topic-chip">Custom enquiry</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section { padding: var(--space-2xl) 0; }
+
+  /* Hero */
+  .contact-hero {
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+  .contact-hero .badge { margin-bottom: var(--space-sm); }
+  .contact-hero h1 { margin: var(--space-xs) 0 var(--space-sm); }
+  .hero-sub { font-size: 1.05rem; max-width: 540px; }
+
+  /* Layout */
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  /* Channels */
+  .contact-channels { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .channel-card {
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    background: white;
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    transition: var(--transition);
+  }
+  .channel-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .channel-card--featured {
+    background: var(--color-dark);
+    border-color: transparent;
+  }
+  .channel-card--featured h3 { color: white; }
+  .channel-card--featured p  { color: rgba(255,255,255,0.65); }
+
+  .channel-icon {
+    width: 44px; height: 44px; border-radius: var(--radius-sm);
+    background: var(--color-primary);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .channel-icon--light { background: rgba(0,123,255,0.1); }
+
+  .channel-card h3 { font-size: 1rem; margin-bottom: var(--space-2xs); }
+  .channel-card p  { font-size: 0.88rem; margin-bottom: var(--space-sm); }
+  .channel-btn { font-size: 0.85rem; }
+  .channel-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .channel-link:hover { text-decoration: underline; }
+
+  .response-note {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-start;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+  .rn-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #10b981; flex-shrink: 0; margin-top: 6px;
+    box-shadow: 0 0 0 3px rgba(16,185,129,0.2);
+  }
+  .response-note p { font-size: 0.85rem; margin: 0; }
+
+  /* Info side */
+  .contact-info h2 { margin-bottom: var(--space-lg); }
+
+  .steps { display: flex; flex-direction: column; gap: var(--space-md); margin-bottom: var(--space-xl); }
+  .step {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+  }
+  .step:hover { border-color: var(--color-primary); background: white; box-shadow: var(--shadow-sm); }
+  .step-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--color-primary); color: white;
+    font-family: var(--font-heading); font-weight: 700; font-size: 0.85rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { display: block; font-size: 0.95rem; color: var(--color-dark); margin-bottom: 3px; }
+  .step p { font-size: 0.85rem; margin: 0; }
+
+  .contact-topics { }
+  .topics-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-body);
+    margin-bottom: var(--space-sm);
+  }
+  .topics-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .topic-chip {
+    font-size: 0.82rem;
+    padding: 0.35em 0.9em;
+    border-radius: 100px;
+    background: rgba(0,123,255,0.08);
+    color: var(--color-primary);
+    border: 1px solid rgba(0,123,255,0.2);
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  .topic-chip:hover { background: var(--color-primary); color: white; cursor: default; }
+
+  @media (max-width: 900px) {
+    .contact-inner { grid-template-columns: 1fr; }
+  }
+</style>

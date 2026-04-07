@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+
+const lastUpdated = 'April 2025'
+---
+
+<BaseLayout
+  title="Refund Policy"
+  description="SnapSkill's refund and cancellation policy for the LMS platform, corporate training programmes, and consulting services."
+>
+  <Nav />
+  <main>
+
+  <section class="legal-hero">
+    <div class="container">
+      <p class="badge">Legal</p>
+      <h1>Refund Policy</h1>
+      <p class="hero-meta">Last updated: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <div class="legal-layout container">
+    <aside class="legal-sidebar">
+      <div class="toc">
+        <p class="toc-label">On this page</p>
+        <ul>
+          <li><a href="#lms-refunds">LMS Platform Subscriptions</a></li>
+          <li><a href="#training-refunds">Corporate Training Programmes</a></li>
+          <li><a href="#consulting-refunds">Consulting Engagements</a></li>
+          <li><a href="#how-to-request">How to Request a Refund</a></li>
+          <li><a href="#processing">Processing Time</a></li>
+          <li><a href="#exceptions">Exceptions</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <article class="legal-body">
+      <p class="intro">We want you to be satisfied with every SnapSkill service. This policy sets out our approach to refunds and cancellations for each type of service we provide. If you have a question not covered here, please contact us at <a href="mailto:support@snapskill.in">support@snapskill.in</a>.</p>
+
+      <section id="lms-refunds">
+        <h2>1. LMS Platform Subscriptions</h2>
+
+        <h3>Monthly subscriptions</h3>
+        <p>Monthly subscriptions may be cancelled at any time. Cancellation takes effect at the end of the current billing period — you retain full access until then. We do not provide prorated refunds for partial months.</p>
+
+        <h3>Annual subscriptions</h3>
+        <p>Annual subscriptions may be cancelled within <strong>14 days of payment</strong> for a full refund, provided the platform has not been actively used (no learners enrolled, no tests or courses created). After 14 days, we do not offer refunds on annual subscriptions, but you retain full access for the remainder of the subscription period.</p>
+
+        <h3>New organisation sign-ups</h3>
+        <p>If you are a new enterprise customer and the platform does not meet your requirements after an initial setup period, please contact us within <strong>30 days of your first payment</strong>. We will assess your situation and work with you to find a resolution, which may include a partial or full refund at our discretion.</p>
+
+        <div class="policy-highlight">
+          <div class="ph-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <p>We strongly recommend requesting a demo before committing to an annual subscription. Our team will give you a full walkthrough tailored to your use case — <a href="/contact">contact us to book one</a>.</p>
+        </div>
+      </section>
+
+      <section id="training-refunds">
+        <h2>2. Corporate Training Programmes</h2>
+
+        <h3>Cancellation by the client</h3>
+        <div class="policy-table">
+          <div class="pt-row pt-row--header">
+            <div>Notice given before session/cohort start</div>
+            <div>Refund</div>
+          </div>
+          <div class="pt-row">
+            <div>More than 14 business days</div>
+            <div class="pt-green">Full refund</div>
+          </div>
+          <div class="pt-row">
+            <div>7–14 business days</div>
+            <div class="pt-yellow">50% refund</div>
+          </div>
+          <div class="pt-row">
+            <div>Less than 7 business days</div>
+            <div class="pt-red">No refund (credit may apply — see below)</div>
+          </div>
+        </div>
+
+        <h3>Rescheduling</h3>
+        <p>If you need to reschedule rather than cancel, we will do our best to accommodate you at no additional cost if you give at least <strong>5 business days' notice</strong>. Rescheduling requests with less than 5 business days' notice may incur a rescheduling fee of up to 20% of the programme cost.</p>
+
+        <h3>Credit for late cancellations</h3>
+        <p>If you cancel with less than 7 business days' notice due to circumstances beyond your control (e.g., a medical emergency, a natural disaster, or a significant business disruption), please contact us. We will consider providing a credit toward a future programme on a case-by-case basis.</p>
+
+        <h3>Cancellation by SnapSkill</h3>
+        <p>If SnapSkill cancels a programme for any reason, you will receive a full refund of all amounts paid. Where SnapSkill cancels due to insufficient participant numbers, we will offer an alternative date before processing a refund.</p>
+      </section>
+
+      <section id="consulting-refunds">
+        <h2>3. Consulting Engagements</h2>
+        <p>Consulting and implementation engagements are governed by the specific Statement of Work signed between SnapSkill and the client. General terms:</p>
+        <ul>
+          <li>Fees for work already completed and delivered are non-refundable</li>
+          <li>Advance payments for future phases may be refundable if the engagement is terminated before that phase commences, subject to the terms in the relevant Statement of Work</li>
+          <li>Where SnapSkill fails to deliver a specific contractual milestone, we will work to remediate the issue. If remediation is not possible, fees attributable to the undelivered milestone will be refunded</li>
+        </ul>
+        <p>Disputes regarding consulting deliverables should first be raised with your SnapSkill engagement manager. We are committed to resolving disputes fairly and without the need for formal proceedings.</p>
+      </section>
+
+      <section id="how-to-request">
+        <h2>4. How to Request a Refund</h2>
+        <p>To request a refund, please email us at <a href="mailto:support@snapskill.in">support@snapskill.in</a> with:</p>
+        <ul>
+          <li>Your name and organisation</li>
+          <li>The service for which you are requesting a refund</li>
+          <li>Your invoice or order number</li>
+          <li>The reason for your refund request</li>
+        </ul>
+        <p>We will acknowledge your request within 2 business days and aim to resolve it within 7 business days.</p>
+      </section>
+
+      <section id="processing">
+        <h2>5. Processing Time</h2>
+        <p>Approved refunds are processed within <strong>7–10 business days</strong> of approval. The time it takes for the refund to appear in your account depends on your payment method and financial institution:</p>
+        <ul>
+          <li>Credit/debit cards: typically 5–10 business days after processing</li>
+          <li>Bank transfers: typically 3–5 business days after processing</li>
+          <li>UPI and other digital payment methods: typically 3–5 business days</li>
+        </ul>
+        <p>If you have not received your refund after 15 business days, please contact us.</p>
+      </section>
+
+      <section id="exceptions">
+        <h2>6. Exceptions</h2>
+        <p>The following are generally not eligible for refunds:</p>
+        <ul>
+          <li>Certificates already issued for completed courses or tests</li>
+          <li>LMS platform usage where significant use has occurred (even within the annual subscription window)</li>
+          <li>Training programmes where the full programme has been delivered</li>
+          <li>Custom programme development fees once development has commenced</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions about this policy or want to discuss a specific situation, we are happy to help:</p>
+        <div class="contact-block">
+          <p><strong>SnapSkill</strong><br>
+          Email: <a href="mailto:support@snapskill.in">support@snapskill.in</a><br>
+          Response time: within 2 business days</p>
+        </div>
+      </section>
+    </article>
+  </div>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal-hero {
+    padding: var(--space-xl) 0 var(--space-lg);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .legal-hero .badge { margin-bottom: var(--space-sm); }
+  .legal-hero h1 { margin: var(--space-xs) 0 var(--space-xs); }
+  .hero-meta { font-size: 0.85rem; color: var(--color-body); }
+
+  .legal-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .legal-sidebar { position: sticky; top: 88px; }
+  .toc { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-md); }
+  .toc-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-body); margin-bottom: var(--space-sm); }
+  .toc ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+  .toc a { font-size: 0.85rem; color: var(--color-body); text-decoration: none; transition: var(--transition); display: block; padding: 3px 0; }
+  .toc a:hover { color: var(--color-primary); }
+
+  .legal-body { min-width: 0; }
+  .intro { font-size: 1rem; color: var(--color-dark); background: rgba(0,123,255,0.05); border-left: 4px solid var(--color-primary); padding: var(--space-md); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: var(--space-lg); }
+
+  .legal-body section { margin-bottom: var(--space-xl); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--color-border); }
+  .legal-body section:last-child { border-bottom: none; }
+  .legal-body h2 { font-size: 1.4rem; margin-bottom: var(--space-md); color: var(--color-dark); }
+  .legal-body h3 { font-size: 1rem; margin: var(--space-md) 0 var(--space-xs); color: var(--color-dark); }
+  .legal-body p  { font-size: 0.95rem; line-height: 1.8; margin-bottom: var(--space-sm); }
+  .legal-body ul { margin-bottom: var(--space-sm); }
+  .legal-body li { font-size: 0.95rem; line-height: 1.75; margin-bottom: var(--space-xs); }
+
+  /* Policy table */
+  .policy-table {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin: var(--space-sm) 0 var(--space-md);
+  }
+  .pt-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.88rem;
+  }
+  .pt-row:last-child { border-bottom: none; }
+  .pt-row--header { background: var(--color-surface); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-body); }
+  .pt-green { color: #065f46; font-weight: 600; }
+  .pt-yellow { color: #92400e; font-weight: 600; }
+  .pt-red { color: #7f1d1d; font-weight: 600; }
+
+  /* Highlight box */
+  .policy-highlight {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-start;
+    background: rgba(255,195,0,0.08);
+    border: 1px solid rgba(255,195,0,0.3);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-top: var(--space-md);
+  }
+  .ph-icon { color: var(--color-accent); flex-shrink: 0; margin-top: 2px; }
+  .policy-highlight p { font-size: 0.88rem; margin: 0; }
+
+  .contact-block {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-top: var(--space-sm);
+  }
+  .contact-block p { margin: 0; font-size: 0.95rem; line-height: 1.8; }
+
+  @media (max-width: 900px) {
+    .legal-layout { grid-template-columns: 1fr; }
+    .legal-sidebar { position: static; }
+    .toc { display: none; }
+    .pt-row { grid-template-columns: 1.5fr 1fr; }
+  }
+  @media (max-width: 500px) {
+    .pt-row { grid-template-columns: 1fr; gap: 4px; }
+    .pt-row--header div:last-child { display: none; }
+  }
+</style>
