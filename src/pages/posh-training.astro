@@ -1,0 +1,814 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<BaseLayout
+  title="POSH Compliance Training — SafeWork"
+  description="India's most engaging POSH Act training. Scenario-based, mobile-first, AI-coached — with admin dashboards and completion certificates. Built for enterprises serious about workplace safety."
+>
+  <Nav />
+  <main>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="bg-grid"></div>
+      <div class="bg-orb bg-orb--1"></div>
+      <div class="bg-orb bg-orb--2"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <div class="badge-shield" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          SafeWork · POSH Compliance
+        </div>
+        <h1>POSH training your<br>employees will<br><span class="hero-hl">actually finish.</span></h1>
+        <p class="hero-sub">Scenario-based, AI-coached, mobile-first POSH Act training — with admin dashboards, automated reminders, and verified completion certificates. Built for Indian enterprises.</p>
+        <div class="hero-actions">
+          <a href="/contact" class="btn btn--accent">Request a demo</a>
+          <a href="#how-it-works" class="btn-ghost">See how it works →</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <div class="trust-num">13</div>
+            <div class="trust-label">Modules per course</div>
+          </div>
+          <div class="trust-sep" aria-hidden="true"></div>
+          <div class="trust-item">
+            <div class="trust-num">100%</div>
+            <div class="trust-label">Mobile compatible</div>
+          </div>
+          <div class="trust-sep" aria-hidden="true"></div>
+          <div class="trust-item">
+            <div class="trust-num">POSH</div>
+            <div class="trust-label">Act 2013 compliant</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone mockup trio -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="phone-trio">
+
+          <!-- Back phone: module list -->
+          <div class="phone phone--back">
+            <div class="phone-shell">
+              <div class="ph-notch"></div>
+              <div class="ph-screen">
+                <div class="ph-greeting">Namaste, Srinivas 👋</div>
+                <div class="ph-date">Tuesday, 7 April</div>
+                <div class="ph-progress-card">
+                  <div class="ph-ring">
+                    <svg viewBox="0 0 48 48" width="48" height="48">
+                      <circle cx="24" cy="24" r="20" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="4"/>
+                      <circle cx="24" cy="24" r="20" fill="none" stroke="white" stroke-width="4" stroke-dasharray="125.7" stroke-dashoffset="87" stroke-linecap="round" transform="rotate(-90 24 24)"/>
+                    </svg>
+                    <span>31%</span>
+                  </div>
+                  <div>
+                    <div class="ph-prog-title">Your Progress</div>
+                    <div class="ph-prog-sub">4 of 13 modules complete</div>
+                  </div>
+                </div>
+                <div class="ph-continue">
+                  <div class="ph-cont-label">Continue:</div>
+                  <div class="ph-cont-title">Is This a Workplace?</div>
+                </div>
+                <div class="ph-modules">
+                  <div class="ph-mod ph-mod--done">
+                    <span class="ph-mod-badge done">Completed</span>
+                    <div class="ph-mod-title">Setting the Stage</div>
+                  </div>
+                  <div class="ph-mod ph-mod--done">
+                    <span class="ph-mod-badge done">Completed</span>
+                    <div class="ph-mod-title">What Is Sexual Harassment?</div>
+                  </div>
+                  <div class="ph-mod ph-mod--active">
+                    <span class="ph-mod-badge active">Module 5</span>
+                    <div class="ph-mod-title">Is This a Workplace?</div>
+                  </div>
+                  <div class="ph-mod ph-mod--locked">
+                    <span class="ph-mod-badge locked">Module 6</span>
+                    <div class="ph-mod-title">The Reporting Roadmap</div>
+                    <div class="ph-lock" aria-hidden="true">🔒</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Front phone: AI chat -->
+          <div class="phone phone--front">
+            <div class="phone-shell">
+              <div class="ph-notch"></div>
+              <div class="ph-screen ph-screen--chat">
+                <div class="ph-chat-header">
+                  <div class="ph-chat-back">←</div>
+                  <div>
+                    <div class="ph-chat-title">SafeWork Coach</div>
+                    <div class="ph-chat-sub">Module 3: The Grey Zone Game</div>
+                  </div>
+                </div>
+                <div class="ph-chat-body">
+                  <div class="chat-bubble chat-bubble--system">
+                    Hello! Welcome to <strong>The Grey Zone Game.</strong> 👋
+                    <br><br>
+                    Workplace situations aren't always black and white. You tell me: is it Harassment, Not Harassment, or does it Depend?
+                  </div>
+                  <div class="chat-bubble chat-bubble--scenario">
+                    <strong>Scenario 1:</strong><br>
+                    Ravi tells Meena at a team lunch: 'You look really hot in that dress today.' Meena laughs awkwardly and changes the subject.
+                  </div>
+                  <div class="chat-bubble chat-bubble--user">Harassment</div>
+                  <div class="chat-bubble chat-bubble--feedback">
+                    <strong>Spot on.</strong> Calling a colleague 'hot' is a sexually coloured remark (Category 3).<br><br>
+                    Intent (compliment) doesn't matter; impact (sexual remark) does.
+                  </div>
+                  <div class="chat-bubble chat-bubble--tip">
+                    💡 Key takeaway: 'Hot' is not a professional compliment.
+                  </div>
+                </div>
+                <div class="ph-chat-footer">Next Scenario →</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       THE PROBLEM
+  ═══════════════════════════════════════════════ -->
+  <section class="problem section">
+    <div class="container problem-inner">
+      <div class="problem-text">
+        <p class="eyebrow-label">The Problem</p>
+        <h2>Most POSH training is a checkbox exercise.<br>This one isn't.</h2>
+        <p>The typical POSH training cycle: email all staff a PDF, wait for the "read receipt," file it away, repeat next year. Employees don't retain it. Managers can't enforce it. And the next incident still catches everyone off guard.</p>
+        <p>The POSH Act requires meaningful training — not just documented exposure. SafeWork is built around what actually changes behaviour: scenario-based learning, real judgement calls, and AI-powered feedback that explains the why, not just the what.</p>
+      </div>
+      <div class="problem-vs">
+        <div class="vs-col vs-col--bad">
+          <h3>Typical POSH training</h3>
+          <ul>
+            <li>PDF or PowerPoint presentation</li>
+            <li>No scenario or judgement practice</li>
+            <li>Completed in 10 minutes, forgotten in 10 days</li>
+            <li>No admin visibility on completion</li>
+            <li>No evidence of understanding — just attendance</li>
+          </ul>
+        </div>
+        <div class="vs-divider">vs</div>
+        <div class="vs-col vs-col--good">
+          <h3>SafeWork by SnapSkill</h3>
+          <ul>
+            <li>13-module structured learning journey</li>
+            <li>AI coach with scenario-based practice</li>
+            <li>Mobile-first — completes during commute</li>
+            <li>Admin dashboard with real-time tracking</li>
+            <li>Verified certificate per employee</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       HOW IT WORKS
+  ═══════════════════════════════════════════════ -->
+  <section class="how-it-works section section--tinted" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow-label">How It Works</p>
+        <h2>A complete POSH training<br>system in one platform.</h2>
+      </div>
+
+      <div class="hiw-grid">
+
+        <div class="hiw-card hiw-card--dark">
+          <div class="hiw-visual" aria-hidden="true">
+            <!-- Admin dashboard mini -->
+            <div class="admin-mini">
+              <div class="am-header">Admin Dashboard · POSH Training</div>
+              <div class="am-stats">
+                <div class="am-stat"><div class="am-num">247</div><div class="am-label">Enrolled</div></div>
+                <div class="am-stat"><div class="am-num am-num--green">189</div><div class="am-label">Completed</div></div>
+                <div class="am-stat"><div class="am-num am-num--yellow">41</div><div class="am-label">In Progress</div></div>
+                <div class="am-stat"><div class="am-num am-num--red">17</div><div class="am-label">Not Started</div></div>
+              </div>
+              <div class="am-bar-label">Pass Rate</div>
+              <div class="am-bar-wrap"><div class="am-bar" style="--w:84%"></div><span>84%</span></div>
+              <div class="am-bar-label">Avg Completion</div>
+              <div class="am-bar-wrap"><div class="am-bar am-bar--teal" style="--w:76%"></div><span>76%</span></div>
+              <div class="am-footer">
+                <div class="am-btn">Upload Employees CSV</div>
+              </div>
+            </div>
+          </div>
+          <div class="hiw-content">
+            <div class="hiw-num">01</div>
+            <h3>Upload your employee list</h3>
+            <p>Add employees via CSV bulk upload or manual entry. Set a completion deadline, assign the course, and the system handles enrolment and reminder emails automatically.</p>
+          </div>
+        </div>
+
+        <div class="hiw-card">
+          <div class="hiw-visual hiw-visual--light" aria-hidden="true">
+            <!-- Module journey mini -->
+            <div class="journey-mini">
+              <div class="jm-label">POSH Training — Course A</div>
+              <div class="jm-modules">
+                {[
+                  { n:1, title:'Setting the Stage', status:'done', time:'5 min' },
+                  { n:2, title:'What Is Sexual Harassment?', status:'done', time:'10 min' },
+                  { n:3, title:'The Grey Zone Game', status:'done', time:'8 min' },
+                  { n:4, title:'Your Workplace Is Bigger…', status:'done', time:'8 min' },
+                  { n:5, title:'Is This a Workplace?', status:'active', time:'5 min' },
+                  { n:6, title:'The Reporting Roadmap', status:'locked', time:'10 min' },
+                ].map(m => (
+                  <div class={`jm-mod jm-mod--${m.status}`}>
+                    <div class="jm-icon">
+                      {m.status === 'done' ? '✓' : m.status === 'active' ? '▶' : '🔒'}
+                    </div>
+                    <div class="jm-info">
+                      <div class="jm-title">{m.title}</div>
+                      <div class="jm-time">{m.time}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div class="hiw-content">
+            <div class="hiw-num hiw-num--dark">02</div>
+            <h3>Employees learn at their own pace</h3>
+            <p>13 structured modules covering the full POSH Act — definitions, categories, grey areas, reporting obligations, IC responsibilities, and real-world scenarios. Sequential gating ensures nothing is skipped.</p>
+          </div>
+        </div>
+
+        <div class="hiw-card">
+          <div class="hiw-visual hiw-visual--light" aria-hidden="true">
+            <!-- Chat scenario mini -->
+            <div class="chat-mini">
+              <div class="cm-header">
+                <div class="cm-title">SafeWork Coach</div>
+                <div class="cm-sub">Module 3: The Grey Zone Game</div>
+              </div>
+              <div class="cm-body">
+                <div class="cm-bubble cm-sys">Workplace situations aren't always black and white. Is it Harassment, Not Harassment, or does it Depend?</div>
+                <div class="cm-scenario">
+                  <strong>Scenario 2:</strong> A manager sends work emails at 11pm with passive-aggressive subject lines. The team feels unable to switch off.
+                </div>
+                <div class="cm-choices">
+                  <div class="cm-choice">Harassment</div>
+                  <div class="cm-choice cm-choice--selected">Depends</div>
+                  <div class="cm-choice">Not Harassment</div>
+                </div>
+                <div class="cm-feedback cm-feedback--correct">
+                  ✓ <strong>Correct.</strong> Repeated unreasonable behaviour that creates a hostile environment may constitute harassment under POSH if it targets an individual.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hiw-content">
+            <div class="hiw-num hiw-num--dark">03</div>
+            <h3>AI coach makes it stick</h3>
+            <p>The SafeWork Coach isn't just multiple choice — it's a conversational AI that presents real workplace scenarios, explains the legal reasoning behind each answer, and corrects misconceptions on the spot.</p>
+          </div>
+        </div>
+
+        <div class="hiw-card hiw-card--accent">
+          <div class="hiw-visual" aria-hidden="true">
+            <!-- Certificate mini -->
+            <div class="cert-mini">
+              <div class="cert-shield">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="cert-text">
+                <div class="cert-title">Certificate of Completion</div>
+                <div class="cert-name">Priya Krishnamurthy</div>
+                <div class="cert-course">POSH Compliance Training — SafeWork</div>
+                <div class="cert-date">Completed 7 April 2026</div>
+              </div>
+              <div class="cert-verify">
+                <div class="cert-qr-mini"></div>
+                <div class="cert-verify-text">Verify online</div>
+              </div>
+            </div>
+          </div>
+          <div class="hiw-content">
+            <div class="hiw-num">04</div>
+            <h3>Verified certificates, automatically</h3>
+            <p>When an employee completes all modules and passes the final assessment, a tamper-proof certificate is issued automatically — downloadable, shareable, and publicly verifiable via a unique code. Your HR records update in real time.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       MODULES
+  ═══════════════════════════════════════════════ -->
+  <section class="modules section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow-label">The Curriculum</p>
+        <h2>13 modules. Nothing skipped.</h2>
+        <p>The SafeWork curriculum covers everything required under the POSH Act 2013 — from definitions and categories to reporting procedures, IC responsibilities, and bystander obligations.</p>
+      </div>
+
+      <div class="modules-grid">
+        {[
+          { n:'01', title:'Setting the Stage', desc:'Why POSH exists and what it means for your organisation.', time:'5 min' },
+          { n:'02', title:'What Is Sexual Harassment?', desc:'Legal definitions, categories 1–3, and the intent vs impact distinction.', time:'10 min' },
+          { n:'03', title:'The Grey Zone Game', desc:'AI-coached scenario practice: Harassment, Not Harassment, or Depends?', time:'8 min', ai:true },
+          { n:'04', title:'Your Workplace Is Bigger Than You Think', desc:'How POSH applies beyond the office — client sites, travel, virtual meetings.', time:'8 min' },
+          { n:'05', title:'Is This a Workplace?', desc:'Speed round: 8 workplace scenarios, test your knowledge.', time:'5 min', ai:true },
+          { n:'06', title:'The Reporting Roadmap', desc:'How to make a complaint, what happens next, and employee protections.', time:'10 min' },
+          { n:'07', title:'Help Priya Decide', desc:'An interactive scenario where you guide a colleague through a real situation.', time:'8 min', ai:true },
+          { n:'08', title:'Bystander Power: The 5D Framework', desc:'Distract, Delegate, Document, Delay, Direct — how to intervene safely.', time:'8 min' },
+          { n:'09', title:'What Would You Do?', desc:'Practice the bystander framework in simulated scenarios.', time:'6 min', ai:true },
+          { n:'10', title:'Myths, Fears, and Facts', desc:'Common misconceptions about POSH — addressed directly and honestly.', time:'6 min' },
+          { n:'11', title:'Sector Spotlight', desc:'Industry-specific scenarios relevant to your organisation\'s context.', time:'8 min' },
+          { n:'12', title:'Final Assessment', desc:'Structured test covering all modules. Must pass to receive certificate.', time:'15 min' },
+          { n:'13', title:'Your Reflection', desc:'A personal commitment module — what will you do differently?', time:'5 min' },
+        ].map(m => (
+          <div class="module-card">
+            <div class="mod-num">{m.n}</div>
+            <div class="mod-body">
+              <div class="mod-title-row">
+                <h3>{m.title}</h3>
+                {m.ai && <span class="mod-ai-badge">AI Coach</span>}
+              </div>
+              <p>{m.desc}</p>
+              <div class="mod-time">⏱ {m.time}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       COMPLIANCE CALLOUT
+  ═══════════════════════════════════════════════ -->
+  <section class="compliance section section--dark">
+    <div class="container compliance-inner">
+      <div class="compliance-text">
+        <p class="eyebrow-label eyebrow--light">Legal Compliance</p>
+        <h2 style="color:white">POSH Act compliance isn't optional.<br>Neither is meaningful training.</h2>
+        <p style="color:rgba(255,255,255,0.65)">Under the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act 2013, every organisation with 10 or more employees is required to conduct regular POSH awareness programmes. Failure to comply can result in penalties, loss of business licences, and significant reputational damage.</p>
+        <p style="color:rgba(255,255,255,0.65)">SafeWork is designed to meet and exceed these requirements — with audit-ready completion records, IC training support, and verifiable employee certificates.</p>
+        <a href="/contact" class="btn btn--accent" style="margin-top:var(--space-md)">Talk to us about rollout</a>
+      </div>
+      <div class="compliance-checklist">
+        <h3 style="color:white;margin-bottom:var(--space-md)">What SafeWork covers</h3>
+        {[
+          'Definition of sexual harassment under POSH Act 2013',
+          'All three categories of prohibited conduct',
+          'Extended definition of workplace (including virtual)',
+          'Complaint filing process and timelines',
+          'Internal Committee (IC) roles and obligations',
+          'Employee protections against retaliation',
+          'Bystander intervention training',
+          'Sector-specific scenario practice',
+          'Final assessment + verifiable completion certificate',
+        ].map(item => (
+          <div class="checklist-item">
+            <div class="cl-icon" aria-hidden="true">✓</div>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOR WHOM
+  ═══════════════════════════════════════════════ -->
+  <section class="for-whom section section--tinted">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow-label">Who It's For</p>
+        <h2>Two courses. Every role covered.</h2>
+      </div>
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-tag">Course A</div>
+          <h3>All Employees</h3>
+          <p>Foundational POSH awareness for every person in your organisation — understanding the law, recognising harassment, knowing how to respond and report.</p>
+          <ul class="course-list">
+            <li>What counts as sexual harassment</li>
+            <li>Your rights as an employee</li>
+            <li>How to make a complaint</li>
+            <li>Bystander responsibilities</li>
+          </ul>
+          <div class="course-meta">
+            <span>13 modules</span>
+            <span>~90 min total</span>
+            <span>Final assessment</span>
+          </div>
+        </div>
+        <div class="course-card course-card--featured">
+          <div class="course-tag course-tag--accent">Course B</div>
+          <h3>Managers & IC Members</h3>
+          <p>Advanced training for Internal Committee members and people managers — covering investigation procedures, documentation, confidentiality obligations, and handling complaints properly.</p>
+          <ul class="course-list">
+            <li>IC formation and composition requirements</li>
+            <li>Inquiry process and timelines</li>
+            <li>Evidence handling and documentation</li>
+            <li>Maintaining confidentiality</li>
+            <li>Appeals and false complaint provisions</li>
+          </ul>
+          <div class="course-meta">
+            <span>8 modules</span>
+            <span>~60 min total</span>
+            <span>Final assessment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CTA
+  ═══════════════════════════════════════════════ -->
+  <section class="final-cta">
+    <div class="fcta-bg" aria-hidden="true">
+      <div class="fcta-orb fcta-orb--1"></div>
+      <div class="fcta-orb fcta-orb--2"></div>
+    </div>
+    <div class="container fcta-inner">
+      <div class="fcta-shield" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="rgba(255,195,0,0.8)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h2>Make your POSH compliance<br>count for something.</h2>
+      <p>Book a 20-minute demo — we'll show you the employee experience, the admin dashboard, and how rollout works for your team size.</p>
+      <div class="fcta-actions">
+        <a href="/contact" class="btn btn--accent">Request a demo</a>
+        <a href="mailto:support@snapskill.in" class="btn-ghost">Email us →</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .section { padding: var(--space-2xl) 0; }
+  .section--tinted { background: var(--color-surface); }
+  .section--dark   { background: var(--color-dark); }
+
+  .section-header { text-align: center; margin-bottom: var(--space-xl); max-width: 580px; margin-inline: auto; }
+  .section-header p { margin-top: var(--space-xs); }
+
+  .eyebrow-label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--color-primary); display: block;
+    margin-bottom: var(--space-xs);
+  }
+  .eyebrow--light { color: var(--color-accent); }
+
+  /* ─── Hero ─────────────────────────────── */
+  .hero {
+    position: relative;
+    background: var(--color-dark);
+    padding: var(--space-2xl) 0;
+    overflow: hidden;
+  }
+  .hero-bg { position: absolute; inset: 0; pointer-events: none; }
+  .bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,175,150,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,175,150,0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-orb { position: absolute; border-radius: 50%; filter: blur(90px); }
+  .bg-orb--1 { width: 500px; height: 500px; background: rgba(0,130,110,0.2); top: -150px; right: -100px; animation: orbFloat 9s ease-in-out infinite; }
+  .bg-orb--2 { width: 350px; height: 350px; background: rgba(255,195,0,0.08); bottom: 0; left: -100px; animation: orbFloat 12s ease-in-out infinite reverse; }
+  @keyframes orbFloat {
+    0%, 100% { transform: translate(0,0); }
+    50%       { transform: translate(15px,-20px); }
+  }
+
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center; position: relative; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,130,110,0.3); border: 1px solid rgba(0,175,150,0.4);
+    border-radius: 100px; padding: 6px 14px;
+    font-size: 0.78rem; font-weight: 600; color: #4dd9c0;
+    margin-bottom: var(--space-md);
+  }
+  .badge-shield {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #007A6A;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .hero-text h1 { color: white; line-height: 1.08; margin-bottom: var(--space-md); }
+  .hero-hl { color: #4dd9c0; }
+  .hero-sub { color: rgba(255,255,255,0.65); font-size: 1.05rem; max-width: 460px; margin-bottom: var(--space-lg); }
+  .hero-actions { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-lg); }
+  .btn-ghost { color: rgba(255,255,255,0.7); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
+  .btn-ghost:hover { color: white; }
+
+  .hero-trust { display: flex; align-items: center; gap: var(--space-lg); }
+  .trust-item { }
+  .trust-num  { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: white; }
+  .trust-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+  .trust-sep  { width: 1px; height: 32px; background: rgba(255,255,255,0.1); }
+
+  /* Phone mockups */
+  .hero-visual { position: relative; height: 520px; }
+  .phone-trio { position: relative; height: 100%; }
+  .phone { position: absolute; }
+  .phone--back  { left: 10px; top: 30px; z-index: 1; transform: rotate(-6deg); opacity: 0.7; }
+  .phone--front { left: 120px; top: 0; z-index: 2; }
+
+  .phone-shell {
+    width: 220px;
+    background: #0d1117;
+    border-radius: 28px;
+    border: 4px solid #1e2535;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+  .ph-notch { width: 70px; height: 18px; background: #0d1117; border-radius: 0 0 12px 12px; margin: 0 auto; }
+
+  /* Back phone content */
+  .ph-screen { padding: 8px 10px 12px; background: white; }
+  .ph-greeting { font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700; color: #0A0F2C; }
+  .ph-date { font-size: 0.6rem; color: #666; margin-bottom: 8px; }
+  .ph-progress-card {
+    background: #0A3040; border-radius: 10px; padding: 10px;
+    display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+  }
+  .ph-ring { position: relative; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ph-ring span { position: absolute; font-size: 0.6rem; font-weight: 700; color: white; }
+  .ph-prog-title { font-size: 0.72rem; font-weight: 700; color: white; }
+  .ph-prog-sub   { font-size: 0.58rem; color: rgba(255,255,255,0.6); }
+  .ph-continue {
+    background: var(--color-surface); border-radius: 8px; padding: 8px 10px;
+    border-left: 3px solid #007A6A; margin-bottom: 8px;
+  }
+  .ph-cont-label { font-size: 0.55rem; color: #666; }
+  .ph-cont-title { font-size: 0.7rem; font-weight: 600; color: #0A0F2C; }
+  .ph-modules { display: flex; flex-direction: column; gap: 4px; }
+  .ph-mod {
+    border-radius: 6px; padding: 6px 8px;
+    display: flex; flex-direction: column; gap: 2px; position: relative;
+  }
+  .ph-mod--done   { background: #007A6A; }
+  .ph-mod--active { background: white; border: 1px solid var(--color-border); }
+  .ph-mod--locked { background: white; border: 1px solid var(--color-border); opacity: 0.6; }
+  .ph-mod-badge { font-size: 0.5rem; font-weight: 700; padding: 1px 5px; border-radius: 100px; align-self: flex-start; }
+  .done  { background: rgba(255,255,255,0.2); color: white; }
+  .active { background: rgba(0,122,106,0.12); color: #007A6A; }
+  .locked { background: var(--color-surface); color: #999; }
+  .ph-mod-title { font-size: 0.6rem; font-weight: 600; }
+  .ph-mod--done .ph-mod-title { color: white; }
+  .ph-mod--active .ph-mod-title, .ph-mod--locked .ph-mod-title { color: #0A0F2C; }
+  .ph-lock { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 0.7rem; }
+
+  /* Front phone: chat */
+  .ph-screen--chat { padding: 0; background: #f5f6fa; }
+  .ph-chat-header {
+    background: #0A3040; padding: 10px 12px; display: flex; gap: 8px; align-items: center;
+  }
+  .ph-chat-back { color: rgba(255,255,255,0.6); font-size: 0.8rem; }
+  .ph-chat-title { font-size: 0.72rem; font-weight: 700; color: white; }
+  .ph-chat-sub   { font-size: 0.55rem; color: rgba(255,255,255,0.5); }
+  .ph-chat-body { padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+  .chat-bubble { border-radius: 10px; padding: 8px 10px; font-size: 0.62rem; line-height: 1.5; }
+  .chat-bubble--system  { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.08); color: #333; }
+  .chat-bubble--scenario { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.08); color: #333; }
+  .chat-bubble--user    { background: #0A3040; color: white; align-self: flex-end; margin-left: 30px; }
+  .chat-bubble--feedback { background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.08); color: #333; }
+  .chat-bubble--tip      { background: #fff9e6; color: #333; font-size: 0.58rem; }
+  .ph-chat-footer {
+    background: #007A6A; color: white; text-align: center;
+    font-size: 0.65rem; font-weight: 700; padding: 10px;
+  }
+
+  /* ─── Problem ───────────────────────────── */
+  .problem-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: start; }
+  .problem-text .eyebrow-label { margin-bottom: var(--space-sm); }
+  .problem-text h2 { margin-bottom: var(--space-md); }
+  .problem-text p  { font-size: 0.95rem; margin-bottom: var(--space-sm); }
+  .problem-vs { display: flex; gap: var(--space-sm); align-items: stretch; }
+  .vs-col { flex: 1; padding: var(--space-md); border-radius: var(--radius-md); }
+  .vs-col--bad  { background: #fff5f5; border: 1px solid #fecaca; }
+  .vs-col--good { background: #f0fdf4; border: 1px solid #a7f3d0; }
+  .vs-col h3 { font-size: 0.88rem; margin-bottom: var(--space-sm); }
+  .vs-col--bad  h3 { color: #b91c1c; }
+  .vs-col--good h3 { color: #065f46; }
+  .vs-col ul { padding-left: var(--space-md); }
+  .vs-col li { font-size: 0.82rem; margin-bottom: 5px; }
+  .vs-col--bad  li { color: #7f1d1d; }
+  .vs-col--good li { color: #064e3b; }
+  .vs-divider { display: flex; align-items: center; font-family: var(--font-heading); font-weight: 800; color: var(--color-body); font-size: 0.9rem; }
+
+  /* ─── How It Works ──────────────────────── */
+  .hiw-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+  .hiw-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); background: white; display: flex; flex-direction: column; transition: var(--transition); }
+  .hiw-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .hiw-card--dark   { background: var(--color-dark); border-color: transparent; }
+  .hiw-card--accent { background: linear-gradient(135deg, #003D35, #007A6A); border-color: transparent; }
+  .hiw-card--dark   .hiw-content h3, .hiw-card--accent .hiw-content h3 { color: white; }
+  .hiw-card--dark   .hiw-content p,  .hiw-card--accent .hiw-content p  { color: rgba(255,255,255,0.65); }
+
+  .hiw-visual { padding: var(--space-md); min-height: 220px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .hiw-visual--light { background: var(--color-surface); border-bottom: 1px solid var(--color-border); }
+  .hiw-content { padding: var(--space-lg); }
+  .hiw-num {
+    font-family: var(--font-heading); font-size: 1.75rem; font-weight: 800;
+    color: var(--color-accent); opacity: 0.7; margin-bottom: var(--space-xs);
+  }
+  .hiw-num--dark { color: var(--color-primary); opacity: 1; }
+  .hiw-content h3 { font-size: 1.1rem; margin-bottom: var(--space-xs); }
+  .hiw-content p  { font-size: 0.88rem; margin: 0; }
+
+  /* Admin mini */
+  .admin-mini { width: 100%; max-width: 280px; }
+  .am-header { font-size: 0.6rem; font-weight: 600; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+  .am-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; margin-bottom: 12px; }
+  .am-stat { background: rgba(255,255,255,0.05); border-radius: 6px; padding: 8px 4px; text-align: center; }
+  .am-num { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800; color: white; line-height: 1; }
+  .am-num--green  { color: #4dd9c0; }
+  .am-num--yellow { color: var(--color-accent); }
+  .am-num--red    { color: #f87171; }
+  .am-label { font-size: 0.5rem; color: rgba(255,255,255,0.35); margin-top: 2px; }
+  .am-bar-label { font-size: 0.55rem; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+  .am-bar-wrap { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; font-size: 0.58rem; color: rgba(255,255,255,0.5); }
+  .am-bar { height: 5px; width: var(--w); background: var(--color-primary); border-radius: 3px; flex: 1; max-width: calc(var(--w)); animation: barGrow 1s ease 0.5s both; }
+  .am-bar--teal { background: #007A6A; }
+  @keyframes barGrow { from { width: 0; } }
+  .am-footer { margin-top: 12px; }
+  .am-btn { background: #007A6A; color: white; font-size: 0.6rem; font-weight: 700; padding: 7px 12px; border-radius: 7px; text-align: center; }
+
+  /* Journey mini */
+  .journey-mini { width: 100%; max-width: 260px; }
+  .jm-label { font-size: 0.65rem; font-weight: 700; color: var(--color-body); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .jm-modules { display: flex; flex-direction: column; gap: 4px; }
+  .jm-mod { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 7px; }
+  .jm-mod--done   { background: #007A6A; }
+  .jm-mod--active { background: white; border: 1px solid var(--color-border); }
+  .jm-mod--locked { background: white; border: 1px solid var(--color-border); opacity: 0.5; }
+  .jm-icon { font-size: 0.7rem; width: 18px; text-align: center; flex-shrink: 0; color: white; }
+  .jm-mod--active .jm-icon, .jm-mod--locked .jm-icon { color: var(--color-body); }
+  .jm-title { font-size: 0.62rem; font-weight: 600; }
+  .jm-mod--done   .jm-title { color: white; }
+  .jm-mod--active .jm-title, .jm-mod--locked .jm-title { color: #0A0F2C; }
+  .jm-time  { font-size: 0.52rem; color: rgba(255,255,255,0.5); }
+  .jm-mod--active .jm-time, .jm-mod--locked .jm-time { color: var(--color-body); }
+
+  /* Chat mini */
+  .chat-mini { width: 100%; max-width: 260px; background: #f5f6fa; border-radius: 10px; overflow: hidden; }
+  .cm-header { background: #0A3040; padding: 8px 10px; }
+  .cm-title   { font-size: 0.7rem; font-weight: 700; color: white; }
+  .cm-sub     { font-size: 0.55rem; color: rgba(255,255,255,0.5); }
+  .cm-body    { padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+  .cm-bubble  { border-radius: 8px; padding: 7px 9px; font-size: 0.6rem; line-height: 1.5; }
+  .cm-sys     { background: white; color: #333; }
+  .cm-scenario { background: white; color: #333; }
+  .cm-choices { display: flex; gap: 4px; flex-wrap: wrap; }
+  .cm-choice  { font-size: 0.58rem; font-weight: 600; padding: 4px 10px; border-radius: 100px; background: var(--color-surface); color: var(--color-body); border: 1px solid var(--color-border); }
+  .cm-choice--selected { background: #007A6A; color: white; border-color: #007A6A; }
+  .cm-feedback { background: #f0fdf4; color: #065f46; border-radius: 8px; padding: 7px 9px; font-size: 0.58rem; line-height: 1.5; }
+  .cm-feedback--correct { border-left: 3px solid #10b981; }
+
+  /* Cert mini */
+  .cert-mini {
+    background: white; border-radius: 12px; padding: var(--space-md);
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2); max-width: 240px;
+    border-top: 4px solid var(--color-accent);
+  }
+  .cert-shield { width: 56px; height: 56px; background: #007A6A; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .cert-text { text-align: center; }
+  .cert-title  { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-body); margin-bottom: 4px; }
+  .cert-name   { font-family: var(--font-heading); font-size: 1rem; font-weight: 800; color: var(--color-dark); }
+  .cert-course { font-size: 0.62rem; color: var(--color-body); margin-top: 2px; }
+  .cert-date   { font-size: 0.58rem; color: var(--color-primary); margin-top: 4px; font-weight: 600; }
+  .cert-verify { text-align: center; }
+  .cert-qr-mini { width: 36px; height: 36px; background: var(--color-dark); border-radius: 4px; margin: 0 auto 4px; }
+  .cert-verify-text { font-size: 0.55rem; color: var(--color-body); }
+
+  /* ─── Modules ───────────────────────────── */
+  .modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); }
+  .module-card {
+    display: flex; gap: var(--space-sm); padding: var(--space-md);
+    border: 1px solid var(--color-border); border-radius: var(--radius-md);
+    background: white; transition: var(--transition);
+  }
+  .module-card:hover { box-shadow: var(--shadow-md); border-color: #007A6A; transform: translateY(-1px); }
+  .mod-num {
+    font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800;
+    color: #007A6A; opacity: 0.5; flex-shrink: 0; width: 28px; line-height: 1.3;
+  }
+  .mod-title-row { display: flex; align-items: flex-start; gap: 6px; margin-bottom: 4px; }
+  .mod-body h3 { font-size: 0.9rem; color: var(--color-dark); margin: 0; }
+  .mod-body p  { font-size: 0.8rem; margin: 4px 0; line-height: 1.5; }
+  .mod-time { font-size: 0.72rem; color: var(--color-body); }
+  .mod-ai-badge {
+    font-size: 0.58rem; font-weight: 700; white-space: nowrap;
+    background: rgba(0,122,106,0.12); color: #007A6A;
+    border: 1px solid rgba(0,122,106,0.3); padding: 1px 6px; border-radius: 100px;
+    flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* ─── Compliance ────────────────────────── */
+  .compliance-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: start; }
+  .checklist-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: var(--space-sm); }
+  .cl-icon {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: #007A6A; color: white;
+    font-size: 0.65rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .checklist-item span { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+  /* ─── Courses ───────────────────────────── */
+  .courses-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+  .course-card {
+    padding: var(--space-xl);
+    border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+    background: white;
+  }
+  .course-card--featured {
+    background: var(--color-dark); border-color: transparent;
+  }
+  .course-card--featured h3 { color: white; }
+  .course-card--featured p  { color: rgba(255,255,255,0.65); }
+  .course-card--featured .course-list li { color: rgba(255,255,255,0.6); }
+  .course-card--featured .course-list li::before { background: var(--color-accent); }
+  .course-card--featured .course-meta { border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); }
+  .course-tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: #007A6A; margin-bottom: var(--space-sm);
+  }
+  .course-tag--accent { color: var(--color-accent); }
+  .course-card h3 { margin-bottom: var(--space-sm); }
+  .course-card p  { font-size: 0.9rem; margin-bottom: var(--space-md); }
+  .course-list { list-style: none; padding: 0; margin-bottom: var(--space-lg); }
+  .course-list li { font-size: 0.85rem; padding-left: 16px; position: relative; margin-bottom: 6px; }
+  .course-list li::before {
+    content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 6px; height: 6px; border-radius: 50%; background: #007A6A;
+  }
+  .course-meta {
+    display: flex; gap: var(--space-md); font-size: 0.78rem;
+    color: var(--color-body); border-top: 1px solid var(--color-border);
+    padding-top: var(--space-sm); flex-wrap: wrap;
+  }
+
+  /* ─── Final CTA ─────────────────────────── */
+  .final-cta { position: relative; background: var(--color-dark); padding: var(--space-2xl) 0; overflow: hidden; }
+  .fcta-bg { position: absolute; inset: 0; pointer-events: none; }
+  .fcta-orb { position: absolute; border-radius: 50%; filter: blur(80px); }
+  .fcta-orb--1 { width: 400px; height: 400px; background: rgba(0,130,110,0.25); top: -100px; left: 10%; }
+  .fcta-orb--2 { width: 300px; height: 300px; background: rgba(255,195,0,0.1); bottom: -50px; right: 10%; }
+  .fcta-inner { position: relative; text-align: center; max-width: 560px; margin: 0 auto; }
+  .fcta-shield { margin: 0 auto var(--space-md); }
+  .fcta-inner h2 { color: white; margin-bottom: var(--space-sm); }
+  .fcta-inner p  { color: rgba(255,255,255,0.65); margin-bottom: var(--space-lg); }
+  .fcta-actions { display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; }
+
+  @media (max-width: 1024px) {
+    .modules-grid { grid-template-columns: repeat(2,1fr); }
+  }
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { height: 380px; margin-top: var(--space-lg); }
+    .phone--back { display: none; }
+    .phone--front { left: 50%; transform: translateX(-50%); }
+    .problem-inner { grid-template-columns: 1fr; }
+    .hiw-grid { grid-template-columns: 1fr; }
+    .compliance-inner { grid-template-columns: 1fr; }
+    .courses-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .modules-grid { grid-template-columns: 1fr; }
+    .problem-vs { flex-direction: column; }
+    .vs-divider { justify-content: center; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .hero-trust { flex-wrap: wrap; gap: var(--space-md); }
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 const navLinks = [
   { label: 'Corporate Training', href: '/corporate-training' },
+  { label: 'POSH Training',      href: '/posh-training' },
   { label: 'LMS',                href: '/lms' },
   { label: 'Insights',           href: '/blog' },
   { label: 'About',              href: '/about' },
@@ -33,6 +34,16 @@ const currentPath = Astro.url.pathname
     </button>
   </div>
 </header>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <nav>
+    {navLinks.map(link => (
+      <a href={link.href} class="mobile-link">{link.label}</a>
+    ))}
+    <a href="/contact" class="btn btn--primary mobile-cta">Talk to us</a>
+  </nav>
+</div>
 
 <style>
   .site-header {
@@ -67,19 +78,20 @@ const currentPath = Astro.url.pathname
   .nav-links {
     display: flex;
     align-items: center;
-    gap: var(--space-xs);
+    gap: var(--space-2xs);
     margin-left: auto;
   }
 
   .nav-link {
     font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-body);
-    padding: 0.4em 0.75em;
+    padding: 0.4em 0.65em;
     border-radius: var(--radius-sm);
     transition: var(--transition);
     text-decoration: none;
+    white-space: nowrap;
   }
   .nav-link:hover,
   .nav-link.active {
@@ -88,7 +100,14 @@ const currentPath = Astro.url.pathname
     text-decoration: none;
   }
 
-  .nav-cta { margin-left: var(--space-sm); font-size: 0.875rem; }
+  /* POSH link gets a subtle teal tint to distinguish it */
+  .nav-link[href="/posh-training"]:hover,
+  .nav-link[href="/posh-training"].active {
+    color: #007A6A;
+    background: rgba(0,122,106,0.08);
+  }
+
+  .nav-cta { margin-left: var(--space-sm); font-size: 0.875rem; flex-shrink: 0; }
 
   .hamburger {
     display: none;
@@ -109,7 +128,32 @@ const currentPath = Astro.url.pathname
     transition: var(--transition);
   }
 
-  @media (max-width: 768px) {
+  /* Mobile drawer */
+  .mobile-drawer {
+    display: none;
+    position: fixed;
+    inset: 68px 0 0 0;
+    background: white;
+    z-index: 99;
+    padding: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    flex-direction: column;
+    gap: var(--space-xs);
+    overflow-y: auto;
+  }
+  .mobile-drawer.open { display: flex; }
+  .mobile-link {
+    font-family: var(--font-heading);
+    font-size: 1rem; font-weight: 600;
+    color: var(--color-dark);
+    padding: var(--space-sm) var(--space-xs);
+    border-bottom: 1px solid var(--color-border);
+    text-decoration: none;
+  }
+  .mobile-link:hover { color: var(--color-primary); }
+  .mobile-cta { margin-top: var(--space-sm); text-align: center; }
+
+  @media (max-width: 900px) {
     .nav-links, .nav-cta { display: none; }
     .hamburger { display: flex; }
   }
@@ -117,13 +161,12 @@ const currentPath = Astro.url.pathname
 
 <script>
   const hamburger = document.querySelector('.hamburger')
-  const navLinks  = document.querySelector('.nav-links')
-  const navCta    = document.querySelector('.nav-cta')
+  const drawer    = document.getElementById('mobileDrawer')
 
   hamburger?.addEventListener('click', () => {
     const open = hamburger.getAttribute('aria-expanded') === 'true'
     hamburger.setAttribute('aria-expanded', String(!open))
-    navLinks?.classList.toggle('mobile-open')
-    navCta?.classList.toggle('mobile-open')
+    drawer?.classList.toggle('open', !open)
+    drawer?.setAttribute('aria-hidden', String(open))
   })
 </script>
