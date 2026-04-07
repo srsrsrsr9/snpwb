@@ -4,200 +4,454 @@ import Nav from '../components/Nav.astro'
 import Footer from '../components/Footer.astro'
 ---
 
-<BaseLayout title="AI Consulting & Implementation" description="SnapSkill helps enterprises implement AI that delivers measurable business outcomes — from strategy through production.">
+<BaseLayout
+  title="AI Consulting & Implementation"
+  description="SnapSkill helps enterprises implement AI that delivers measurable business outcomes — from strategy through production."
+>
   <Nav />
   <main>
 
-  <!-- ── Hero ──────────────────────────────────────── -->
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
   <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="bg-grid"></div>
+      <div class="bg-orb bg-orb--1"></div>
+      <div class="bg-orb bg-orb--2"></div>
+      <div class="bg-orb bg-orb--3"></div>
+    </div>
+
     <div class="container hero-inner">
-      <div class="hero-content">
-        <p class="badge badge--accent">AI Consulting · Implementation · Capability Building</p>
-        <h1>AI that ships.<br><span class="text-primary">Not just slides.</span></h1>
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="live-dot" aria-hidden="true"></span>
+          AI Consulting · Implementation · Capability Building
+        </div>
+        <h1>AI that ships.<br><span class="hero-highlight">Not just slides.</span></h1>
         <p class="hero-sub">Most AI pilots die in the boardroom. We take them to production — with the business outcomes to prove it.</p>
         <div class="hero-actions">
-          <a href="/contact" class="btn btn--primary">Start a conversation</a>
-          <a href="/blog" class="btn btn--outline">Read our insights</a>
-        </div>
-        <div class="hero-proof">
-          <div class="proof-item">
-            <strong>73%</strong>
-            <span>of AI pilots never reach production</span>
-          </div>
-          <div class="proof-divider"></div>
-          <div class="proof-item">
-            <strong>We fix that.</strong>
-            <span>Strategy → Build → Adoption</span>
-          </div>
+          <a href="https://calendly.com/snapskill" target="_blank" rel="noopener" class="btn btn--primary">Request a Callback</a>
+          <a href="/blog" class="btn-ghost">Read our insights →</a>
         </div>
       </div>
+
+      <!-- Animated pilot-to-production visual -->
       <div class="hero-visual" aria-hidden="true">
-        <!-- 73% stat overlay -->
-        <div class="stat-overlay">
-          <strong>73<span>%</span></strong>
-          <p>of AI pilots<br>never ship</p>
+
+        <!-- Central pipeline diagram -->
+        <div class="pipeline">
+          <div class="pipe-header">AI Implementation Pipeline</div>
+
+          <div class="pipe-stages">
+            <div class="pipe-stage pipe-stage--done">
+              <div class="ps-icon ps-icon--check"></div>
+              <div class="ps-label">Discovery</div>
+              <div class="ps-sub">Done</div>
+            </div>
+            <div class="pipe-arrow"></div>
+            <div class="pipe-stage pipe-stage--done">
+              <div class="ps-icon ps-icon--check"></div>
+              <div class="ps-label">Data Audit</div>
+              <div class="ps-sub">Done</div>
+            </div>
+            <div class="pipe-arrow"></div>
+            <div class="pipe-stage pipe-stage--active">
+              <div class="ps-icon ps-icon--spin"></div>
+              <div class="ps-label">Build</div>
+              <div class="ps-sub">In progress</div>
+            </div>
+            <div class="pipe-arrow pipe-arrow--dim"></div>
+            <div class="pipe-stage pipe-stage--dim">
+              <div class="ps-icon ps-icon--empty"></div>
+              <div class="ps-label">Production</div>
+              <div class="ps-sub">Week 8</div>
+            </div>
+          </div>
+
+          <!-- Metrics row -->
+          <div class="pipe-metrics">
+            <div class="pm-item">
+              <div class="pm-bar-wrap">
+                <div class="pm-bar" style="--pw:85%"></div>
+              </div>
+              <div class="pm-label">Pilot → Production rate</div>
+              <div class="pm-val">85%</div>
+            </div>
+            <div class="pm-item">
+              <div class="pm-bar-wrap">
+                <div class="pm-bar pm-bar--dim" style="--pw:27%"></div>
+              </div>
+              <div class="pm-label">Industry average</div>
+              <div class="pm-val pm-val--muted">27%</div>
+            </div>
+          </div>
+
+          <!-- Live activity -->
+          <div class="pipe-feed">
+            <div class="pf-item pf-item--1">
+              <div class="pf-dot green"></div>
+              <span>Data pipeline validated · <b>2 issues resolved</b></span>
+            </div>
+            <div class="pf-item pf-item--2">
+              <div class="pf-dot blue"></div>
+              <span>Model accuracy: <b>91.4%</b> · target met</span>
+            </div>
+            <div class="pf-item pf-item--3">
+              <div class="pf-dot yellow"></div>
+              <span>Stakeholder sign-off received</span>
+            </div>
+          </div>
         </div>
-
-        <!-- Main pipeline card -->
-        <div class="pipeline-card">
-          <p class="pipeline-label">Implementation Pipeline</p>
-
-          <div class="pipeline-steps">
-            <div class="pip-step pip-done"><span class="pip-icon">&#10003;</span><span class="pip-name">Discovery</span><span class="pip-status done">Done</span></div>
-            <span class="pip-arrow">&rarr;</span>
-            <div class="pip-step pip-done"><span class="pip-icon">&#10003;</span><span class="pip-name">Data Audit</span><span class="pip-status done">Done</span></div>
-            <span class="pip-arrow">&rarr;</span>
-            <div class="pip-step pip-active"><span class="pip-icon">&#9881;</span><span class="pip-name">Build</span><span class="pip-status active">In progress</span></div>
-            <span class="pip-arrow">&rarr;</span>
-            <div class="pip-step"><span class="pip-icon">&#9675;</span><span class="pip-name">Production</span><span class="pip-status">Week 8</span></div>
-          </div>
-
-          <div class="pipeline-metrics">
-            <div class="pm-row"><span>Pilot &rarr; Production rate</span><strong>85%</strong></div>
-            <div class="pm-row"><span>Industry average</span><strong class="muted">27%</strong></div>
-          </div>
-
-          <div class="pipeline-checks">
-            <div class="pcheck"><span class="pcheck-dot done"></span> Data pipeline validated: <strong>2 issues resolved</strong></div>
-            <div class="pcheck"><span class="pcheck-dot done"></span> Model accuracy <strong>91.4%</strong>: target met</div>
-            <div class="pcheck"><span class="pcheck-dot done"></span> Stakeholder sign-off received</div>
-          </div>
-
-          <div class="deploy-row">
-            <span class="deploy-check">&#10003;</span>
-            <span class="deploy-text">Production<br>deployed</span>
-            <span class="week-badge">Week 10</span>
+        <div class="float-card float-card--br">
+          <div class="fc-check"></div>
+          <div>
+            <div class="fc-label" style="font-weight:600;color:rgba(255,255,255,0.85)">Production<br>deployed</div>
+            <div class="fc-time-wrap">
+              <span class="fc-time-circle">Week 10</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="hero-gradient" aria-hidden="true"></div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
   </section>
 
-  <!-- ── The Problem ───────────────────────────────── -->
-  <section class="problem section">
+  <!-- ═══════════════════════════════════════════════
+       PROBLEM STATEMENT
+  ═══════════════════════════════════════════════ -->
+  <section class="problem">
     <div class="container problem-inner">
-      <div class="problem-stats">
+      <div class="problem-stat-col">
         <div class="big-stat">
-          <strong>88<span>%</span></strong>
-          <p>of AI proof-of-concepts<br>never reach production</p>
-          <cite>S&P Global Market Intelligence, 2025</cite>
-        </div>
-        <div class="small-stats">
-          <div class="sm-stat">
-            <strong>42<span>%</span></strong>
-            <p>of companies abandoned AI initiatives in 2025</p>
+          <div class="bs-number">
+            <span class="bs-digit">8</span><span class="bs-digit">8</span><span class="bs-pct">%</span>
           </div>
-          <div class="sm-stat">
-            <strong>33<span>x</span></strong>
-            <p>POCs launched for every 4 that reach production</p>
+          <div class="bs-label">of AI proof-of-concepts<br>never reach production</div>
+          <div class="bs-source">S&P Global Market Intelligence, 2025</div>
+        </div>
+        <div class="stat-row">
+          <div class="sr-item">
+            <div class="sr-num">42<span>%</span></div>
+            <div class="sr-label">of companies abandoned AI initiatives in 2025</div>
+          </div>
+          <div class="sr-item">
+            <div class="sr-num">33<span>x</span></div>
+            <div class="sr-label">POCs launched for every 4 that reach production</div>
           </div>
         </div>
       </div>
-      <div class="problem-text">
-        <p class="badge">The Problem</p>
+      <div class="problem-text-col">
+        <p class="eyebrow-label">The Problem</p>
         <h2>Your AI initiative is probably in trouble. Here's why.</h2>
         <p>Board pressure creates pilots born from FOMO, not ROI. Technical teams optimise F1-scores while integration tasks sit untouched. Nobody's talking to compliance, IT, or the people who'll actually use the thing.</p>
         <p>By the time someone asks "when do we go live?" — the integration challenges, data governance issues, and user resistance surface all at once. The project gets quietly deprioritised. Sound familiar?</p>
         <p>The 5–30% of AI projects that succeed share one thing: they treat implementation as an organisational challenge, not a technical one.</p>
-        <a href="/blog/why-ai-pilots-fail" class="service-link">Read the full analysis &rarr;</a>
+        
       </div>
     </div>
   </section>
 
-  <!-- ── Services ──────────────────────────────────── -->
+  <!-- ═══════════════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════════════ -->
   <section class="services section">
     <div class="container">
       <div class="section-header">
-        <p class="badge">What We Do</p>
-        <h2>End-to-end AI delivery</h2>
+        <p class="eyebrow-label">What We Do</p>
+        <h2>End-to-end AI delivery.</h2>
         <p>From identifying the right problems to embedding AI into how your team actually works.</p>
       </div>
 
       <div class="services-grid">
-        <div class="service-card service-card--featured">
-          <div class="service-icon" aria-hidden="true">⚙️</div>
-          <h3>AI Implementation</h3>
-          <p>We take your highest-value use cases from POC to production — with integrations, governance, and change management built in from day one.</p>
-          <!-- Learn more link hidden until page is ready -->
+
+        <!-- Implementation — featured -->
+        <div class="svc-card svc-card--featured">
+          <div class="svc-visual" aria-hidden="true">
+            <div class="impl-diagram">
+              <div class="id-row">
+                <div class="id-box id-box--done">Data Audit</div>
+                <div class="id-arrow">→</div>
+                <div class="id-box id-box--done">POC</div>
+                <div class="id-arrow">→</div>
+                <div class="id-box id-box--active">Build</div>
+                <div class="id-arrow id-arrow--dim">→</div>
+                <div class="id-box id-box--dim">Production</div>
+              </div>
+              <div class="id-checklist">
+                <div class="ic-item ic-item--done">Integration architecture defined</div>
+                <div class="ic-item ic-item--done">Compliance reviewed</div>
+                <div class="ic-item ic-item--active">Change management running</div>
+                <div class="ic-item">User training scheduled</div>
+              </div>
+            </div>
+          </div>
+          <div class="svc-content">
+            <h3>AI Implementation</h3>
+            <p>We take your highest-value use cases from POC to production — with integrations, governance, and change management built in from day one.</p>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon" aria-hidden="true">🎯</div>
-          <h3>AI Strategy & Consulting</h3>
-          <p>Identify which AI bets will move your P&L. We audit your data readiness, prioritise use cases, and build a roadmap leadership actually believes in.</p>
-          <!-- Learn more link hidden until page is ready -->
+
+        <!-- Strategy -->
+        <div class="svc-card">
+          <div class="svc-visual svc-visual--light" aria-hidden="true">
+            <div class="strategy-visual">
+              <div class="sv-matrix">
+                <div class="sv-axis sv-axis--x">Business Impact →</div>
+                <div class="sv-axis sv-axis--y">← Complexity</div>
+                <div class="sv-dot sv-dot--big" style="left:72%;top:25%">
+                  <div class="sv-dot-label">Do first</div>
+                </div>
+                <div class="sv-dot sv-dot--med" style="left:55%;top:55%">
+                  <div class="sv-dot-label">Plan</div>
+                </div>
+                <div class="sv-dot sv-dot--sm" style="left:25%;top:40%"></div>
+                <div class="sv-dot sv-dot--sm" style="left:35%;top:72%"></div>
+                <div class="sv-quadrant-label" style="left:58%;top:10%">High value</div>
+                <div class="sv-quadrant-label" style="left:10%;top:10%">Low value</div>
+              </div>
+            </div>
+          </div>
+          <div class="svc-content">
+            <h3>AI Strategy & Consulting</h3>
+            <p>Identify which AI bets will move your P&L. We audit your data readiness, prioritise use cases, and build a roadmap leadership actually believes in.</p>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon" aria-hidden="true">🧠</div>
-          <h3>Capability Building</h3>
-          <p>Upskill your teams to sustain AI initiatives long after the engagement ends. Custom programs for executives, PMs, and practitioners.</p>
-          <!-- Learn more link hidden until page is ready -->
+
+        <!-- Capability Building -->
+        <div class="svc-card">
+          <div class="svc-visual svc-visual--light" aria-hidden="true">
+            <div class="capability-visual">
+              <div class="cv-cohort">
+                <div class="cv-label">Current cohort · Week 3 of 6</div>
+                <div class="cv-members">
+                  {['E','M','P','P','P','P'].map((r,i) => (
+                    <div class={`cv-member cv-member--${r === 'E' ? 'exec' : r === 'M' ? 'mgr' : 'prac'}`}>
+                      <div class="cv-av">{['A','R','S','P','K','N'][i]}</div>
+                      <div class="cv-role">{r === 'E' ? 'Exec' : r === 'M' ? 'Mgr' : 'Practitioner'}</div>
+                    </div>
+                  ))}
+                </div>
+                <div class="cv-bars">
+                  <div class="cvb-row">
+                    <span>AI Literacy</span>
+                    <div class="cvb-track"><div class="cvb-fill" style="--cw:78%"></div></div>
+                    <span>78%</span>
+                  </div>
+                  <div class="cvb-row">
+                    <span>Prompting</span>
+                    <div class="cvb-track"><div class="cvb-fill" style="--cw:91%"></div></div>
+                    <span>91%</span>
+                  </div>
+                  <div class="cvb-row">
+                    <span>Tool Use</span>
+                    <div class="cvb-track"><div class="cvb-fill cvb-fill--accent" style="--cw:54%"></div></div>
+                    <span>54%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="svc-content">
+            <h3>Capability Building</h3>
+            <p>Upskill your teams to sustain AI initiatives long after the engagement ends. Custom programs for executives, PMs, and practitioners.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── Products ───────────────────────────────────── -->
-  <section class="products section section--tinted">
-    <div class="container">
-      <div class="section-header">
-        <p class="badge">Our Products</p>
-        <h2>Built for scale</h2>
-        <p>Platforms that embed learning and AI capability directly into how your organisation works.</p>
-      </div>
-      <div class="products-grid">
-        <a href="/lms" class="product-card">
-          <div class="product-icon" aria-hidden="true">📚</div>
-          <div>
-            <h3>SnapSkill LMS</h3>
-            <p>AI-powered learning management system built for enterprise upskilling programs.</p>
-            <span class="service-link">Explore platform →</span>
-          </div>
-        </a>
-        <a href="/corporate-training" class="product-card">
-          <div class="product-icon" aria-hidden="true">🏢</div>
-          <div>
-            <h3>Corporate AI Training</h3>
-            <p>Custom training programs designed around your team's actual workflows and tools.</p>
-            <span class="service-link">See programs →</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Why SnapSkill ──────────────────────────────── -->
-  <section class="why section section--dark">
+  <!-- ═══════════════════════════════════════════════
+       HOW WE'RE DIFFERENT
+  ═══════════════════════════════════════════════ -->
+  <section class="differentiators section section--dark">
     <div class="container">
       <div class="section-header section-header--light">
-        <p class="badge">Why SnapSkill</p>
-        <h2 style="color:white">We've seen why pilots fail.<br>We know how to prevent it.</h2>
+        <p class="eyebrow-label">Why SnapSkill</p>
+        <h2 style="color:white">We've seen why pilots fail.<br>We build to prevent it.</h2>
       </div>
 
-      <div class="pillars-grid">
+      <div class="diff-grid">
         {[
-          { icon: '📊', title: 'Business-first thinking', body: 'Every engagement starts with the P&L impact, not the model architecture.' },
-          { icon: '🔗', title: 'Integration by default', body: 'We design for your legacy systems, compliance stack, and real users from day one.' },
-          { icon: '📈', title: 'Outcomes, not outputs', body: 'We track business KPIs — revenue, cost, time — not just technical accuracy metrics.' },
-          { icon: '🤝', title: 'Knowledge transfer', body: 'Your teams own the AI, not us. We build internal capability as we deliver.' },
-        ].map(p => (
-          <div class="pillar">
-            <div class="pillar-icon" aria-hidden="true">{p.icon}</div>
-            <h3>{p.title}</h3>
-            <p>{p.body}</p>
+          {
+            label: 'Business-first',
+            before: '"What can we do with AI?"',
+            after: '"What business problem costs us the most?"',
+            desc: 'Every engagement starts with the P&L impact, not the model architecture.'
+          },
+          {
+            label: 'Integration by default',
+            before: 'Build in sandbox, integrate later',
+            after: 'Production architecture from day one',
+            desc: 'We design for your legacy systems, compliance stack, and real users from day one.'
+          },
+          {
+            label: 'Outcome tracking',
+            before: 'F1-score: 0.94 ✓',
+            after: '₹2.3Cr cost savings in Q3',
+            desc: 'We track business KPIs — revenue, cost, time — not just technical accuracy metrics.'
+          },
+          {
+            label: 'Knowledge transfer',
+            before: 'Consultants leave, knowledge goes too',
+            after: 'Your team owns and operates the AI',
+            desc: 'We build internal capability throughout — so you aren\'t dependent on us.'
+          },
+        ].map(d => (
+          <div class="diff-card">
+            <div class="diff-label-tag">{d.label}</div>
+            <div class="diff-compare">
+              <div class="diff-bad">
+                <div class="diff-icon diff-icon--bad" aria-hidden="true"></div>
+                <span>{d.before}</span>
+              </div>
+              <div class="diff-vs" aria-hidden="true">→</div>
+              <div class="diff-good">
+                <div class="diff-icon diff-icon--good" aria-hidden="true"></div>
+                <span>{d.after}</span>
+              </div>
+            </div>
+            <p class="diff-desc">{d.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ── CTA ───────────────────────────────────────── -->
-  <section class="cta-section section">
+  <!-- ═══════════════════════════════════════════════
+       PRODUCTS STRIP
+  ═══════════════════════════════════════════════ -->
+  <section class="products section">
     <div class="container">
-      <div class="cta-box">
-        <h2>Ready to move from pilot to production?</h2>
-        <p>Let's start with an honest conversation about where your AI initiative stands — and what it would take to make it work.</p>
+      <div class="section-header">
+        <p class="eyebrow-label">Our Products</p>
+        <h2>Built-for-scale learning infrastructure.</h2>
+        <p>Platforms that embed AI capability directly into how your organisation works.</p>
+      </div>
+      <div class="products-grid">
+        <a href="/lms" class="product-card">
+          <div class="product-visual" aria-hidden="true">
+            <div class="pv-lms">
+              <div class="pv-sidebar">
+                <div class="pvs-item pvs-item--active"></div>
+                <div class="pvs-item"></div>
+                <div class="pvs-item"></div>
+                <div class="pvs-item"></div>
+              </div>
+              <div class="pv-content">
+                <div class="pvc-stat">
+                  <div class="pvc-num">847</div>
+                  <div class="pvc-label">Learners</div>
+                </div>
+                <div class="pvc-bars">
+                  <div class="pvcb"><div class="pvcb-fill" style="--pw:82%"></div></div>
+                  <div class="pvcb"><div class="pvcb-fill" style="--pw:61%"></div></div>
+                  <div class="pvcb"><div class="pvcb-fill pvcb-fill--accent" style="--pw:44%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-text">
+            <h3>SnapSkill LMS</h3>
+            <p>AI-powered learning management system built for enterprise upskilling — tests, courses, live sessions, certificates, and analytics.</p>
+            <span class="product-link">Explore platform →</span>
+          </div>
+        </a>
+        <a href="/corporate-training" class="product-card">
+          <div class="product-visual" aria-hidden="true">
+            <div class="pv-training">
+              <div class="pvt-programs">
+                {['AI for Executives', 'AI-Enabled Management', 'AI Skills Bootcamp'].map((p, i) => (
+                  <div class="pvt-prog">
+                    <div class="pvt-dot" style={`background:${['#007BFF','#FFC300','#10b981'][i]}`}></div>
+                    <span>{p}</span>
+                    <div class="pvt-badge">{['1 day', '4 weeks', '6 weeks'][i]}</div>
+                  </div>
+                ))}
+              </div>
+              <div class="pvt-stat">
+                <div class="pvts-num">92<span>%</span></div>
+                <div class="pvts-label">satisfaction</div>
+              </div>
+            </div>
+          </div>
+          <div class="product-text">
+            <h3>Corporate AI Training</h3>
+            <p>Custom training programs designed around your team's actual workflows, tools, and business context — not generic slides.</p>
+            <span class="product-link">See programs →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       INSIGHTS TEASER
+  ═══════════════════════════════════════════════ -->
+  <section class="insights section section--tinted">
+    <div class="container">
+      <div class="insights-header">
+        <div>
+          <p class="eyebrow-label">Insights</p>
+          <h2>Thinking that earns its place.</h2>
+        </div>
+        <a href="/blog" class="btn btn--outline">All articles →</a>
+      </div>
+      <div class="insights-featured">
+        <a href="/blog/why-ai-pilots-fail" class="insight-card insight-card--big">
+          <div class="ic-meta">
+            <span class="badge">Thought Leadership</span>
+            <time>Apr 2025</time>
+          </div>
+          <h3>Why 73% of Corporate AI Projects Never Make It Past the Pilot Stage</h3>
+          <p>88% of AI proof-of-concepts fail to reach production. The issue isn't the technology — it's organizational readiness, unclear objectives, and the gap between technical success and business value.</p>
+          <span class="ic-read">Read article →</span>
+        </a>
+        <div class="insight-aside">
+          <div class="ia-callout">
+            <div class="iac-icon" aria-hidden="true">
+              <div class="iac-ring iac-ring--1"></div>
+              <div class="iac-ring iac-ring--2"></div>
+              <div class="iac-inner">73%</div>
+            </div>
+            <h3>The pilot purgatory problem</h3>
+            <p>Most organisations have 3–5 AI projects "in progress" that haven't shipped anything in months. We wrote the definitive guide on breaking out.</p>
+            <a href="/blog/why-ai-pilots-fail" class="ia-link">Read the analysis →</a>
+          </div>
+          <div class="ia-newsletter">
+            <p class="ian-label">Stay ahead of enterprise AI</p>
+            <p class="ian-sub">2–3 articles a month on what's actually working.</p>
+            <a href="mailto:support@snapskill.in?subject=Newsletter" class="ian-btn">Subscribe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FINAL CTA
+  ═══════════════════════════════════════════════ -->
+  <section class="final-cta">
+    <div class="fcta-bg" aria-hidden="true">
+      <div class="fcta-orb fcta-orb--1"></div>
+      <div class="fcta-orb fcta-orb--2"></div>
+      <div class="fcta-grid"></div>
+    </div>
+    <div class="container fcta-inner">
+      <div class="fcta-badge">
+        <span class="live-dot" aria-hidden="true"></span>
+        Taking on new engagements
+      </div>
+      <h2>Ready to move from pilot<br>to production?</h2>
+      <p>Let's start with an honest conversation about where your AI initiative stands — and what it would take to make it work.</p>
+      <div class="fcta-actions">
         <a href="/contact" class="btn btn--primary">Talk to us</a>
+        <a href="/blog" class="btn-ghost" style="color:rgba(255,255,255,0.7)">Read our thinking →</a>
       </div>
     </div>
   </section>
@@ -207,192 +461,473 @@ import Footer from '../components/Footer.astro'
 </BaseLayout>
 
 <style>
-  .section { padding: var(--space-2xl) 0; }
-  .section--dark   { background: var(--color-dark); }
-  .section--tinted { background: var(--color-surface); }
+/* ─── Shared ────────────────────────────────────────── */
+.section { padding: var(--space-2xl) 0; }
+.section--dark   { background: var(--color-dark); }
+.section--tinted { background: var(--color-surface); }
 
-  .section-header { text-align: center; margin-bottom: var(--space-xl); max-width: 560px; margin-inline: auto; }
-  .section-header .badge { margin-bottom: var(--space-sm); }
-  .section-header h2 { margin: var(--space-xs) 0 var(--space-sm); }
-  .section-header--light p  { color: rgba(255,255,255,0.65); }
+.section-header { text-align: center; margin-bottom: var(--space-xl); max-width: 560px; margin-inline: auto; }
+.section-header .eyebrow-label { margin-bottom: var(--space-sm); }
+.section-header h2 { margin: var(--space-xs) 0 var(--space-sm); }
+.section-header--light p { color: rgba(255,255,255,0.65); }
 
-  /* Hero */
-  .hero { position: relative; padding: var(--space-2xl) 0 var(--space-xl); overflow: hidden; }
-  .hero-gradient {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,123,255,0.07) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center; position: relative; }
-  .hero-content { position: relative; z-index: 2; }
-  .hero-content .badge { margin-bottom: var(--space-md); }
-  .hero-content h1 { margin-bottom: var(--space-md); }
-  .hero-sub { font-size: 1.15rem; max-width: 460px; margin-bottom: var(--space-lg); }
-  .hero-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-bottom: var(--space-lg); }
-  .hero-proof {
-    display: flex; align-items: center; gap: var(--space-md);
-    padding: var(--space-md); background: rgba(248,249,250,0.7);
-    border-radius: var(--radius-md); border: 1px solid rgba(0,0,0,0.06);
-  }
-  .proof-item { display: flex; flex-direction: column; }
-  .proof-item strong { font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-primary); opacity: 0.85; }
-  .proof-item span   { font-size: 0.8rem; color: var(--color-body); }
-  .proof-divider     { width: 1px; height: 36px; background: rgba(0,0,0,0.08); flex-shrink: 0; }
+.eyebrow-label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
 
-  /* Hero visual — pipeline dashboard */
-  .hero-visual { position: relative; }
+/* ─── Hero ──────────────────────────────────────────── */
+.hero {
+  position: relative;
+  background: var(--color-dark);
+  padding: var(--space-2xl) 0 var(--space-xl);
+  overflow: hidden;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  .stat-overlay {
-    position: absolute; top: -10px; left: -10px; z-index: 2;
-    background: #f0f4f8; border: 1px solid #dce3ea;
-    border-radius: var(--radius-md); padding: var(--space-sm) var(--space-md);
-    box-shadow: var(--shadow-sm);
-  }
-  .stat-overlay strong {
-    font-family: var(--font-heading); font-size: 2rem; font-weight: 800;
-    color: var(--color-primary); line-height: 1;
-  }
-  .stat-overlay strong span { font-size: 1.2rem; }
-  .stat-overlay p { font-size: 0.72rem; color: var(--color-body); margin: 0; line-height: 1.3; }
+.hero-bg { position: absolute; inset: 0; pointer-events: none; }
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,123,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,123,255,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+.bg-orb { position: absolute; border-radius: 50%; filter: blur(100px); }
+.bg-orb--1 { width: 600px; height: 600px; background: rgba(0,123,255,0.15); top: -150px; right: -100px; animation: orbFloat 9s ease-in-out infinite; }
+.bg-orb--2 { width: 400px; height: 400px; background: rgba(255,195,0,0.07); bottom: 0; left: -100px; animation: orbFloat 12s ease-in-out infinite reverse; }
+.bg-orb--3 { width: 300px; height: 300px; background: rgba(0,123,255,0.1); bottom: 100px; right: 30%; animation: orbFloat 7s ease-in-out infinite 2s; }
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  33%       { transform: translate(15px,-20px) scale(1.03); }
+  66%       { transform: translate(-10px,10px) scale(0.98); }
+}
 
-  .pipeline-card {
-    background: #111827; border-radius: var(--radius-lg);
-    padding: var(--space-md) var(--space-md) var(--space-sm);
-    color: rgba(255,255,255,0.85); position: relative;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-  }
-  .pipeline-label {
-    font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 0.08em; color: rgba(255,255,255,0.45); margin-bottom: var(--space-md);
-    padding-left: 90px;
-  }
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  position: relative;
+}
 
-  .pipeline-steps {
-    display: flex; align-items: center; gap: 6px;
-    margin-bottom: var(--space-md); flex-wrap: wrap;
-  }
-  .pip-step {
-    display: flex; flex-direction: column; align-items: center; gap: 4px;
-    background: rgba(255,255,255,0.06); border-radius: var(--radius-sm);
-    padding: 8px 12px; min-width: 72px;
-  }
-  .pip-icon { font-size: 0.85rem; }
-  .pip-name { font-size: 0.7rem; font-weight: 600; }
-  .pip-status { font-size: 0.6rem; color: rgba(255,255,255,0.4); }
-  .pip-status.done { color: #34d399; }
-  .pip-status.active { color: var(--color-accent); }
-  .pip-done { border: 1px solid rgba(52,211,153,0.3); }
-  .pip-active { border: 1px solid rgba(255,195,0,0.4); background: rgba(255,195,0,0.08); }
-  .pip-arrow { color: rgba(255,255,255,0.25); font-size: 0.8rem; }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+  animation: fadeUp 0.6s ease both;
+}
+.live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.25);
+  flex-shrink: 0;
+  animation: livePulse 2s infinite;
+}
+@keyframes livePulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(16,185,129,0.25); }
+  50%       { box-shadow: 0 0 0 7px rgba(16,185,129,0.08); }
+}
+.hero-text h1 {
+  color: white;
+  margin-bottom: var(--space-md);
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  line-height: 1.05;
+  animation: fadeUp 0.6s ease 0.1s both;
+}
+.hero-highlight { color: var(--color-accent); }
+.hero-sub {
+  color: rgba(255,255,255,0.62);
+  font-size: 1.1rem;
+  max-width: 440px;
+  margin-bottom: var(--space-lg);
+  line-height: 1.7;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+.hero-actions {
+  display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+.btn-ghost {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem; font-weight: 600;
+  text-decoration: none; transition: var(--transition);
+}
+.btn-ghost:hover { color: white; text-decoration: none; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-  .pipeline-metrics {
-    display: flex; flex-direction: column; gap: 6px;
-    margin-bottom: var(--space-sm); padding: 0 4px;
-  }
-  .pm-row {
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 0.75rem; color: rgba(255,255,255,0.5);
-  }
-  .pm-row strong { color: white; font-size: 0.85rem; }
-  .pm-row strong.muted { color: rgba(255,255,255,0.35); }
+/* Pipeline */
+.hero-visual {
+  position: relative;
+  animation: fadeUp 0.7s ease 0.4s both;
+  /* Push visual down so floating card TL doesn't overlap eyebrow text */
+  margin-top: 20px;
+}
+.pipeline {
+  background: rgba(30,36,55,0.75);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: var(--space-md);
+  backdrop-filter: blur(12px);
+}
+.pipe-header {
+  font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: var(--space-md);
+}
+.pipe-stages {
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: var(--space-md);
+}
+.pipe-stage { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; }
+.ps-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.ps-icon--check { background: rgba(16,185,129,0.2); border: 2px solid #10b981; }
+.ps-icon--check::after { content: '✓'; color: #10b981; font-weight: 700; font-size: 0.9rem; }
+.ps-icon--spin { background: rgba(0,123,255,0.2); border: 2px solid rgba(0,123,255,0.5); border-top-color: var(--color-primary); animation: spin 1.5s linear infinite; }
+.ps-icon--empty { background: rgba(255,255,255,0.04); border: 2px dashed rgba(255,255,255,0.15); }
+@keyframes spin { to { transform: rotate(360deg); } }
+.ps-label { font-size: 0.7rem; font-weight: 600; color: rgba(255,255,255,0.7); }
+.ps-sub   { font-size: 0.6rem; color: rgba(255,255,255,0.3); }
+.pipe-stage--done .ps-label   { color: #10b981; }
+.pipe-stage--active .ps-label { color: var(--color-primary); }
+.pipe-stage--dim .ps-label    { color: rgba(255,255,255,0.35); }
+.pipe-stage--dim .ps-sub      { color: rgba(255,255,255,0.2); }
+.pipe-arrow { font-size: 0.75rem; color: rgba(255,255,255,0.3); flex-shrink: 0; width: 16px; text-align: center; }
+.pipe-arrow::after { content: '→'; }
+.pipe-arrow--dim { opacity: 0.35; }
 
-  .pipeline-checks {
-    display: flex; flex-direction: column; gap: 5px;
-    margin-bottom: var(--space-sm); padding: 0 4px;
-  }
-  .pcheck { font-size: 0.72rem; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 6px; }
-  .pcheck strong { color: rgba(255,255,255,0.8); }
-  .pcheck-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; background: rgba(255,255,255,0.2); }
-  .pcheck-dot.done { background: #34d399; }
+.pipe-metrics { margin-bottom: var(--space-sm); display: flex; flex-direction: column; gap: 8px; }
+.pm-item { display: flex; align-items: center; gap: 10px; }
+.pm-bar-wrap { flex: 1; height: 6px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden; }
+.pm-bar { height: 100%; width: var(--pw); background: linear-gradient(90deg, var(--color-primary), #4da6ff); border-radius: 3px; animation: barGrow 1.2s ease 0.8s both; }
+.pm-bar--dim { background: rgba(255,255,255,0.15); }
+.pm-label { font-size: 0.62rem; color: rgba(255,255,255,0.35); flex-shrink: 0; width: 130px; }
+.pm-val { font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.7); width: 30px; text-align: right; flex-shrink: 0; }
+.pm-val--muted { color: rgba(255,255,255,0.25); }
+@keyframes barGrow { from { width: 0; } }
 
-  .deploy-row {
-    display: flex; align-items: center; gap: var(--space-sm);
-    background: rgba(255,255,255,0.05); border-radius: var(--radius-sm);
-    padding: 8px 12px; margin-top: var(--space-xs);
-  }
-  .deploy-check {
-    width: 24px; height: 24px; border-radius: 50%;
-    background: var(--color-primary); color: white;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.75rem; font-weight: 700; flex-shrink: 0;
-  }
-  .deploy-text { font-size: 0.72rem; line-height: 1.3; color: rgba(255,255,255,0.6); }
-  .week-badge {
-    margin-left: auto; font-family: var(--font-heading);
-    font-size: 0.75rem; font-weight: 700; color: var(--color-dark);
-    background: var(--color-accent); padding: 4px 12px;
-    border-radius: 100px; white-space: nowrap;
-    box-shadow: 0 0 0 3px rgba(255,195,0,0.3);
-  }
+.pipe-feed { display: flex; flex-direction: column; gap: 5px; }
+.pf-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.65rem; color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.03); padding: 5px 8px; border-radius: 6px;
+  opacity: 0;
+}
+.pf-item b { color: rgba(255,255,255,0.8); }
+.pf-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.pf-dot.green  { background: #10b981; }
+.pf-dot.blue   { background: var(--color-primary); }
+.pf-dot.yellow { background: var(--color-accent); }
+.pf-item--1 { animation: feedIn 0.4s ease 1.2s both; }
+.pf-item--2 { animation: feedIn 0.4s ease 1.5s both; }
+.pf-item--3 { animation: feedIn 0.4s ease 1.8s both; }
+@keyframes feedIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
 
-  /* Services */
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
-  .service-card { padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); background: white; transition: var(--transition); }
-  .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-  .service-card--featured { background: linear-gradient(135deg, var(--color-dark) 0%, #151d4a 100%); border-color: transparent; }
-  .service-card--featured h3 { color: var(--color-accent); }
-  .service-card--featured p  { color: rgba(255,255,255,0.72); }
-  .service-card--featured .service-link { color: white; }
-  .service-icon { font-size: 2rem; margin-bottom: var(--space-sm); }
-  .service-card h3 { margin-bottom: var(--space-sm); }
-  .service-card p  { font-size: 0.93rem; margin-bottom: var(--space-md); }
-  .service-link { font-size: 0.9rem; font-weight: 600; color: var(--color-primary); }
+/* Floating cards */
+.float-card {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  animation: popIn 0.5s ease both;
+  z-index: 10;
+}
+/* TL card: sits below the eyebrow text region. pipeline has margin-top:20px so 
+   -18px from pipeline top = well below the hero eyebrow */
+.float-card--tl {
+  top: 28px;
+  left: -32px;
+  animation-delay: 1.8s;
+  opacity: 0;
+  /* Softer red so it doesn't feel too alarming */
+}
+.float-card--br {
+  bottom: -16px;
+  right: -24px;
+  animation-delay: 2.1s;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.fc-num {
+  font-family: var(--font-heading);
+  font-size: 1.6rem; font-weight: 800;
+  color: #c0392b; /* slightly muted red */
+  line-height: 1;
+}
+.fc-num span { font-size: 1rem; }
+.fc-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); line-height: 1.4; font-weight: 500; }
+.fc-check {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(16,185,129,0.15);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.fc-check::after { content: '✓'; color: #10b981; font-weight: 700; }
 
-  /* Products */
-  .products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
-  .product-card {
-    display: flex; gap: var(--space-md); align-items: flex-start;
-    padding: var(--space-lg); border-radius: var(--radius-lg);
-    border: 2px solid var(--color-border); background: white;
-    text-decoration: none; transition: var(--transition);
-  }
-  .product-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-2px); }
-  .product-icon { font-size: 2.5rem; flex-shrink: 0; }
-  .product-card h3 { margin-bottom: var(--space-xs); color: var(--color-dark); }
-  .product-card p  { font-size: 0.93rem; margin-bottom: var(--space-sm); }
+/* Orange circle around Week 10 */
+.fc-time-wrap { margin-top: 4px; }
+.fc-time-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+  background: #E8601C;
+  border-radius: 100px;
+  padding: 3px 12px;
+  letter-spacing: 0.03em;
+}
 
-  /* Why */
-  .pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
-  .pillar { padding: var(--space-md); border-radius: var(--radius-md); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
-  .pillar-icon { font-size: 1.75rem; margin-bottom: var(--space-sm); }
-  .pillar h3   { color: white; font-size: 1rem; margin-bottom: var(--space-xs); }
-  .pillar p    { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin: 0; }
+.scroll-hint { position: absolute; bottom: var(--space-md); left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; }
+.scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent); animation: scrollDrop 2s ease-in-out infinite; }
+@keyframes scrollDrop {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: top; opacity: 0; }
+}
 
-  /* Problem */
-  .problem-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: start; }
-  .big-stat { margin-bottom: var(--space-md); }
-  .big-stat strong {
-    font-family: var(--font-heading); font-size: clamp(4rem, 8vw, 6rem);
-    font-weight: 800; color: var(--color-primary); line-height: 1;
-  }
-  .big-stat strong span { font-size: 0.5em; }
-  .big-stat p { font-size: 0.95rem; font-weight: 600; color: var(--color-dark); margin: var(--space-xs) 0 var(--space-2xs); }
-  .big-stat cite { font-size: 0.75rem; font-style: normal; color: var(--color-body); }
-  .small-stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
-  .sm-stat { padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
-  .sm-stat strong { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 800; color: var(--color-dark); display: block; }
-  .sm-stat strong span { font-size: 0.7em; }
-  .sm-stat p { font-size: 0.8rem; margin: 0; }
-  .problem-text .badge { margin-bottom: var(--space-sm); }
-  .problem-text h2 { margin-bottom: var(--space-md); }
-  .problem-text p { font-size: 0.95rem; margin-bottom: var(--space-sm); }
-  .problem-text .service-link { font-size: 0.9rem; font-weight: 600; color: var(--color-primary); }
+/* ─── Problem ───────────────────────────────────────── */
+.problem { padding: var(--space-2xl) 0; border-bottom: 1px solid var(--color-border); }
+.problem-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: start; }
+.big-stat { margin-bottom: var(--space-lg); }
+.bs-number { display: flex; align-items: flex-start; line-height: 1; margin-bottom: var(--space-sm); }
+.bs-digit { font-family: var(--font-heading); font-size: clamp(4rem, 8vw, 7rem); font-weight: 800; color: var(--color-dark); line-height: 1; }
+.bs-pct   { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; color: var(--color-primary); margin-top: 8px; }
+.bs-label  { font-size: 1rem; font-weight: 600; color: var(--color-dark); margin-bottom: var(--space-xs); max-width: 280px; line-height: 1.4; }
+.bs-source { font-size: 0.75rem; color: var(--color-body); }
+.stat-row  { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.sr-item   { padding: var(--space-md); background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+.sr-num    { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--color-primary); line-height: 1; }
+.sr-num span { font-size: 1.2rem; }
+.sr-label  { font-size: 0.8rem; margin-top: 4px; line-height: 1.4; }
+.problem-text-col .eyebrow-label { margin-bottom: var(--space-sm); }
+.problem-text-col h2 { margin-bottom: var(--space-md); }
+.problem-text-col p  { margin-bottom: var(--space-md); font-size: 0.95rem; }
+.problem-link { font-weight: 600; font-size: 0.9rem; color: var(--color-primary); }
 
-  /* CTA */
-  .cta-box { text-align: center; padding: var(--space-xl); border-radius: var(--radius-lg); background: var(--color-surface); border: 2px solid var(--color-border); max-width: 640px; margin: 0 auto; }
-  .cta-box h2 { margin-bottom: var(--space-sm); }
-  .cta-box p  { margin-bottom: var(--space-lg); max-width: 440px; margin-inline: auto; margin-bottom: var(--space-lg); }
+/* ─── Services ──────────────────────────────────────── */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+.svc-card { border-radius: var(--radius-lg); border: 1px solid var(--color-border); background: white; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
+.svc-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.svc-card--featured { background: var(--color-dark); border-color: transparent; }
+.svc-card--featured .svc-content h3 { color: white; }
+.svc-card--featured .svc-content p  { color: rgba(255,255,255,0.65); }
 
-  @media (max-width: 960px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-visual { display: none; }
-    .problem-inner { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
-    .pillars-grid  { grid-template-columns: repeat(2, 1fr); }
-    .products-grid { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 600px) {
-    .pillars-grid { grid-template-columns: 1fr; }
-    .hero-actions { flex-direction: column; }
-  }
+.svc-visual { padding: var(--space-md); min-height: 180px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.svc-visual--light { background: var(--color-surface); border-bottom: 1px solid var(--color-border); }
+.svc-content { padding: var(--space-md) var(--space-lg) var(--space-lg); flex: 1; display: flex; flex-direction: column; }
+.svc-content h3 { margin-bottom: var(--space-xs); }
+.svc-content p  { font-size: 0.88rem; flex: 1; margin-bottom: 0; }
+
+/* Implementation diagram */
+.impl-diagram { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+.id-row { display: flex; align-items: center; gap: 4px; }
+.id-box { font-size: 0.62rem; font-weight: 600; padding: 5px 8px; border-radius: 6px; white-space: nowrap; }
+.id-box--done   { background: rgba(16,185,129,0.15); color: #10b981; }
+.id-box--active { background: rgba(0,123,255,0.2); color: #60a5fa; border: 1px solid rgba(0,123,255,0.4); }
+.id-box--dim    { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); }
+.id-arrow { font-size: 0.65rem; color: rgba(255,255,255,0.3); flex-shrink: 0; }
+.id-arrow--dim { opacity: 0.3; }
+.id-checklist { display: flex; flex-direction: column; gap: 5px; }
+.ic-item { font-size: 0.65rem; padding: 5px 10px 5px 22px; border-radius: 6px; position: relative; color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.03); }
+.ic-item::before { content: '○'; position: absolute; left: 6px; font-size: 0.6rem; }
+.ic-item--done   { color: rgba(16,185,129,0.8); }
+.ic-item--done::before   { content: '✓'; color: #10b981; }
+.ic-item--active { color: rgba(0,123,255,0.9); background: rgba(0,123,255,0.08); }
+.ic-item--active::before { content: '◉'; color: var(--color-primary); }
+
+/* Strategy scatter */
+.strategy-visual { width: 100%; }
+.sv-matrix { position: relative; width: 100%; aspect-ratio: 1.4; background: white; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background-image: linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px); background-size: 25% 25%; overflow: hidden; }
+.sv-axis { position: absolute; font-size: 0.6rem; color: var(--color-body); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.sv-axis--x { bottom: 5px; right: 8px; }
+.sv-axis--y { top: 8px; left: 5px; writing-mode: vertical-rl; transform: rotate(180deg); }
+.sv-dot { position: absolute; border-radius: 50%; transform: translate(-50%,-50%); background: var(--color-primary); display: flex; align-items: center; justify-content: center; animation: dotPop 0.4s ease both; }
+.sv-dot--big { width: 40px; height: 40px; box-shadow: 0 0 0 6px rgba(0,123,255,0.15); animation-delay: 0.3s; }
+.sv-dot--med { width: 28px; height: 28px; background: rgba(0,123,255,0.6); animation-delay: 0.5s; }
+.sv-dot--sm  { width: 16px; height: 16px; background: rgba(0,123,255,0.25); animation-delay: 0.7s; }
+@keyframes dotPop { from { transform: translate(-50%,-50%) scale(0); } to { transform: translate(-50%,-50%) scale(1); } }
+.sv-dot-label { font-size: 0.55rem; font-weight: 700; color: white; white-space: nowrap; text-align: center; }
+.sv-quadrant-label { position: absolute; font-size: 0.55rem; color: var(--color-body); opacity: 0.6; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Capability cohort */
+.capability-visual { width: 100%; }
+.cv-cohort { display: flex; flex-direction: column; gap: 10px; }
+.cv-label  { font-size: 0.68rem; font-weight: 600; color: var(--color-body); }
+.cv-members { display: flex; gap: 8px; flex-wrap: wrap; }
+.cv-member  { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.cv-av { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; color: white; }
+.cv-member--exec .cv-av { background: var(--color-dark); }
+.cv-member--mgr  .cv-av { background: var(--color-primary); }
+.cv-member--prac .cv-av { background: #6366f1; }
+.cv-role { font-size: 0.55rem; color: var(--color-body); }
+.cv-bars { display: flex; flex-direction: column; gap: 6px; }
+.cvb-row { display: flex; align-items: center; gap: 8px; font-size: 0.65rem; color: var(--color-body); }
+.cvb-row span:first-child { width: 68px; flex-shrink: 0; }
+.cvb-row span:last-child  { width: 28px; text-align: right; font-weight: 600; color: var(--color-dark); }
+.cvb-track { flex: 1; height: 5px; background: var(--color-border); border-radius: 3px; overflow: hidden; }
+.cvb-fill  { height: 100%; width: var(--cw); background: var(--color-primary); border-radius: 3px; animation: barGrow 1s ease 0.5s both; }
+.cvb-fill--accent { background: var(--color-accent); }
+@keyframes barGrow { from { width: 0; } }
+
+/* ─── Differentiators ───────────────────────────────── */
+.diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+.diff-card { padding: var(--space-lg); border-radius: var(--radius-lg); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); transition: var(--transition); }
+.diff-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
+.diff-label-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent); margin-bottom: var(--space-sm); }
+.diff-compare { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); flex-wrap: wrap; }
+.diff-bad, .diff-good { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 600; padding: 5px 10px; border-radius: 6px; flex: 1; }
+.diff-bad  { background: rgba(239,68,68,0.12); color: rgba(255,255,255,0.5); }
+.diff-good { background: rgba(16,185,129,0.12); color: rgba(255,255,255,0.85); }
+.diff-icon { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; position: relative; }
+.diff-icon--bad  { background: #ef4444; }
+.diff-icon--bad::after  { content: '✕'; color: white; font-size: 0.55rem; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.diff-icon--good { background: #10b981; }
+.diff-icon--good::after { content: '✓'; color: white; font-size: 0.55rem; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.diff-vs   { font-size: 0.8rem; color: rgba(255,255,255,0.2); flex-shrink: 0; }
+.diff-desc { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin: 0; }
+
+/* ─── Products ──────────────────────────────────────── */
+.products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.product-card { border: 2px solid var(--color-border); border-radius: var(--radius-lg); background: white; overflow: hidden; text-decoration: none; transition: var(--transition); display: flex; flex-direction: column; }
+.product-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-2px); text-decoration: none; }
+.product-visual { background: var(--color-surface); border-bottom: 1px solid var(--color-border); padding: var(--space-md); min-height: 140px; display: flex; align-items: center; justify-content: center; }
+.pv-lms { display: flex; gap: 10px; width: 100%; background: #0d1117; border-radius: 10px; padding: 12px; border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
+.pv-sidebar { width: 32px; display: flex; flex-direction: column; gap: 4px; }
+.pvs-item { height: 6px; border-radius: 3px; background: rgba(255,255,255,0.1); }
+.pvs-item--active { background: var(--color-primary); }
+.pv-content { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.pvc-stat { display: flex; align-items: baseline; gap: 5px; }
+.pvc-num { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: white; }
+.pvc-label { font-size: 0.6rem; color: rgba(255,255,255,0.35); }
+.pvc-bars { display: flex; flex-direction: column; gap: 4px; }
+.pvcb { height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+.pvcb-fill { height: 100%; width: var(--pw); background: var(--color-primary); border-radius: 3px; animation: barGrow 1s ease 0.3s both; }
+.pvcb-fill--accent { background: var(--color-accent); }
+.pv-training { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+.pvt-programs { display: flex; flex-direction: column; gap: 5px; }
+.pvt-prog { display: flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--color-border); border-radius: 8px; padding: 7px 10px; }
+.pvt-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.pvt-prog span { font-size: 0.75rem; font-weight: 600; color: var(--color-dark); flex: 1; }
+.pvt-badge { font-size: 0.62rem; background: var(--color-surface); padding: 2px 8px; border-radius: 100px; color: var(--color-body); border: 1px solid var(--color-border); }
+.pvt-stat { display: flex; align-items: center; gap: 6px; }
+.pvts-num { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--color-primary); }
+.pvts-num span { font-size: 1rem; }
+.pvts-label { font-size: 0.72rem; color: var(--color-body); }
+.product-text { padding: var(--space-md) var(--space-lg) var(--space-lg); flex: 1; display: flex; flex-direction: column; }
+.product-text h3 { color: var(--color-dark); margin-bottom: var(--space-xs); }
+.product-text p  { font-size: 0.88rem; flex: 1; margin-bottom: var(--space-sm); }
+.product-link { font-size: 0.88rem; font-weight: 600; color: var(--color-primary); }
+
+/* ─── Insights ──────────────────────────────────────── */
+.insights-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-lg); }
+.insights-header h2 { margin: var(--space-xs) 0 0; }
+.insights-featured { display: grid; grid-template-columns: 1fr 380px; gap: var(--space-md); align-items: start; }
+.insight-card { text-decoration: none; display: flex; flex-direction: column; gap: var(--space-sm); padding: var(--space-xl); background: var(--color-dark); border-radius: var(--radius-lg); transition: var(--transition); }
+.insight-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); text-decoration: none; }
+.ic-meta { display: flex; align-items: center; gap: var(--space-sm); }
+.ic-meta time { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+.insight-card h3 { font-size: 1.3rem; color: white; line-height: 1.3; }
+.insight-card p  { font-size: 0.9rem; color: rgba(255,255,255,0.6); flex: 1; }
+.ic-read { font-size: 0.88rem; font-weight: 600; color: var(--color-accent); }
+.insight-aside { display: flex; flex-direction: column; gap: var(--space-md); }
+.ia-callout { padding: var(--space-lg); border: 2px solid var(--color-border); border-radius: var(--radius-lg); background: white; display: flex; flex-direction: column; gap: var(--space-sm); }
+.iac-icon { position: relative; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; }
+.iac-ring { position: absolute; border-radius: 50%; border: 2px solid rgba(0,123,255,0.2); }
+.iac-ring--1 { inset: 0; animation: ringPulse 2s ease-in-out infinite; }
+.iac-ring--2 { inset: 8px; animation: ringPulse 2s ease-in-out infinite 0.5s; border-color: rgba(0,123,255,0.15); }
+@keyframes ringPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.06); opacity: 0.6; } }
+.iac-inner { position: relative; z-index: 1; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800; color: var(--color-primary); }
+.ia-callout h3 { font-size: 0.95rem; margin: 0; }
+.ia-callout p  { font-size: 0.82rem; margin: 0; }
+.ia-link { font-size: 0.85rem; font-weight: 600; color: var(--color-primary); }
+.ia-newsletter { padding: var(--space-md); border-radius: var(--radius-md); background: var(--color-surface); border: 1px solid var(--color-border); display: flex; flex-direction: column; gap: var(--space-xs); }
+.ian-label { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--color-dark); }
+.ian-sub   { font-size: 0.82rem; margin-bottom: var(--space-xs); }
+
+/* Subscribe button — compact */
+.ian-btn {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45em 1.2em;
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.ian-btn:hover { background: var(--color-primary-dark); text-decoration: none; }
+
+/* ─── Final CTA ─────────────────────────────────────── */
+.final-cta { position: relative; background: var(--color-dark); padding: var(--space-2xl) 0; overflow: hidden; }
+.fcta-bg { position: absolute; inset: 0; pointer-events: none; }
+.fcta-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,123,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,123,255,0.05) 1px, transparent 1px); background-size: 60px 60px; }
+.fcta-orb { position: absolute; border-radius: 50%; filter: blur(90px); }
+.fcta-orb--1 { width: 500px; height: 500px; background: rgba(0,123,255,0.18); top: -200px; left: -100px; animation: orbFloat 8s ease-in-out infinite; }
+.fcta-orb--2 { width: 350px; height: 350px; background: rgba(255,195,0,0.09); bottom: -100px; right: 5%; animation: orbFloat 11s ease-in-out infinite reverse; }
+.fcta-inner { position: relative; text-align: center; max-width: 580px; margin: 0 auto; }
+.fcta-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: var(--space-md); }
+.fcta-inner h2 { color: white; margin-bottom: var(--space-sm); }
+.fcta-inner p  { color: rgba(255,255,255,0.62); margin-bottom: var(--space-lg); max-width: 440px; margin-inline: auto; margin-bottom: var(--space-lg); }
+.fcta-actions { display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; }
+
+/* ─── Responsive ────────────────────────────────────── */
+@media (max-width: 1024px) { .diff-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { display: block; margin-top: var(--space-lg); }
+  .float-card  { display: none; }
+  .pipeline    { padding: var(--space-sm); }
+  .problem-inner { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr; }
+  .insights-featured { grid-template-columns: 1fr; }
+  .diff-grid { grid-template-columns: 1fr 1fr; }
+  .insights-header { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+}
+@media (max-width: 600px) {
+  .diff-grid  { grid-template-columns: 1fr; }
+  .stat-row   { grid-template-columns: 1fr 1fr; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .fcta-actions { flex-direction: column; }
+  .pipe-stages  { gap: 3px; }
+  .ps-icon      { width: 28px; height: 28px; }
+  .ps-label     { font-size: 0.6rem; }
+  .pm-label     { width: 90px; font-size: 0.58rem; }
+  .hero         { min-height: auto; padding: var(--space-xl) 0; }
+}
 </style>

@@ -1264,7 +1264,9 @@ import Footer from '../components/Footer.astro'
 }
 @media (max-width: 900px) {
   .hero-inner   { grid-template-columns: 1fr; }
-  .hero-visual  { display: none; }
+  .hero-visual  { display: block; margin-top: var(--space-lg); }
+  .float-badge  { display: none; }
+  .dashboard    { border-radius: 12px; }
   .se-inner     { grid-template-columns: 1fr; }
   .admin-grid   { grid-template-columns: repeat(2, 1fr); }
   .pricing-grid { grid-template-columns: 1fr; }
