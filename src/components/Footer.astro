@@ -13,9 +13,9 @@ const links = {
     { label: 'Contact',  href: '/contact' },
   ],
   'Legal': [
-    { label: 'Privacy Policy',    href: '/privacy-policy' },
+    { label: 'Privacy Policy',     href: '/privacy-policy' },
     { label: 'Terms & Conditions', href: '/terms-and-conditions' },
-    { label: 'Refund Policy',     href: '/refund-policy' },
+    { label: 'Refund Policy',      href: '/refund-policy' },
   ],
 }
 ---
@@ -24,8 +24,9 @@ const links = {
   <div class="container footer-inner">
 
     <div class="footer-brand">
-      <a href="/" class="logo">
-        <img src="/logo.jpeg" alt="SnapSkill" class="footer-logo-img" />
+      <a href="/" class="footer-logo-link" aria-label="SnapSkill home">
+        <!-- Text logo: works cleanly on dark background, no image artefacts -->
+        <span class="flogo-snap">Snap</span><span class="flogo-skill">Skill</span>
       </a>
       <p>AI consulting, implementation, and capability building for enterprises that are serious about results.</p>
       <div class="social-links">
@@ -68,7 +69,8 @@ const links = {
   .site-footer {
     background: var(--color-dark);
     color: rgba(255,255,255,0.65);
-    margin-top: var(--space-2xl);
+    /* No margin-top — dark sections before footer don't need a gap.
+       Pages with light sections before footer add their own bottom padding. */
   }
 
   .footer-inner {
@@ -78,15 +80,18 @@ const links = {
     padding: var(--space-xl) var(--space-md);
   }
 
-  .footer-brand .logo {
+  /* Text logo — renders cleanly on dark background, no white-box JPEG issues */
+  .footer-logo-link {
     display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-decoration: none;
     margin-bottom: var(--space-sm);
+    line-height: 1;
   }
-  .footer-logo-img {
-    height: 32px;
-    width: auto;
-    filter: brightness(0) invert(1);
-  }
+  .flogo-snap  { color: white; }
+  .flogo-skill { color: var(--color-accent); }
 
   .footer-brand p {
     font-size: 0.9rem;
@@ -116,8 +121,8 @@ const links = {
 
   .footer-nav-group h4 {
     font-family: var(--font-heading);
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--color-accent);
@@ -130,11 +135,9 @@ const links = {
     font-size: 0.9rem;
     color: rgba(255,255,255,0.6);
     transition: var(--transition);
-  }
-  .footer-nav-group a:hover {
-    color: white;
     text-decoration: none;
   }
+  .footer-nav-group a:hover { color: white; }
 
   .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
