@@ -598,6 +598,44 @@ import Footer from '../components/Footer.astro'
   </section>
 
   <!-- ═══════════════════════════════════════════════
+       LEAD MAGNET
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--tinted">
+    <div class="container">
+      <div class="lm-card">
+        <div class="lm-left">
+          <p class="lm-eyebrow">Free Resource</p>
+          <h3>LMS Evaluation Template</h3>
+          <p>A ready-made spreadsheet to compare LMS platforms objectively — covering content types, analytics, integrations, pricing structure, and support. Built from 50+ platform evaluations.</p>
+          <ul class="lm-bullets">
+            <li>20+ criteria across learning experience, admin, and cost</li>
+            <li>Side-by-side scoring columns for each vendor</li>
+            <li>Notes column with what to ask on each vendor call</li>
+          </ul>
+        </div>
+        <div class="lm-right">
+          <p class="lm-form-label">Download free — no strings attached</p>
+          <form class="snap-form" novalidate>
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+            <input type="hidden" name="subject" value="Lead Magnet: LMS Evaluation Template">
+            <input type="hidden" name="resource" value="LMS Evaluation Template">
+            <input type="hidden" name="botcheck" style="display:none">
+            <div class="snap-form-fields lm-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Work email" required>
+              <input type="tel" name="phone" placeholder="WhatsApp (optional)">
+              <button type="submit" class="btn btn--primary" data-submit-btn>Get the Template →</button>
+            </div>
+            <p class="snap-form-success lm-success" hidden>
+              ✓ Check your inbox! Or <a href="PLACEHOLDER_LMS_TEMPLATE_PDF_URL" target="_blank" rel="noopener">download directly here</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
        FINAL CTA
   ═══════════════════════════════════════════════ -->
   <section class="final-cta">
@@ -608,7 +646,20 @@ import Footer from '../components/Footer.astro'
     <div class="container fcta-inner">
       <h2>See it live in 30 minutes.</h2>
       <p>We'll walk you through a demo tailored to your industry and team size — with your use cases, not ours.</p>
-      <a href="/contact" class="btn btn--accent">Request a demo</a>
+      <form class="snap-form fcta-form" novalidate>
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="LMS Demo Request - SnapSkill">
+        <input type="hidden" name="page" value="LMS">
+        <input type="hidden" name="botcheck" style="display:none">
+        <div class="snap-form-fields fcta-fields">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="tel" name="phone" placeholder="WhatsApp / Phone" required>
+          <input type="text" name="company" placeholder="Company name">
+          <button type="submit" class="btn btn--accent" data-submit-btn>Request a Demo →</button>
+        </div>
+        <p class="snap-form-success fcta-success" hidden>✓ We'll WhatsApp you within a few hours to set up the demo.</p>
+      </form>
+      <p class="fcta-or">Or email <a href="mailto:support@snapskill.in">support@snapskill.in</a></p>
     </div>
   </section>
 
@@ -1237,6 +1288,44 @@ import Footer from '../components/Footer.astro'
 .plan-btn--accent { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-dark); }
 .plan-btn--accent:hover { background: #e6b000; border-color: #e6b000; }
 
+/* ─── Lead Magnet ───────────────────────────────── */
+.lm-card {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+.lm-eyebrow {
+  font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--color-primary); margin-bottom: var(--space-xs);
+}
+.lm-left h3 { font-size: 1.35rem; margin-bottom: var(--space-sm); color: var(--color-dark); }
+.lm-left > p { font-size: 0.9rem; margin-bottom: var(--space-md); }
+.lm-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.lm-bullets li { font-size: 0.88rem; padding-left: 1.4em; position: relative; }
+.lm-bullets li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: 700; }
+.lm-form-label { font-size: 0.78rem; font-weight: 700; color: var(--color-body); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.06em; }
+.lm-fields { display: flex; flex-direction: column; gap: var(--space-xs); }
+.lm-fields input {
+  width: 100%; padding: 0.7em 1em;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body); font-size: 0.9rem;
+  background: var(--color-surface); color: var(--color-dark);
+  transition: var(--transition);
+}
+.lm-fields input:focus { outline: none; border-color: var(--color-primary); background: white; }
+.lm-fields .btn { width: 100%; text-align: center; margin-top: var(--space-xs); }
+.lm-success { font-size: 0.88rem; color: #10b981; margin-top: var(--space-sm); line-height: 1.6; }
+.lm-success a { color: var(--color-primary); font-weight: 600; }
+@media (max-width: 768px) { .lm-card { grid-template-columns: 1fr; } }
+
 /* ─── Final CTA ────────────────────────────────── */
 .final-cta {
   position: relative;
@@ -1252,9 +1341,25 @@ import Footer from '../components/Footer.astro'
 }
 .fcta-orb--1 { width: 400px; height: 400px; background: rgba(0,123,255,0.2); top: -100px; left: 10%; animation: orbFloat 7s ease-in-out infinite; }
 .fcta-orb--2 { width: 300px; height: 300px; background: rgba(255,195,0,0.1); bottom: -50px; right: 10%; animation: orbFloat 9s ease-in-out infinite reverse; }
-.fcta-inner { position: relative; text-align: center; max-width: 580px; margin: 0 auto; }
+.fcta-inner { position: relative; text-align: center; max-width: 560px; margin: 0 auto; }
 .fcta-inner h2 { color: white; margin-bottom: var(--space-sm); }
 .fcta-inner p  { color: rgba(255,255,255,0.65); margin-bottom: var(--space-lg); }
+.fcta-form { width: 100%; }
+.fcta-fields { display: flex; flex-direction: column; gap: var(--space-xs); }
+.fcta-fields input {
+  width: 100%; padding: 0.75em 1em;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.08);
+  color: white; font-family: var(--font-body); font-size: 0.9rem;
+  transition: var(--transition);
+}
+.fcta-fields input::placeholder { color: rgba(255,255,255,0.4); }
+.fcta-fields input:focus { outline: none; border-color: var(--color-accent); background: rgba(255,255,255,0.12); }
+.fcta-fields .btn { width: 100%; text-align: center; margin-top: var(--space-xs); }
+.fcta-success { color: #4ade80; font-size: 0.9rem; margin-top: var(--space-md); }
+.fcta-or { color: rgba(255,255,255,0.4); font-size: 0.82rem; margin-top: var(--space-md); }
+.fcta-or a { color: rgba(255,255,255,0.6); }
 
 /* ─── Responsive ────────────────────────────────── */
 @media (max-width: 1024px) {

@@ -116,13 +116,22 @@ const related    = allPosts
 
   <!-- Bottom CTA -->
   <section class="section section--dark">
-    <div class="container" style="max-width:580px;text-align:center">
+    <div class="container" style="max-width:520px;text-align:center">
       <h2 style="color:white">Enjoyed this? Get more in your inbox.</h2>
-      <p style="color:rgba(255,255,255,0.65);margin:var(--space-sm) 0 var(--space-lg)">Two to three articles a month on enterprise AI implementation — what's working and what's not.</p>
-      <div style="display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap">
-        <a href="mailto:support@snapskill.in?subject=Newsletter" class="btn btn--accent">Subscribe by email</a>
-        <a href="/blog" class="btn btn--outline" style="border-color:rgba(255,255,255,0.3);color:white">More articles</a>
-      </div>
+      <p style="color:rgba(255,255,255,0.65);margin:var(--space-sm) 0 var(--space-lg)">Two to three articles a month on enterprise AI implementation — what's working, what's not, and what to do about it.</p>
+      <form class="snap-form blog-nl-form" novalidate>
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="Newsletter Signup - Blog Post">
+        <input type="hidden" name="source_post" value={post.data.title}>
+        <input type="hidden" name="botcheck" style="display:none">
+        <div class="snap-form-fields blog-nl-fields">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Work email" required>
+          <button type="submit" class="btn btn--accent" data-submit-btn>Subscribe →</button>
+        </div>
+        <p class="snap-form-success blog-nl-success" hidden>✓ You're in! Expect 2–3 emails a month, no fluff.</p>
+      </form>
+      <a href="/blog" style="display:block;margin-top:var(--space-md);color:rgba(255,255,255,0.45);font-size:0.88rem">← More articles</a>
     </div>
   </section>
 
@@ -199,6 +208,14 @@ const related    = allPosts
   .read-link { font-size: 0.88rem; font-weight: 600; color: var(--color-primary); }
 
   .prose { max-width: var(--prose-width); margin-inline: auto; }
+
+  /* Newsletter form */
+  .blog-nl-fields { display: flex; flex-direction: column; gap: var(--space-xs); max-width: 380px; margin: 0 auto; }
+  .blog-nl-fields input { width: 100%; padding: 0.75em 1em; border: 1.5px solid rgba(255,255,255,0.15); border-radius: var(--radius-sm); background: rgba(255,255,255,0.08); color: white; font-family: var(--font-body); font-size: 0.9rem; transition: var(--transition); }
+  .blog-nl-fields input::placeholder { color: rgba(255,255,255,0.4); }
+  .blog-nl-fields input:focus { outline: none; border-color: var(--color-accent); background: rgba(255,255,255,0.12); }
+  .blog-nl-fields .btn { width: 100%; margin-top: var(--space-xs); }
+  .blog-nl-success { color: #4ade80; font-size: 0.9rem; margin-top: var(--space-md); }
 
   @media (max-width: 900px) {
     .post-layout  { grid-template-columns: 1fr; }

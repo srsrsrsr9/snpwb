@@ -440,6 +440,45 @@ import Footer from '../components/Footer.astro'
   </section>
 
   <!-- ═══════════════════════════════════════════════
+       LEAD MAGNET
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--tinted">
+    <div class="container">
+      <div class="lm-card">
+        <div class="lm-left">
+          <p class="lm-eyebrow">Free Resource</p>
+          <h3>POSH Compliance Audit Checklist</h3>
+          <p>Is your organisation actually POSH-compliant — or just think it is? This 12-point checklist covers the most common gaps HR teams miss. Used by 100+ companies before their annual audits.</p>
+          <ul class="lm-bullets">
+            <li>Internal Committee formation requirements</li>
+            <li>Annual report obligations (Section 21)</li>
+            <li>Training documentation and completion records</li>
+            <li>Policy display and employee awareness requirements</li>
+          </ul>
+        </div>
+        <div class="lm-right">
+          <p class="lm-form-label">Download free — takes 30 seconds</p>
+          <form class="snap-form" novalidate>
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+            <input type="hidden" name="subject" value="Lead Magnet: POSH Compliance Checklist">
+            <input type="hidden" name="resource" value="POSH Compliance Audit Checklist">
+            <input type="hidden" name="botcheck" style="display:none">
+            <div class="snap-form-fields lm-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Work email" required>
+              <input type="tel" name="phone" placeholder="WhatsApp (optional)">
+              <button type="submit" class="btn btn--primary" style="background:#007A6A;border-color:#007A6A" data-submit-btn>Download Free Checklist →</button>
+            </div>
+            <p class="snap-form-success lm-success" hidden>
+              ✓ Check your inbox! Or <a href="PLACEHOLDER_POSH_CHECKLIST_PDF_URL" target="_blank" rel="noopener">download directly here</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
        CTA
   ═══════════════════════════════════════════════ -->
   <section class="final-cta">
@@ -453,10 +492,20 @@ import Footer from '../components/Footer.astro'
       </div>
       <h2>Make your POSH compliance<br>count for something.</h2>
       <p>Book a 20-minute demo — we'll show you the employee experience, the admin dashboard, and how rollout works for your team size.</p>
-      <div class="fcta-actions">
-        <a href="/contact" class="btn btn--accent">Request a demo</a>
-        <a href="mailto:support@snapskill.in" class="btn-ghost">Email us →</a>
-      </div>
+      <form class="snap-form fcta-form" novalidate>
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="POSH Training Demo Request">
+        <input type="hidden" name="page" value="POSH Training">
+        <input type="hidden" name="botcheck" style="display:none">
+        <div class="snap-form-fields fcta-fields">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="tel" name="phone" placeholder="WhatsApp / Phone" required>
+          <input type="text" name="company" placeholder="Company name">
+          <button type="submit" class="btn btn--accent" data-submit-btn>Request a Demo →</button>
+        </div>
+        <p class="snap-form-success fcta-success" hidden>✓ We'll WhatsApp you within a few hours to set up the demo.</p>
+      </form>
+      <p class="fcta-or">Or email <a href="mailto:support@snapskill.in">support@snapskill.in</a></p>
     </div>
   </section>
 
@@ -779,6 +828,29 @@ import Footer from '../components/Footer.astro'
     padding-top: var(--space-sm); flex-wrap: wrap;
   }
 
+  /* ─── Lead Magnet ───────────────────────── */
+  .lm-card {
+    display: grid; grid-template-columns: 1fr 1.1fr;
+    gap: var(--space-xl); align-items: center;
+    background: white; border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg); padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+  }
+  .lm-eyebrow { font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #007A6A; margin-bottom: var(--space-xs); }
+  .lm-left h3 { font-size: 1.35rem; margin-bottom: var(--space-sm); color: var(--color-dark); }
+  .lm-left > p { font-size: 0.9rem; margin-bottom: var(--space-md); }
+  .lm-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .lm-bullets li { font-size: 0.88rem; padding-left: 1.4em; position: relative; }
+  .lm-bullets li::before { content: '✓'; position: absolute; left: 0; color: #007A6A; font-weight: 700; }
+  .lm-form-label { font-size: 0.78rem; font-weight: 700; color: var(--color-body); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.06em; }
+  .lm-fields { display: flex; flex-direction: column; gap: var(--space-xs); }
+  .lm-fields input { width: 100%; padding: 0.7em 1em; border: 1.5px solid var(--color-border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.9rem; background: var(--color-surface); color: var(--color-dark); transition: var(--transition); }
+  .lm-fields input:focus { outline: none; border-color: #007A6A; background: white; }
+  .lm-fields .btn { width: 100%; text-align: center; margin-top: var(--space-xs); }
+  .lm-success { font-size: 0.88rem; color: #10b981; margin-top: var(--space-sm); line-height: 1.6; }
+  .lm-success a { color: #007A6A; font-weight: 600; }
+  @media (max-width: 768px) { .lm-card { grid-template-columns: 1fr; } }
+
   /* ─── Final CTA ─────────────────────────── */
   .final-cta { position: relative; background: var(--color-dark); padding: var(--space-2xl) 0; overflow: hidden; }
   .fcta-bg { position: absolute; inset: 0; pointer-events: none; }
@@ -789,7 +861,15 @@ import Footer from '../components/Footer.astro'
   .fcta-shield { margin: 0 auto var(--space-md); }
   .fcta-inner h2 { color: white; margin-bottom: var(--space-sm); }
   .fcta-inner p  { color: rgba(255,255,255,0.65); margin-bottom: var(--space-lg); }
-  .fcta-actions { display: flex; align-items: center; justify-content: center; gap: var(--space-md); flex-wrap: wrap; }
+  .fcta-form { width: 100%; }
+  .fcta-fields { display: flex; flex-direction: column; gap: var(--space-xs); }
+  .fcta-fields input { width: 100%; padding: 0.75em 1em; border: 1.5px solid rgba(255,255,255,0.15); border-radius: var(--radius-sm); background: rgba(255,255,255,0.08); color: white; font-family: var(--font-body); font-size: 0.9rem; transition: var(--transition); }
+  .fcta-fields input::placeholder { color: rgba(255,255,255,0.4); }
+  .fcta-fields input:focus { outline: none; border-color: var(--color-accent); background: rgba(255,255,255,0.12); }
+  .fcta-fields .btn { width: 100%; text-align: center; margin-top: var(--space-xs); }
+  .fcta-success { color: #4ade80; font-size: 0.9rem; margin-top: var(--space-md); }
+  .fcta-or { color: rgba(255,255,255,0.4); font-size: 0.82rem; margin-top: var(--space-md); }
+  .fcta-or a { color: rgba(255,255,255,0.6); }
 
   @media (max-width: 1024px) {
     .modules-grid { grid-template-columns: repeat(2,1fr); }

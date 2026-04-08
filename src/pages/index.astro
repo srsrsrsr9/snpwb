@@ -470,8 +470,55 @@ import Footer from '../components/Footer.astro'
           <div class="ia-newsletter">
             <p class="ian-label">Stay ahead of enterprise AI</p>
             <p class="ian-sub">2–3 articles a month on what's actually working.</p>
-            <a href="mailto:support@snapskill.in?subject=Newsletter" class="ian-btn">Subscribe</a>
+            <form class="snap-form ian-form" novalidate>
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+              <input type="hidden" name="subject" value="Newsletter Signup - Home Page">
+              <input type="hidden" name="botcheck" style="display:none">
+              <div class="snap-form-fields ian-fields">
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit" class="ian-btn" data-submit-btn>Subscribe →</button>
+              </div>
+              <p class="snap-form-success ian-success" hidden>✓ You're in! We'll be in touch.</p>
+            </form>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       LEAD MAGNET
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--tinted lm-section">
+    <div class="container">
+      <div class="lm-card">
+        <div class="lm-left">
+          <p class="lm-eyebrow">Free Resource</p>
+          <h3>The AI POC Death Checklist</h3>
+          <p>10 reasons your AI pilot won't reach production — and the questions to ask before you start. Used by 200+ enterprise teams.</p>
+          <ul class="lm-bullets">
+            <li>Integration red flags to catch early</li>
+            <li>Governance gaps that kill momentum</li>
+            <li>The 3 change management steps most teams skip</li>
+          </ul>
+        </div>
+        <div class="lm-right">
+          <p class="lm-form-label">Get the free PDF — no spam, ever.</p>
+          <form class="snap-form lm-form" novalidate>
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+            <input type="hidden" name="subject" value="Lead Magnet: AI POC Death Checklist">
+            <input type="hidden" name="resource" value="AI POC Death Checklist">
+            <input type="hidden" name="botcheck" style="display:none">
+            <div class="snap-form-fields lm-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Work email" required>
+              <input type="tel" name="phone" placeholder="WhatsApp (optional)">
+              <button type="submit" class="btn btn--primary" data-submit-btn>Download Free PDF →</button>
+            </div>
+            <p class="snap-form-success lm-success" hidden>
+              ✓ Check your inbox! Also <a href="PLACEHOLDER_AI_CHECKLIST_PDF_URL" target="_blank" rel="noopener">click here to download directly</a>.
+            </p>
+          </form>
         </div>
       </div>
     </div>
@@ -964,6 +1011,59 @@ import Footer from '../components/Footer.astro'
   transition: var(--transition);
 }
 .ian-btn:hover { background: var(--color-primary-dark); text-decoration: none; }
+
+/* ─── Newsletter inline form ─────────────────────────── */
+.ian-form { width: 100%; }
+.ian-fields { display: flex; flex-direction: column; gap: 6px; }
+.ian-fields input {
+  width: 100%; padding: 0.55em 0.9em;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body); font-size: 0.85rem;
+  background: white; color: var(--color-dark);
+}
+.ian-fields input:focus { outline: 2px solid var(--color-primary); border-color: transparent; }
+.ian-success { font-size: 0.82rem; color: #10b981; margin: var(--space-xs) 0 0; }
+
+/* ─── Lead Magnet Section ────────────────────────────── */
+.lm-card {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+.lm-eyebrow {
+  font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--color-primary); margin-bottom: var(--space-xs);
+}
+.lm-left h3 { font-size: 1.4rem; margin-bottom: var(--space-sm); color: var(--color-dark); }
+.lm-left > p { font-size: 0.9rem; margin-bottom: var(--space-md); }
+.lm-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.lm-bullets li { font-size: 0.88rem; padding-left: 1.4em; position: relative; }
+.lm-bullets li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: 700; }
+.lm-form-label { font-size: 0.8rem; font-weight: 600; color: var(--color-body); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.06em; }
+.lm-fields { display: flex; flex-direction: column; gap: var(--space-xs); }
+.lm-fields input {
+  width: 100%; padding: 0.7em 1em;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body); font-size: 0.9rem;
+  background: var(--color-surface); color: var(--color-dark);
+  transition: var(--transition);
+}
+.lm-fields input:focus { outline: none; border-color: var(--color-primary); background: white; }
+.lm-fields .btn { width: 100%; justify-content: center; margin-top: var(--space-xs); }
+.lm-success { font-size: 0.88rem; color: #10b981; margin-top: var(--space-sm); line-height: 1.6; }
+.lm-success a { color: var(--color-primary); font-weight: 600; }
+@media (max-width: 768px) {
+  .lm-card { grid-template-columns: 1fr; }
+}
 
 /* ─── Final CTA ─────────────────────────────────────── */
 .final-cta { position: relative; background: var(--color-dark); padding: var(--space-2xl) 0; overflow: hidden; }

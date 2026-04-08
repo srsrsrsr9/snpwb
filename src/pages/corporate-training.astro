@@ -190,12 +190,61 @@ import Footer from '../components/Footer.astro'
     </div>
   </section>
 
+  <!-- Lead Magnet -->
+  <section class="section section--tinted">
+    <div class="container">
+      <div class="lm-card">
+        <div class="lm-left">
+          <p class="lm-eyebrow">Free Resource</p>
+          <h3>AI Skills Gap Assessment Template</h3>
+          <p>A 7-question diagnostic to baseline your team's current AI literacy — and prioritise which skills to build first. Includes a scoring guide and recommendations by role.</p>
+          <ul class="lm-bullets">
+            <li>Questions segmented by role (exec, manager, practitioner)</li>
+            <li>Scoring rubric with maturity levels</li>
+            <li>Recommended training path for each level</li>
+          </ul>
+        </div>
+        <div class="lm-right">
+          <p class="lm-form-label">Download free — no strings attached</p>
+          <form class="snap-form" novalidate>
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+            <input type="hidden" name="subject" value="Lead Magnet: AI Skills Gap Assessment">
+            <input type="hidden" name="resource" value="AI Skills Gap Assessment Template">
+            <input type="hidden" name="botcheck" style="display:none">
+            <div class="snap-form-fields lm-fields">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Work email" required>
+              <input type="tel" name="phone" placeholder="WhatsApp (optional)">
+              <button type="submit" class="btn btn--primary" data-submit-btn>Get the Assessment →</button>
+            </div>
+            <p class="snap-form-success lm-success" hidden>
+              ✓ Check your inbox! Or <a href="PLACEHOLDER_SKILLS_ASSESSMENT_PDF_URL" target="_blank" rel="noopener">download directly here</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
-  <section class="section">
-    <div class="container" style="max-width:640px;text-align:center">
-      <h2>Let's design something<br>that actually works.</h2>
-      <p style="margin:var(--space-sm) 0 var(--space-lg)">Tell us about your team — size, roles, current AI maturity — and we'll come back with a program design within 48 hours.</p>
-      <a href="/contact" class="btn btn--primary">Start the conversation</a>
+  <section class="section section--dark">
+    <div class="container" style="max-width:600px;text-align:center">
+      <h2 style="color:white">Let's design something<br>that actually works.</h2>
+      <p style="color:rgba(255,255,255,0.65);margin:var(--space-sm) 0 var(--space-lg)">Tell us about your team — size, roles, current AI maturity — and we'll come back with a program design within 48 hours.</p>
+      <form class="snap-form ct-form" novalidate>
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="Corporate Training Enquiry - SnapSkill">
+        <input type="hidden" name="page" value="Corporate Training">
+        <input type="hidden" name="botcheck" style="display:none">
+        <div class="snap-form-fields ct-fields">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="tel" name="phone" placeholder="WhatsApp / Phone" required>
+          <input type="text" name="company" placeholder="Company &amp; team size">
+          <button type="submit" class="btn btn--accent" data-submit-btn>Start the Conversation →</button>
+        </div>
+        <p class="snap-form-success ct-success" hidden>✓ We'll WhatsApp you within a few hours with initial thoughts.</p>
+      </form>
+      <p class="ct-or">Or email <a href="mailto:support@snapskill.in" style="color:rgba(255,255,255,0.6)">support@snapskill.in</a></p>
     </div>
   </section>
 
@@ -306,12 +355,39 @@ import Footer from '../components/Footer.astro'
   .process-step h3 { color: white; font-size: 1rem; margin-bottom: var(--space-xs); }
   .process-step p  { color: rgba(255,255,255,0.6); font-size: 0.88rem; margin: 0; }
 
+  /* Lead Magnet */
+  .lm-card { display: grid; grid-template-columns: 1fr 1.1fr; gap: var(--space-xl); align-items: center; background: white; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-sm); }
+  .lm-eyebrow { font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-primary); margin-bottom: var(--space-xs); }
+  .lm-left h3 { font-size: 1.35rem; margin-bottom: var(--space-sm); color: var(--color-dark); }
+  .lm-left > p { font-size: 0.9rem; margin-bottom: var(--space-md); }
+  .lm-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .lm-bullets li { font-size: 0.88rem; padding-left: 1.4em; position: relative; }
+  .lm-bullets li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: 700; }
+  .lm-form-label { font-size: 0.78rem; font-weight: 700; color: var(--color-body); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.06em; }
+  .lm-fields { display: flex; flex-direction: column; gap: var(--space-xs); }
+  .lm-fields input { width: 100%; padding: 0.7em 1em; border: 1.5px solid var(--color-border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.9rem; background: var(--color-surface); color: var(--color-dark); transition: var(--transition); }
+  .lm-fields input:focus { outline: none; border-color: var(--color-primary); background: white; }
+  .lm-fields .btn { width: 100%; text-align: center; margin-top: var(--space-xs); }
+  .lm-success { font-size: 0.88rem; color: #10b981; margin-top: var(--space-sm); line-height: 1.6; }
+  .lm-success a { color: var(--color-primary); font-weight: 600; }
+
+  /* CTA Form */
+  .ct-form { width: 100%; max-width: 480px; margin: 0 auto; }
+  .ct-fields { display: flex; flex-direction: column; gap: var(--space-xs); }
+  .ct-fields input { width: 100%; padding: 0.75em 1em; border: 1.5px solid rgba(255,255,255,0.15); border-radius: var(--radius-sm); background: rgba(255,255,255,0.08); color: white; font-family: var(--font-body); font-size: 0.9rem; transition: var(--transition); }
+  .ct-fields input::placeholder { color: rgba(255,255,255,0.4); }
+  .ct-fields input:focus { outline: none; border-color: var(--color-accent); background: rgba(255,255,255,0.12); }
+  .ct-fields .btn { width: 100%; text-align: center; margin-top: var(--space-xs); }
+  .ct-success { color: #4ade80; font-size: 0.9rem; margin-top: var(--space-md); }
+  .ct-or { color: rgba(255,255,255,0.4); font-size: 0.82rem; margin-top: var(--space-md); }
+
   @media (max-width: 960px) {
     .hero-inner     { grid-template-columns: 1fr; }
     .hero-visual    { display: block; margin-top: var(--space-lg); }
     .problem-inner  { grid-template-columns: 1fr; }
     .programs-grid  { grid-template-columns: 1fr; }
     .process-steps  { grid-template-columns: repeat(2, 1fr); }
+    .lm-card        { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
     .problem-vs    { flex-direction: column; }
