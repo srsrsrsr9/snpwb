@@ -32,9 +32,12 @@ import Footer from '../components/Footer.astro'
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8a16 16 0 0 0 7.91 7.91l.72-.72a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
           <div>
-            <h3>Request a callback</h3>
-            <p>Book a 30-minute call via Calendly. We'll come prepared with questions — not slides.</p>
-            <a href="https://calendly.com/snapskill" target="_blank" rel="noopener" class="btn btn--accent channel-btn">Schedule a call →</a>
+            <h3>Call or WhatsApp us</h3>
+            <p>We'll come prepared with questions — not slides. Pick whatever's easier for you.</p>
+            <div class="channel-cta-row">
+              <a href="tel:+919876656573" class="btn btn--accent channel-btn">Call +91 98766 56573</a>
+              <a href="https://wa.me/919876656573?text=Hi%21+I%27d+like+to+have+a+conversation+about+my+AI+project." target="_blank" rel="noopener" class="channel-link">WhatsApp us →</a>
+            </div>
           </div>
         </div>
 
@@ -187,6 +190,7 @@ import Footer from '../components/Footer.astro'
   .channel-card h3 { font-size: 1rem; margin-bottom: var(--space-2xs); }
   .channel-card p  { font-size: 0.88rem; margin-bottom: var(--space-sm); }
   .channel-btn { font-size: 0.85rem; }
+  .channel-cta-row { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
   .channel-link {
     font-size: 0.9rem;
     font-weight: 600;
