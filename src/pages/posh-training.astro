@@ -457,22 +457,16 @@ import Footer from '../components/Footer.astro'
           </ul>
         </div>
         <div class="lm-right">
-          <p class="lm-form-label">Download free — takes 30 seconds</p>
-          <form class="snap-form" novalidate>
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-            <input type="hidden" name="subject" value="Lead Magnet: POSH Compliance Checklist">
-            <input type="hidden" name="resource" value="POSH Compliance Audit Checklist">
-            <input type="hidden" name="botcheck" style="display:none">
-            <div class="snap-form-fields lm-fields">
-              <input type="text" name="name" placeholder="Your name" required>
-              <input type="email" name="email" placeholder="Work email" required>
-              <input type="tel" name="phone" placeholder="WhatsApp (optional)">
-              <button type="submit" class="btn btn--primary" style="background:#007A6A;border-color:#007A6A" data-submit-btn>Download Free Checklist →</button>
-            </div>
-            <p class="snap-form-success lm-success" hidden>
-              ✓ Check your inbox! Or <a href="PLACEHOLDER_POSH_CHECKLIST_PDF_URL" target="_blank" rel="noopener">download directly here</a>.
-            </p>
-          </form>
+          <p class="lm-how">How to get it</p>
+          <ol class="lm-steps">
+            <li>Tap the button below</li>
+            <li>WhatsApp opens with a ready-to-send message</li>
+            <li>Hit send — we'll reply with the checklist</li>
+          </ol>
+          <a href="https://wa.me/919876656573?text=Hi%21+Send+me+the+POSH+Compliance+Checklist" target="_blank" rel="noopener" class="btn lm-wa-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp us for the free checklist
+          </a>
         </div>
       </div>
     </div>
@@ -492,20 +486,13 @@ import Footer from '../components/Footer.astro'
       </div>
       <h2>Make your POSH compliance<br>count for something.</h2>
       <p>Book a 20-minute demo — we'll show you the employee experience, the admin dashboard, and how rollout works for your team size.</p>
-      <form class="snap-form fcta-form" novalidate>
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-        <input type="hidden" name="subject" value="POSH Training Demo Request">
-        <input type="hidden" name="page" value="POSH Training">
-        <input type="hidden" name="botcheck" style="display:none">
-        <div class="snap-form-fields fcta-fields">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="tel" name="phone" placeholder="WhatsApp / Phone" required>
-          <input type="text" name="company" placeholder="Company name">
-          <button type="submit" class="btn btn--accent" data-submit-btn>Request a Demo →</button>
-        </div>
-        <p class="snap-form-success fcta-success" hidden>✓ We'll WhatsApp you within a few hours to set up the demo.</p>
-      </form>
-      <p class="fcta-or">Or email <a href="mailto:support@snapskill.in">support@snapskill.in</a></p>
+      <div class="fcta-actions">
+        <a href="https://wa.me/919876656573?text=Hi%21+I%27d+like+to+see+a+demo+of+SafeWork+POSH+Training." target="_blank" rel="noopener" class="btn btn--accent fcta-wa-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp us to book a demo
+        </a>
+        <a href="mailto:support@snapskill.in" class="btn-ghost">Email us →</a>
+      </div>
     </div>
   </section>
 
@@ -842,13 +829,11 @@ import Footer from '../components/Footer.astro'
   .lm-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
   .lm-bullets li { font-size: 0.88rem; padding-left: 1.4em; position: relative; }
   .lm-bullets li::before { content: '✓'; position: absolute; left: 0; color: #007A6A; font-weight: 700; }
-  .lm-form-label { font-size: 0.78rem; font-weight: 700; color: var(--color-body); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.06em; }
-  .lm-fields { display: flex; flex-direction: column; gap: var(--space-xs); }
-  .lm-fields input { width: 100%; padding: 0.7em 1em; border: 1.5px solid var(--color-border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.9rem; background: var(--color-surface); color: var(--color-dark); transition: var(--transition); }
-  .lm-fields input:focus { outline: none; border-color: #007A6A; background: white; }
-  .lm-fields .btn { width: 100%; text-align: center; margin-top: var(--space-xs); }
-  .lm-success { font-size: 0.88rem; color: #10b981; margin-top: var(--space-sm); line-height: 1.6; }
-  .lm-success a { color: #007A6A; font-weight: 600; }
+  .lm-how { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-body); margin-bottom: var(--space-xs); }
+  .lm-steps { padding-left: 1.25em; display: flex; flex-direction: column; gap: 4px; margin-bottom: var(--space-lg); }
+  .lm-steps li { font-size: 0.9rem; color: var(--color-body); }
+  .lm-wa-btn { display: inline-flex; align-items: center; gap: 8px; width: 100%; justify-content: center; background: #25D366; border: 2px solid #25D366; color: white; text-decoration: none; }
+  .lm-wa-btn:hover { background: #1ebe5d; border-color: #1ebe5d; color: white; text-decoration: none; }
   @media (max-width: 768px) { .lm-card { grid-template-columns: 1fr; } }
 
   /* ─── Final CTA ─────────────────────────── */
@@ -861,15 +846,7 @@ import Footer from '../components/Footer.astro'
   .fcta-shield { margin: 0 auto var(--space-md); }
   .fcta-inner h2 { color: white; margin-bottom: var(--space-sm); }
   .fcta-inner p  { color: rgba(255,255,255,0.65); margin-bottom: var(--space-lg); }
-  .fcta-form { width: 100%; }
-  .fcta-fields { display: flex; flex-direction: column; gap: var(--space-xs); }
-  .fcta-fields input { width: 100%; padding: 0.75em 1em; border: 1.5px solid rgba(255,255,255,0.15); border-radius: var(--radius-sm); background: rgba(255,255,255,0.08); color: white; font-family: var(--font-body); font-size: 0.9rem; transition: var(--transition); }
-  .fcta-fields input::placeholder { color: rgba(255,255,255,0.4); }
-  .fcta-fields input:focus { outline: none; border-color: var(--color-accent); background: rgba(255,255,255,0.12); }
-  .fcta-fields .btn { width: 100%; text-align: center; margin-top: var(--space-xs); }
-  .fcta-success { color: #4ade80; font-size: 0.9rem; margin-top: var(--space-md); }
-  .fcta-or { color: rgba(255,255,255,0.4); font-size: 0.82rem; margin-top: var(--space-md); }
-  .fcta-or a { color: rgba(255,255,255,0.6); }
+  .fcta-wa-btn { display: inline-flex; align-items: center; gap: 10px; padding: 0.85em 2em; font-size: 1rem; }
 
   @media (max-width: 1024px) {
     .modules-grid { grid-template-columns: repeat(2,1fr); }

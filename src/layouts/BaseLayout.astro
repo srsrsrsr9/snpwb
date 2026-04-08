@@ -54,40 +54,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site)
     </svg>
   </a>
 
-  <!-- ── Global form handler for all .snap-form elements ── -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.snap-form').forEach(form => {
-        form.addEventListener('submit', async (e) => {
-          e.preventDefault()
-          const btn = form.querySelector('[data-submit-btn]')
-          const fields = form.querySelector('.snap-form-fields')
-          const success = form.querySelector('.snap-form-success')
-          const origText = btn.textContent
-          btn.disabled = true
-          btn.textContent = 'Sending…'
-          try {
-            const res = await fetch('https://api.web3forms.com/submit', {
-              method: 'POST',
-              body: new FormData(form)
-            })
-            if (res.ok) {
-              if (fields) fields.style.display = 'none'
-              if (success) success.removeAttribute('hidden')
-            } else {
-              btn.disabled = false
-              btn.textContent = origText
-            }
-          } catch {
-            btn.disabled = false
-            btn.textContent = origText
-          }
-        })
-      })
-    })
-  </script>
 
-  <style>
+<style>
     .wa-float {
       position: fixed;
       bottom: 1.75rem;
