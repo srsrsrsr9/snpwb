@@ -15,20 +15,24 @@ import Footer from '../components/Footer.astro'
        HERO
   ═══════════════════════════════════════════════ -->
   <section class="cg-hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-orb hero-orb--1"></div>
+      <div class="hero-orb hero-orb--2"></div>
+    </div>
     <div class="container">
       <div class="hero-inner">
         <div class="hero-text">
-          <p class="badge badge--accent">For Colleges &amp; Universities</p>
-          <h1>AI training that doesn't end with a certificate.<br>It ends with <span class="text-primary">better placements.</span></h1>
-          <p class="hero-sub">Placement season doesn't wait for curriculum revisions. Recruiters don't hire based on attendance. And students don't remember the syllabus — they remember the projects they built, the interviews they cracked, and the offers they received.</p>
-          <div class="hero-actions">
+          <p class="badge badge--accent hero-in hero-in--1">For Colleges &amp; Universities</p>
+          <h1 class="hero-in hero-in--2">AI training that doesn't end with a certificate.<br>It ends with <span class="text-primary">better placements.</span></h1>
+          <p class="hero-sub hero-in hero-in--3">Placement season doesn't wait for curriculum revisions. Recruiters don't hire based on attendance. And students don't remember the syllabus — they remember the projects they built, the interviews they cracked, and the offers they received.</p>
+          <div class="hero-actions hero-in hero-in--4">
             <a href="/contact" class="btn btn--primary">Book a Consultation</a>
             <a href="#programs" class="btn btn--outline">See the programs</a>
           </div>
         </div>
 
         <!-- Animated placement-readiness dashboard visual -->
-        <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual hero-in hero-in--3" aria-hidden="true">
           <div class="training-dash">
             <div class="td-topbar">
               <div class="td-logo-dot"></div>
@@ -64,7 +68,7 @@ import Footer from '../components/Footer.astro'
       </div>
 
       <!-- Trusted by strip -->
-      <div class="trusted-strip">
+      <div class="trusted-strip hero-in hero-in--5">
         <span class="trusted-label">Trusted by Institutions &amp; Industry</span>
         <div class="trusted-names">
           <span>Numaligarh Refinery (NRL)</span>
@@ -82,14 +86,14 @@ import Footer from '../components/Footer.astro'
   ═══════════════════════════════════════════════ -->
   <section class="problem section section--tinted">
     <div class="container problem-inner">
-      <div class="problem-text">
+      <div class="problem-text reveal">
         <p class="badge">The Equation</p>
         <h2>Every college is trying to solve the same equation.</h2>
         <p>Better placements improve admissions. Better admissions improve rankings. Better rankings attract stronger students. It's a cycle every institution understands.</p>
         <p>But there's one missing variable: <strong>industry-ready graduates.</strong> Unfortunately, that's also the hardest part to solve for.</p>
         <p>We don't replace your faculty. We strengthen what they're already doing — with current industry expertise, modern tools, practical projects, and instructors who've built AI systems outside the classroom.</p>
       </div>
-      <div class="problem-vs">
+      <div class="problem-vs reveal">
         <div class="vs-col vs-col--bad">
           <h3>What makes it hard</h3>
           <ul>
@@ -120,10 +124,10 @@ import Footer from '../components/Footer.astro'
   ═══════════════════════════════════════════════ -->
   <section class="section">
     <div class="container" style="max-width:760px;text-align:center">
-      <p class="badge">Why Colleges Choose SnapSkill</p>
-      <h2>Lots of companies teach AI.<br>Very few have actually built it.</h2>
-      <p style="margin-top:var(--space-sm)">Fewer still have successfully brought that experience into classrooms. That's the difference.</p>
-      <blockquote class="cg-pull-quote">We're an AI company that also teaches. Not a training company that recently discovered AI.</blockquote>
+      <p class="badge reveal">Why Colleges Choose SnapSkill</p>
+      <h2 class="reveal">Lots of companies teach AI.<br>Very few have actually built it.</h2>
+      <p class="reveal" style="margin-top:var(--space-sm)">Fewer still have successfully brought that experience into classrooms. That's the difference.</p>
+      <blockquote class="cg-pull-quote reveal">We're an AI company that also teaches. Not a training company that recently discovered AI.</blockquote>
     </div>
   </section>
 
@@ -133,13 +137,13 @@ import Footer from '../components/Footer.astro'
   <section class="proof section section--dark">
     <div class="container">
       <div class="proof-grid">
-        <div class="proof-card">
+        <div class="proof-card reveal">
           <p class="badge badge--accent">Earned, Not Given</p>
           <h3 style="color:white">We've earned the trust of paying professionals.</h3>
           <p>Our flagship <strong style="color:white">Data Science Ninja</strong> program wasn't built for captive classrooms — it's a paid program for working professionals who invest their own money because they expect better career opportunities.</p>
           <p>People paying out of pocket don't tolerate outdated content, generic lectures, or theoretical exercises. They expect practical learning, relevance, and results. That's exactly how we teach college students too — recruiters don't lower the bar simply because someone is graduating.</p>
         </div>
-        <div class="proof-card">
+        <div class="proof-card reveal">
           <p class="badge badge--accent">Built in the Field</p>
           <h3 style="color:white">We teach AI because we've built AI.</h3>
           <p>When <strong style="color:white">Numaligarh Refinery (NRL)</strong> partnered with us, they weren't looking for another AI awareness workshop. They needed AI that solved real business problems.</p>
@@ -154,24 +158,24 @@ import Footer from '../components/Footer.astro'
   ═══════════════════════════════════════════════ -->
   <section class="delivered section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <p class="badge">Proven on Campus</p>
         <h2>We've delivered inside real colleges.</h2>
         <p>Different faculty. Different infrastructure. Different expectations. Different student preparedness. Our programs adapt to the college, not the other way around.</p>
       </div>
       <div class="delivered-grid">
-        <div class="delivered-card">
+        <div class="delivered-card reveal">
           <div class="delivered-avatar" aria-hidden="true">RS</div>
           <h3>CVR College of Engineering</h3>
           <p class="delivered-by">Delivered by Dr. Rajitha Somina, Lead AI Research Scientist at SnapSkill.</p>
         </div>
-        <div class="delivered-card">
+        <div class="delivered-card reveal">
           <img src="/pooja.jpeg" alt="Pooja Chaurasia, CEO, SnapSkill" class="delivered-photo" />
           <h3>Lovely Professional University</h3>
           <p class="delivered-by">Delivered by Pooja Chaurasia, CEO, SnapSkill.</p>
         </div>
       </div>
-      <p class="delivered-footer">Different institutions. Same philosophy: teach what industry actually uses.</p>
+      <p class="delivered-footer reveal">Different institutions. Same philosophy: teach what industry actually uses.</p>
     </div>
   </section>
 
@@ -180,7 +184,7 @@ import Footer from '../components/Footer.astro'
   ═══════════════════════════════════════════════ -->
   <section class="programs section section--tinted" id="programs">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <p class="badge">Three Ways We Can Work Together</p>
         <h2>No two colleges have<br>the same challenge.</h2>
         <p>That's why we don't force every institution into the same program. Instead, we solve the problem you're trying to solve.</p>
@@ -219,7 +223,7 @@ import Footer from '../components/Footer.astro'
             fit: 'Faculty upskilling · Accreditation initiatives',
           },
         ].map(p => (
-          <div class="program-card">
+          <div class="program-card reveal">
             <div class="program-header">
               <p class="badge">{p.icon} {p.tag}</p>
               <h3>{p.title}</h3>
@@ -242,7 +246,7 @@ import Footer from '../components/Footer.astro'
       </div>
 
       <!-- Need something different -->
-      <div class="need-different">
+      <div class="need-different reveal">
         <h3>Need something different?</h3>
         <p>Many institutions need something that doesn't fit neatly inside a brochure. That's perfectly fine — neither do most real problems. If your challenge is unique, we'll build a solution around it.</p>
         <div class="chip-row">
@@ -259,11 +263,11 @@ import Footer from '../components/Footer.astro'
   ═══════════════════════════════════════════════ -->
   <section class="compare section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <p class="badge">Why SnapSkill?</p>
         <h2>Not another training vendor.</h2>
       </div>
-      <div class="compare-table-wrap">
+      <div class="compare-table-wrap reveal">
         <table class="compare-table">
           <thead>
             <tr><th>Typical Training Vendor</th><th>SnapSkill</th></tr>
@@ -293,12 +297,12 @@ import Footer from '../components/Footer.astro'
   ═══════════════════════════════════════════════ -->
   <section class="success section section--dark">
     <div class="container">
-      <div class="section-header section-header--light">
+      <div class="section-header section-header--light reveal">
         <p class="badge">What Success Looks Like</p>
         <h2 style="color:white">Imagine your next placement season.</h2>
       </div>
       <div class="success-flow">
-        <div class="success-q">
+        <div class="success-q reveal">
           <span class="success-q-mark">"</span>
           Tell me about a project you're proud of.
         </div>
@@ -311,13 +315,13 @@ import Footer from '../components/Footer.astro'
             'Demonstrates the solution.',
             'Answers follow-up questions confidently.',
           ].map((s, i) => (
-            <div class="success-step">
+            <div class="success-step reveal">
               <span class="success-step-n">{String(i + 1).padStart(2, '0')}</span>
               <span>{s}</span>
             </div>
           ))}
         </div>
-        <p class="success-note">That's a very different interview. And it starts months before the recruiter walks into campus. Not better certificates — better conversations between students and recruiters.</p>
+        <p class="success-note reveal">That's a very different interview. And it starts months before the recruiter walks into campus. Not better certificates — better conversations between students and recruiters.</p>
       </div>
     </div>
   </section>
@@ -327,10 +331,10 @@ import Footer from '../components/Footer.astro'
   ═══════════════════════════════════════════════ -->
   <section class="section">
     <div class="container" style="max-width:680px;text-align:center">
-      <p class="badge">Our Philosophy</p>
-      <h2>Technology changes.<br>Learning doesn't.</h2>
-      <p style="margin-top:var(--space-sm)">People remember what they build. They remember what they solve. And employers hire people who can demonstrate capability, not just completion.</p>
-      <blockquote class="cg-pull-quote">"Will this help a student perform better during an interview?" If the answer is no, it doesn't belong in the program.</blockquote>
+      <p class="badge reveal">Our Philosophy</p>
+      <h2 class="reveal">Technology changes.<br>Learning doesn't.</h2>
+      <p class="reveal" style="margin-top:var(--space-sm)">People remember what they build. They remember what they solve. And employers hire people who can demonstrate capability, not just completion.</p>
+      <blockquote class="cg-pull-quote reveal">"Will this help a student perform better during an interview?" If the answer is no, it doesn't belong in the program.</blockquote>
     </div>
   </section>
 
@@ -339,7 +343,7 @@ import Footer from '../components/Footer.astro'
   ═══════════════════════════════════════════════ -->
   <section class="faq section section--tinted">
     <div class="container" style="max-width:760px">
-      <div class="section-header">
+      <div class="section-header reveal">
         <p class="badge">Frequently Asked Questions</p>
         <h2>Let's answer the practical stuff.</h2>
       </div>
@@ -351,7 +355,7 @@ import Footer from '../components/Footer.astro'
           { q: 'How large can a batch be?', a: "We've successfully delivered programs ranging from small specialized cohorts to large institutional batches. We'll recommend the best delivery model based on your student numbers." },
           { q: 'How quickly can a program begin?', a: 'Depending on scope, programs can often begin within a few weeks. For placement-focused cohorts, we work backwards from your placement calendar.' },
         ].map(item => (
-          <details class="faq-item">
+          <details class="faq-item reveal">
             <summary>{item.q}</summary>
             <p>{item.a}</p>
           </details>
@@ -364,7 +368,7 @@ import Footer from '../components/Footer.astro'
        FINAL CTA
   ═══════════════════════════════════════════════ -->
   <section class="section">
-    <div class="container" style="max-width:640px;text-align:center">
+    <div class="container reveal" style="max-width:640px;text-align:center">
       <h2>Let's solve the right problem.</h2>
       <p style="margin:var(--space-sm) 0 var(--space-lg)">Maybe your priority is improving placements. Maybe it's modernizing the curriculum. Maybe it's preparing faculty for the AI era. Your students only get one placement season each year — let's make sure they're ready when opportunity arrives.</p>
       <div class="final-cta-actions">
@@ -381,6 +385,23 @@ import Footer from '../components/Footer.astro'
   <Footer />
 </BaseLayout>
 
+<script>
+  const revealEls = document.querySelectorAll('.reveal')
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+          io.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' })
+    revealEls.forEach((el) => io.observe(el))
+  } else {
+    revealEls.forEach((el) => el.classList.add('is-visible'))
+  }
+</script>
+
 <style>
   .section { padding: var(--space-2xl) 0; }
   .section--tinted { background: var(--color-surface); }
@@ -391,22 +412,47 @@ import Footer from '../components/Footer.astro'
   .section-header--light p { color: rgba(255,255,255,0.65); }
 
   /* Hero */
-  .cg-hero { padding: var(--space-2xl) 0 var(--space-xl); border-bottom: 1px solid var(--color-border); }
-  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center; }
+  .cg-hero { position: relative; padding: var(--space-2xl) 0 var(--space-xl); border-bottom: 1px solid var(--color-border); overflow: hidden; }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center; position: relative; z-index: 1; }
   .hero-text .badge { margin-bottom: var(--space-md); }
   .hero-text h1 { margin-bottom: var(--space-md); }
   .hero-sub { font-size: 1.05rem; max-width: 480px; margin-bottom: var(--space-lg); }
   .hero-actions { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
 
+  /* Hero background orbs */
+  .hero-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+  .hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); }
+  .hero-orb--1 { width: 460px; height: 460px; background: rgba(0,123,255,0.09); top: -160px; right: -100px; animation: orbFloat 10s ease-in-out infinite; }
+  .hero-orb--2 { width: 320px; height: 320px; background: rgba(255,195,0,0.12); bottom: -120px; left: -80px; animation: orbFloat 13s ease-in-out infinite reverse; }
+  @keyframes orbFloat {
+    0%, 100% { transform: translate(0,0); }
+    50%       { transform: translate(18px,-22px); }
+  }
+
+  /* Hero staggered entrance */
+  .hero-in { opacity: 0; animation: heroFadeUp 0.7s ease both; }
+  .hero-in--1 { animation-delay: 0.05s; }
+  .hero-in--2 { animation-delay: 0.16s; }
+  .hero-in--3 { animation-delay: 0.3s; }
+  .hero-in--4 { animation-delay: 0.44s; }
+  .hero-in--5 { animation-delay: 0.6s; }
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
   /* Trusted-by strip */
-  .trusted-strip { margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
+  .trusted-strip { margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; position: relative; z-index: 1; }
   .trusted-label { font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-body); flex-shrink: 0; }
   .trusted-names { display: flex; align-items: center; gap: var(--space-sm); flex-wrap: wrap; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 600; color: var(--color-dark); }
+  .trusted-names span:not(.trusted-dot) { transition: color 0.2s ease; }
+  .trusted-names span:not(.trusted-dot):hover { color: var(--color-primary); }
   .trusted-dot { color: var(--color-accent); }
 
-  /* Placement dashboard visual (same pattern as corporate-training) */
-  .training-dash { background: #0d1117; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.3); animation: dashIn 0.7s ease 0.3s both; }
-  @keyframes dashIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+  /* Placement dashboard visual (same pattern as corporate-training, plus a gentle float) */
+  .hero-visual { animation-name: heroFadeUp, dashFloat; animation-duration: 0.7s, 5.5s; animation-delay: 0.3s, 1.4s; animation-timing-function: ease, ease-in-out; animation-iteration-count: 1, infinite; animation-fill-mode: both, none; }
+  @keyframes dashFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+  .training-dash { background: #0d1117; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
   .td-topbar { background: #161b22; padding: 10px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .td-logo-dot { width: 18px; height: 18px; border-radius: 5px; background: var(--color-primary); flex-shrink: 0; }
   .td-title { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.7); flex: 1; }
@@ -540,6 +586,43 @@ import Footer from '../components/Footer.astro'
   /* Final CTA */
   .final-cta-actions { display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
   .cg-wa-btn { display: inline-flex; align-items: center; gap: 8px; }
+
+  /* ─── Scroll reveal ─────────────────────────── */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .hero-in { animation: none; opacity: 1; }
+    .hero-visual { animation: none; }
+    .hero-orb { animation: none; }
+  }
+
+  /* Stagger children within grids/lists as they reveal */
+  .proof-grid .reveal:nth-child(2)      { transition-delay: 0.12s; }
+  .delivered-grid .reveal:nth-child(2)  { transition-delay: 0.12s; }
+  .programs-grid .reveal:nth-child(2)   { transition-delay: 0.1s; }
+  .programs-grid .reveal:nth-child(3)   { transition-delay: 0.2s; }
+  .success-steps .reveal:nth-child(2)   { transition-delay: 0.08s; }
+  .success-steps .reveal:nth-child(3)   { transition-delay: 0.16s; }
+  .success-steps .reveal:nth-child(4)   { transition-delay: 0.24s; }
+  .success-steps .reveal:nth-child(5)   { transition-delay: 0.32s; }
+  .success-steps .reveal:nth-child(6)   { transition-delay: 0.4s; }
+  .faq-list .reveal:nth-child(2)        { transition-delay: 0.06s; }
+  .faq-list .reveal:nth-child(3)        { transition-delay: 0.12s; }
+  .faq-list .reveal:nth-child(4)        { transition-delay: 0.18s; }
+  .faq-list .reveal:nth-child(5)        { transition-delay: 0.24s; }
+
+  /* Chip hover */
+  .chip { transition: var(--transition); }
+  .chip:hover { background: var(--color-primary); color: white; border-color: var(--color-primary); transform: translateY(-2px); }
+
+  /* FAQ marker rotate + answer fade-in */
+  .faq-item summary::after { transition: transform 0.25s ease; display: inline-block; }
+  .faq-item[open] summary::after { content: '+'; transform: rotate(45deg); }
+  .faq-item[open] p { animation: faqFadeIn 0.3s ease; }
+  @keyframes faqFadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+  .faq-item { transition: box-shadow 0.25s ease, transform 0.65s ease, opacity 0.65s ease; }
+  .faq-item:hover { box-shadow: var(--shadow-sm); }
 
   @media (max-width: 960px) {
     .hero-inner      { grid-template-columns: 1fr; }
