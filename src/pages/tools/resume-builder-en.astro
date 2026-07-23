@@ -1,0 +1,787 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Nav from '../../components/Nav.astro'
+import Footer from '../../components/Footer.astro'
+---
+
+<BaseLayout
+  title="Resume Builder (English)"
+  description="Fill it with drama, walk out with a résumé that slaps. SnapSkill's free Resume Builder for college placements."
+  fonts={["https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,500&display=swap"]}
+>
+  <Nav />
+  <main>
+
+<div class="wrap">
+  <p class="lang-toggle"><a href="/tools/resume-builder">Hinglish version →</a></p>
+
+<section class="hero">
+    <span class="kicker">College placement season, but make it fun ✍️</span>
+    <h1 class="title">Fill it with <span>drama.</span><br>Walk out with a résumé that slaps.</h1>
+    <p class="sub">Six quick, painless steps. Answer like you're texting a friend — we'll turn it into a résumé that reads like you hired a consultant.</p>
+  </section>
+
+  <div class="steps-strip" id="stepsStrip"></div>
+
+  <div class="builder">
+    <div class="panel" id="formPanel">
+      <span class="tag" id="stepTag">Step 1</span>
+      <div class="coach">
+        <div class="avatar">🙋</div>
+        <div class="bubble" id="coachLine">Right, let's start with the basics — who's this legend we're building a résumé for?</div>
+      </div>
+      <button class="lesson-toggle no-print" id="lessonToggle">🎓 <span id="lessonToggleText">60-second lesson</span> <span class="arrow">▾</span></button>
+      <div class="lesson-box" id="lessonBox"></div>
+      <div id="stepBody"></div>
+      <div class="nav-row">
+        <button class="btn ghost" id="backBtn">← Back</button>
+        <button class="btn primary" id="nextBtn">Next →</button>
+      </div>
+    </div>
+
+    <div class="preview-wrap">
+      <div class="preview-frame">
+        <div class="fake-toolbar"><span></span><span></span><span></span></div>
+        <div class="tpl-picker" id="tplPicker"></div>
+        <p class="tpl-hint">Picked Modern or Bold? Tick "Background graphics" in the print dialog to keep the colour.</p>
+        <div class="resume-paper" id="resumePaper"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="finale" id="finale" style="display:none;">
+    <div class="burst">SNAP! 🎉</div>
+    <p>Your résumé is ready to make an HR inbox very happy. Download it, print it, or take a screenshot for the group chat. It's 100% yours — no logos, no watermarks, nobody likes an ad on their résumé.</p>
+    <div class="finale-actions">
+      <button class="btn primary" id="downloadBtn">⬇ Download as PDF</button>
+      <button class="btn ghost" id="editAgainBtn">✎ Edit again</button>
+    </div>
+    <div class="share-love no-print">
+      <p>💛 If this saved you some pain, don't thank us — tell a friend who's stressing about placements too.</p>
+      <div class="share-row">
+        <a class="share-btn wa" id="waShareBtn" href="#" target="_blank" rel="noopener">📲 Share on WhatsApp</a>
+        <button class="share-btn" id="copyLinkBtn">🔗 Copy link</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style is:global>
+
+  :root{
+    --ink:#12163B;
+    --sun:#FFC93C;
+    --coral:#FF5D5D;
+    --mint:#4FD8A8;
+    --cream:#FFF8ED;
+    --charcoal:#1F2430;
+    --line:#E7E1D2;
+    --shadow: 6px 6px 0 var(--ink);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image: radial-gradient(var(--ink) 1px, transparent 1px);
+    background-size: 18px 18px;
+    opacity:0.05;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px;position:relative;z-index:1;}
+
+  /* HEADER */
+  header.site{padding:22px 0 10px;}
+  .brandrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.3rem;color:var(--ink);text-decoration:none;}
+  .brand .dot{width:12px;height:12px;background:var(--coral);border-radius:50%;display:inline-block;}
+  .backlink{font-size:0.85rem;font-weight:600;color:var(--ink);opacity:0.7;text-decoration:none;border-bottom:2px solid var(--ink);}
+  .backlink:hover{opacity:1;}
+
+  .hero{padding:26px 0 18px;}
+  .kicker{display:inline-block;font-family:'Caveat',cursive;font-size:1.5rem;color:var(--coral);transform:rotate(-2deg);margin-bottom:2px;}
+  h1.title{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;margin:0 0 10px;color:var(--ink);}
+  h1.title span{background:linear-gradient(180deg,transparent 60%, var(--sun) 60%);padding:0 4px;}
+  .sub{font-size:1.05rem;max-width:640px;color:#43485c;margin:0 0 6px;}
+
+  /* PROGRESS COMIC STRIP */
+  .steps-strip{display:flex;gap:8px;margin:22px 0 6px;overflow-x:auto;padding-bottom:6px;}
+  .step-chip{
+    flex:0 0 auto; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:0.85rem;
+    padding:8px 14px; border-radius:999px; border:2px solid var(--ink); background:#fff;
+    color:var(--ink); opacity:0.45; white-space:nowrap; transition:all .2s ease;
+  }
+  .step-chip.active{opacity:1; background:var(--sun); box-shadow:3px 3px 0 var(--ink);}
+  .step-chip.done{opacity:0.85; background:var(--mint); }
+
+  /* LAYOUT */
+  .builder{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;margin-top:18px;align-items:start;}
+  @media (max-width:920px){ .builder{grid-template-columns:1fr;} }
+
+  .panel{
+    background:#fff;border:2.5px solid var(--ink);border-radius:18px;
+    box-shadow:var(--shadow); padding:26px 26px 22px; position:relative;
+  }
+  .panel .tag{
+    position:absolute; top:-16px; left:22px; background:var(--coral); color:#fff;
+    font-family:'Baloo 2',sans-serif; font-weight:700; font-size:0.8rem;
+    padding:5px 14px; border-radius:999px; border:2px solid var(--ink);
+  }
+  .coach{display:flex; gap:12px; align-items:flex-start; margin:14px 0 20px;}
+  .coach .bubble{
+    background:var(--cream); border:2px solid var(--ink); border-radius:14px 14px 14px 2px;
+    padding:10px 14px; font-family:'Caveat',cursive; font-size:1.2rem; line-height:1.25; color:var(--ink);
+  }
+  .coach .avatar{
+    flex:0 0 auto; width:42px;height:42px;border-radius:50%; background:var(--sun);
+    border:2px solid var(--ink); display:flex;align-items:center;justify-content:center; font-size:1.3rem;
+  }
+
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-weight:700; font-size:0.85rem; margin-bottom:6px; color:var(--ink);}
+  .field .hint{font-weight:400; font-size:0.78rem; color:#7a7f95; margin-left:6px;}
+  input[type=text],input[type=email],input[type=tel],input[type=url],textarea,select{
+    width:100%; padding:10px 12px; border:2px solid var(--line); border-radius:10px;
+    font-family:'Inter',sans-serif; font-size:0.95rem; background:#fffdf8; color:var(--charcoal);
+    transition:border-color .15s ease;
+  }
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--coral);}
+  textarea{resize:vertical;min-height:70px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:520px){.row2{grid-template-columns:1fr;}}
+
+  .repeat-block{border:2px dashed var(--line); border-radius:12px; padding:16px; margin-bottom:14px; position:relative;}
+  .repeat-block .rm{
+    position:absolute; top:8px; right:8px; background:none; border:none; color:var(--coral);
+    font-weight:800; cursor:pointer; font-size:1rem;
+  }
+  .add-btn{
+    background:#fff; border:2px dashed var(--ink); border-radius:10px; padding:10px 16px;
+    font-family:'Baloo 2',sans-serif; font-weight:700; color:var(--ink); cursor:pointer; width:100%;
+  }
+  .add-btn:hover{background:var(--mint);}
+
+  .skillchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .chip{
+    background:var(--cream); border:2px solid var(--ink); border-radius:999px; padding:5px 12px;
+    font-size:0.85rem; font-weight:600; display:flex; align-items:center; gap:6px;
+  }
+  .chip button{border:none;background:none;color:var(--coral);font-weight:800;cursor:pointer;font-size:0.9rem;}
+
+  .nav-row{display:flex; justify-content:space-between; margin-top:22px; gap:10px;}
+  button.btn{
+    font-family:'Baloo 2',sans-serif; font-weight:700; font-size:0.95rem; cursor:pointer;
+    border:2.5px solid var(--ink); border-radius:12px; padding:11px 22px; background:#fff; color:var(--ink);
+    box-shadow:4px 4px 0 var(--ink); transition:transform .1s ease;
+  }
+  button.btn:active{transform:translate(2px,2px); box-shadow:2px 2px 0 var(--ink);}
+  button.btn.primary{background:var(--coral); color:#fff;}
+  button.btn.gold{background:var(--sun); color:var(--ink);}
+  button.btn.ghost{background:none; box-shadow:none;}
+  button.btn:disabled{opacity:0.35; cursor:not-allowed; box-shadow:none;}
+
+  /* LIVE PREVIEW (playful frame, professional inside) */
+  .preview-wrap{position:sticky; top:20px;}
+  .preview-frame{
+    background:var(--ink); border-radius:18px; padding:16px; box-shadow:var(--shadow);
+  }
+  .preview-frame .fake-toolbar{display:flex; gap:6px; margin-bottom:10px; padding-left:4px;}
+  .fake-toolbar span{width:10px;height:10px;border-radius:50%;}
+  .fake-toolbar span:nth-child(1){background:var(--coral);}
+  .fake-toolbar span:nth-child(2){background:var(--sun);}
+  .fake-toolbar span:nth-child(3){background:var(--mint);}
+  /* TEMPLATE PICKER */
+  .tpl-picker{display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap;}
+  .tpl-btn{
+    background:#1c2050; color:#fff; border:2px solid #2a2f66; border-radius:8px; padding:7px 12px;
+    font-family:'Baloo 2',sans-serif; font-size:0.72rem; font-weight:700; cursor:pointer;
+    display:flex; align-items:center; gap:6px;
+  }
+  .tpl-btn.active{background:var(--sun); color:var(--ink); border-color:var(--sun);}
+  .tpl-swatch{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  .tpl-hint{color:#aab0d0; font-size:0.68rem; margin:0 0 10px;}
+
+  .resume-paper{
+    background:#fff; border-radius:8px; min-height:520px; overflow:hidden; color:#1c1c1c;
+  }
+  .r-contact span{margin-right:10px;}
+  .r-item{margin-bottom:10px;}
+  .r-item-top{display:flex; justify-content:space-between; font-weight:600; font-size:0.85rem;}
+  .r-item-sub{font-size:0.78rem; font-style:italic; color:#555; margin-bottom:3px;}
+  .r-item ul{margin:4px 0 0; padding-left:18px;}
+  .r-item li{margin-bottom:2px;}
+  .r-skills{display:flex; flex-wrap:wrap; gap:6px 14px; font-size:0.8rem;}
+  .placeholder-muted{color:#b7b7b7; font-style:italic;}
+
+  /* Template: Classic */
+  .tpl-classic{font-family:'Lora',serif; font-size:0.82rem; line-height:1.5; padding:34px 32px;}
+  .tpl-classic .r-name{font-family:'Lora',serif; font-weight:600; font-size:1.5rem; margin:0 0 2px; color:#111;}
+  .tpl-classic .r-role{font-size:0.85rem; color:var(--coral); font-weight:600; margin-bottom:8px;}
+  .tpl-classic .r-contact{font-size:0.75rem; color:#555; margin-bottom:16px;}
+  .tpl-classic .r-section-title{
+    font-family:'Inter',sans-serif; font-weight:700; font-size:0.72rem; letter-spacing:1.5px;
+    text-transform:uppercase; color:#111; border-bottom:1.5px solid #111; padding-bottom:3px; margin:16px 0 8px;
+  }
+
+  /* Template: Compact */
+  .tpl-compact{font-family:'Inter',sans-serif; font-size:0.76rem; line-height:1.42; padding:26px 28px;}
+  .tpl-compact .r-name{font-family:'Inter',sans-serif; font-weight:800; font-size:1.25rem; margin:0 0 1px; color:#111; text-transform:uppercase; letter-spacing:0.5px;}
+  .tpl-compact .r-role{font-size:0.8rem; color:var(--coral); font-weight:700; margin-bottom:6px;}
+  .tpl-compact .r-contact{font-size:0.7rem; color:#555; margin-bottom:12px;}
+  .tpl-compact .r-section-title{
+    font-family:'Inter',sans-serif; font-weight:800; font-size:0.66rem; letter-spacing:1.2px;
+    text-transform:uppercase; color:var(--ink); border-bottom:2px solid var(--ink); padding-bottom:2px; margin:12px 0 6px;
+  }
+  .tpl-compact .r-item{margin-bottom:6px;}
+
+  /* Template: Bold Header */
+  .tpl-bold{font-family:'Inter',sans-serif; font-size:0.82rem; line-height:1.5;}
+  .tpl-bold .r-header{
+    background:var(--ink); color:#fff; padding:26px 30px 20px;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .tpl-bold .r-name{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1.7rem; margin:0 0 2px; color:#fff;}
+  .tpl-bold .r-role{font-size:0.85rem; color:var(--sun); font-weight:700; margin-bottom:8px;}
+  .tpl-bold .r-contact{font-size:0.75rem; color:#dfe1f2;}
+  .tpl-bold .r-body{padding:22px 30px 30px;}
+  .tpl-bold .r-section-title{
+    font-family:'Inter',sans-serif; font-weight:800; font-size:0.72rem; letter-spacing:1.2px;
+    text-transform:uppercase; color:var(--ink); border-bottom:none; border-left:4px solid var(--coral);
+    padding:2px 0 2px 10px; margin:16px 0 8px;
+  }
+
+  /* Template: Modern Sidebar */
+  .tpl-modern{
+    display:grid; grid-template-columns:36% 64%; font-family:'Inter',sans-serif; font-size:0.8rem; line-height:1.48; min-height:520px;
+  }
+  .tpl-modern .r-sidebar{
+    background:var(--ink); color:#fff; padding:26px 20px;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .tpl-modern .r-main{padding:26px 24px;}
+  .tpl-modern .r-name{font-family:'Baloo 2',sans-serif; font-weight:700; font-size:1.25rem; margin:0 0 2px; color:#fff;}
+  .tpl-modern .r-role{font-size:0.78rem; color:var(--sun); font-weight:700; margin-bottom:14px;}
+  .tpl-modern .r-sidebar .r-contact{display:block; font-size:0.7rem; color:#c9cce3; margin-bottom:6px;}
+  .tpl-modern .r-sidebar .r-contact span{display:block; margin-right:0; margin-bottom:6px;}
+  .tpl-modern .r-sidebar .r-section-title{
+    font-family:'Inter',sans-serif; font-weight:800; font-size:0.66rem; letter-spacing:1.2px;
+    text-transform:uppercase; color:var(--sun); border-bottom:1px solid rgba(255,255,255,0.25); padding-bottom:3px; margin:18px 0 8px;
+  }
+  .tpl-modern .r-sidebar .r-item-sub{color:#c9cce3;}
+  .tpl-modern .r-sidebar .r-skills{gap:4px 0; flex-direction:column; font-size:0.75rem;}
+  .tpl-modern .r-main .r-section-title{
+    font-family:'Inter',sans-serif; font-weight:800; font-size:0.7rem; letter-spacing:1.2px;
+    text-transform:uppercase; color:var(--ink); border-bottom:1.5px solid var(--ink); padding-bottom:3px; margin:16px 0 8px;
+  }
+  .tpl-modern .r-main .r-section-title:first-child{margin-top:0;}
+
+  /* FINALE */
+  .finale{text-align:center; padding:50px 0 70px;}
+  .burst{
+    font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(2.2rem,6vw,4rem);
+    color:var(--ink); display:inline-block; transform:rotate(-2deg);
+    background:var(--sun); padding:6px 26px; border:3px solid var(--ink); border-radius:14px;
+    box-shadow:var(--shadow); margin-bottom:18px;
+  }
+  .finale p{max-width:520px;margin:0 auto 26px;color:#43485c;}
+  .finale-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+
+  /* QUICK LESSON */
+  .lesson-toggle{
+    display:inline-flex; align-items:center; gap:8px; background:var(--mint); color:var(--ink);
+    border:2px solid var(--ink); border-radius:999px; padding:7px 16px; font-family:'Baloo 2',sans-serif;
+    font-weight:700; font-size:0.85rem; cursor:pointer; margin-bottom:14px;
+  }
+  .lesson-toggle .arrow{transition:transform .2s ease;}
+  .lesson-toggle.open .arrow{transform:rotate(180deg);}
+  .lesson-box{
+    display:none; background:var(--cream); border:2px dashed var(--ink); border-radius:12px;
+    padding:16px 18px; margin:-6px 0 18px; font-size:0.9rem; line-height:1.5;
+  }
+  .lesson-box.open{display:block;}
+  .lesson-box h4{margin:0 0 8px; font-family:'Baloo 2',sans-serif; color:var(--coral); font-size:1rem;}
+  .lesson-box ul{margin:8px 0 0; padding-left:20px;}
+  .lesson-box li{margin-bottom:6px;}
+  .lesson-box .swap{background:#fff; border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:0.85rem;}
+  .lesson-box .swap .bad{color:#b03030; text-decoration:line-through; display:block;}
+  .lesson-box .swap .good{color:#1c8a5f; font-weight:600; display:block; margin-top:4px;}
+
+  /* SHARE THE LOVE */
+  .share-love{
+    background:#fff; border:2.5px solid var(--ink); border-radius:16px; padding:18px 22px;
+    max-width:480px; margin:26px auto 0; box-shadow:4px 4px 0 var(--ink); text-align:center;
+  }
+  .share-love p{margin:0 0 12px; font-size:0.92rem; color:#43485c;}
+  .share-love .share-row{display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
+  .share-btn{
+    font-family:'Baloo 2',sans-serif; font-weight:700; font-size:0.85rem; cursor:pointer;
+    border:2px solid var(--ink); border-radius:10px; padding:8px 16px; background:var(--sun); color:var(--ink);
+    text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  }
+  .share-btn.wa{background:#25D366; color:#0b3b1e;}
+
+  footer.site{text-align:center; padding:40px 0 30px; font-size:0.82rem; color:#8a8f9f;}
+
+  @media print{
+    body::before{display:none;}
+    header.site,.hero,.steps-strip,.builder > div:first-child, .finale, footer.site, .no-print, .tpl-picker, .tpl-hint, .fake-toolbar{display:none !important;}
+    .preview-frame{background:none;box-shadow:none;padding:0;border-radius:0;}
+    .resume-paper{box-shadow:none; min-height:0;}
+    .builder{display:block;}
+    .preview-wrap{position:static;}
+  }
+
+
+  .lang-toggle {
+    text-align: right;
+    margin: 0 0 -6px;
+  }
+  .lang-toggle a {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--coral);
+    text-decoration: none;
+    border-bottom: 2px solid var(--coral);
+  }
+  .lang-toggle a:hover { opacity: 0.75; }
+  @media print { .lang-toggle { display: none !important; } }
+</style>
+
+<script is:inline>
+
+(function(){
+  const state = {
+    name:"", role:"", email:"", phone:"", location:"", linkedin:"",
+    summary:"",
+    experience:[{title:"",company:"",dates:"",bullets:""}],
+    education:[{degree:"",school:"",dates:"",detail:""}],
+    skills:[],
+    extras:"",
+    template:"classic"
+  };
+
+  const templates = [
+    {id:'classic', label:'Classic', swatch:'#12163B'},
+    {id:'modern', label:'Modern Sidebar', swatch:'#12163B'},
+    {id:'compact', label:'Compact', swatch:'#4FD8A8'},
+    {id:'bold', label:'Bold Header', swatch:'#FF5D5D'}
+  ];
+
+  const steps = ["Basics","Your Story","Experience & Projects","Education","Skills","Extras"];
+  let current = 0;
+
+  const coachLines = [
+    "Right, let's start with the basics — who's this legend we're building a résumé for?",
+    "Time for a little drama — sell yourself in 2-3 lines. Pretend you're the trailer, not the whole movie.",
+    "No internship? Doesn't matter. Projects, fest committees, part-time gigs — HR just wants proof you can get things done.",
+    "Degrees, colleges, CGPA if it's a flex-worthy number. Keep it crisp.",
+    "Skills round! Type one, hit enter, repeat. No skill too small (except maybe 'good at memes').",
+    "Almost there! Certifications, projects, languages, hobbies that don't sound generic — your call."
+  ];
+
+  const lessons = [
+    {
+      title:"Your name is the headline",
+      body:`<p>Recruiters spend about 6-7 seconds on a fresh résumé before deciding to read on. Your name and target role are the first thing they see — so skip "Curriculum Vitae" as a title, it wastes the best real estate on the page.</p>
+        <div class="swap"><span class="bad">Curriculum Vitae — Personal Details</span><span class="good">Priya Sharma — Data Analyst</span></div>`
+    },
+    {
+      title:"The one-line formula",
+      body:`<p>A good summary is: <strong>who you are + what you're good at + one proof point.</strong> Skip "hardworking and dedicated" — literally every résumé on Earth says that.</p>
+        <div class="swap"><span class="bad">Hardworking and dedicated fresher looking for opportunities.</span><span class="good">Final-year CS student who turns messy data into decisions — built 3 dashboards used by 40+ classmates.</span></div>`
+    },
+    {
+      title:"No internship? These still count",
+      body:`<p>Freshers panic here, but HR knows most freshers don't have "real" jobs yet. Anything where you owned an outcome counts: college projects, hackathons, fest committees, part-time or freelance work, a personal app or blog, even organizing a study group.</p>
+        <p><strong>Bullet formula:</strong> Action verb + what you did + result or number.</p>
+        <div class="swap"><span class="bad">Made Instagram posts for college fest</span><span class="good">Designed and published 12 Instagram posts for the annual college fest, growing the event page by 30% in two weeks</span></div>`
+    },
+    {
+      title:"CGPA is optional, not mandatory",
+      body:`<p>Include your CGPA only if it's genuinely strong for your college (usually 7.5+/10 or 75%+). If it's lower, just list the degree and dates — let your projects and skills carry the weight instead.</p>`
+    },
+    {
+      title:"List skills you can defend",
+      body:`<p>Only add a skill if you can survive a follow-up question about it in an interview. A short, honest list beats a long list that falls apart under one question.</p>
+        <div class="swap"><span class="bad">Python, Machine Learning, AI, Blockchain, Cloud Computing</span><span class="good">Python, Excel, SQL basics, Canva</span></div>`
+    },
+    {
+      title:"One real detail beats three generic ones",
+      body:`<p>"Reading" and "traveling" say nothing about you. A specific, slightly odd detail is memorable and often becomes the interviewer's icebreaker question.</p>
+        <div class="swap"><span class="bad">Hobbies: Reading, Music, Traveling</span><span class="good">Write a monthly newsletter on personal finance for 400 subscribers</span></div>`
+    }
+  ];
+
+  function renderStrip(){
+    const strip = document.getElementById('stepsStrip');
+    strip.innerHTML = steps.map((s,i)=>{
+      let cls = 'step-chip';
+      if(i===current) cls += ' active';
+      else if(i<current) cls += ' done';
+      return `<div class="${cls}">${i+1}. ${s}</div>`;
+    }).join('');
+  }
+
+  function esc(s){
+    return (s||"").replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+  }
+
+  function stepBasics(){
+    return `
+      <div class="row2">
+        <div class="field"><label>Full name</label><input type="text" id="f_name" value="${esc(state.name)}" placeholder="e.g. Priya Sharma"></div>
+        <div class="field"><label>Target role <span class="hint">what you're applying for</span></label><input type="text" id="f_role" value="${esc(state.role)}" placeholder="e.g. Data Analyst"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Email</label><input type="email" id="f_email" value="${esc(state.email)}" placeholder="you@example.com"></div>
+        <div class="field"><label>Phone</label><input type="tel" id="f_phone" value="${esc(state.phone)}" placeholder="+91 90000 00000"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Location</label><input type="text" id="f_location" value="${esc(state.location)}" placeholder="e.g. Hyderabad, India"></div>
+        <div class="field"><label>LinkedIn / portfolio <span class="hint">optional</span></label><input type="text" id="f_linkedin" value="${esc(state.linkedin)}" placeholder="linkedin.com/in/you"></div>
+      </div>
+    `;
+  }
+
+  function stepSummary(){
+    return `
+      <div class="field">
+        <label>Your 2-3 line trailer</label>
+        <textarea id="f_summary" rows="4" placeholder="e.g. Final-year CS student who turns messy spreadsheets into decisions people actually act on. Built 3 dashboards that saved a club committee from an Excel meltdown.">${esc(state.summary)}</textarea>
+      </div>
+    `;
+  }
+
+  function stepExperience(){
+    return `
+      <p style="font-size:0.85rem;color:#6a6f84;margin:-8px 0 16px;">No internship yet? No drama — this section is also for projects, freelance gigs, fest committees, part-time work, or anything you led. Open the lesson above for the exact formula.</p>
+      <div id="expList">
+        ${state.experience.map((e,i)=>`
+          <div class="repeat-block" data-idx="${i}">
+            ${state.experience.length>1?'<button class="rm" data-remove="exp" data-idx="'+i+'">✕</button>':''}
+            <div class="row2">
+              <div class="field"><label>Role / title</label><input type="text" data-exp="title" data-idx="${i}" value="${esc(e.title)}" placeholder="e.g. Marketing Intern / Project Lead / Fest Volunteer"></div>
+              <div class="field"><label>Company / project / event</label><input type="text" data-exp="company" data-idx="${i}" value="${esc(e.company)}" placeholder="e.g. BrightAds Pvt Ltd / College Tech Fest"></div>
+            </div>
+            <div class="field"><label>Dates</label><input type="text" data-exp="dates" data-idx="${i}" value="${esc(e.dates)}" placeholder="e.g. May 2025 – Jul 2025"></div>
+            <div class="field"><label>What you actually did <span class="hint">one per line, start with a verb, add a number if you can</span></label>
+              <textarea data-exp="bullets" data-idx="${i}" rows="3" placeholder="Built a 3-member team to run 4 Instagram campaigns, grew followers by 22%&#10;Managed a ₹15,000 budget for the fest's food stalls">${esc(e.bullets)}</textarea>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      <button class="add-btn" id="addExp">+ Add another role or project</button>
+    `;
+  }
+
+  function stepEducation(){
+    return `
+      <div id="eduList">
+        ${state.education.map((e,i)=>`
+          <div class="repeat-block" data-idx="${i}">
+            ${state.education.length>1?'<button class="rm" data-remove="edu" data-idx="'+i+'">✕</button>':''}
+            <div class="row2">
+              <div class="field"><label>Degree</label><input type="text" data-edu="degree" data-idx="${i}" value="${esc(e.degree)}" placeholder="e.g. B.Tech, Computer Science"></div>
+              <div class="field"><label>School / college</label><input type="text" data-edu="school" data-idx="${i}" value="${esc(e.school)}" placeholder="e.g. CVR College of Engineering"></div>
+            </div>
+            <div class="row2">
+              <div class="field"><label>Dates</label><input type="text" data-edu="dates" data-idx="${i}" value="${esc(e.dates)}" placeholder="e.g. 2022 – 2026"></div>
+              <div class="field"><label>CGPA / detail <span class="hint">optional</span></label><input type="text" data-edu="detail" data-idx="${i}" value="${esc(e.detail)}" placeholder="e.g. CGPA 8.7/10"></div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      <button class="add-btn" id="addEdu">+ Add another qualification</button>
+    `;
+  }
+
+  function stepSkills(){
+    return `
+      <div class="field">
+        <label>Skills <span class="hint">type one, press Enter</span></label>
+        <input type="text" id="f_skillInput" placeholder="e.g. Excel, Python, Canva, Public Speaking...">
+        <div class="skillchips" id="skillChips">
+          ${state.skills.map((s,i)=>`<div class="chip">${esc(s)}<button data-rmskill="${i}">✕</button></div>`).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  function stepExtras(){
+    return `
+      <div class="field">
+        <label>Certifications, projects, languages, hobbies <span class="hint">one per line</span></label>
+        <textarea id="f_extras" rows="5" placeholder="Google Data Analytics Certificate, 2025&#10;Built a placement-prep app used by 200+ classmates&#10;Fluent in Telugu, Hindi, English&#10;Badminton state-level player">${esc(state.extras)}</textarea>
+      </div>
+    `;
+  }
+
+  const stepRenderers = [stepBasics, stepSummary, stepExperience, stepEducation, stepSkills, stepExtras];
+
+  function bindStepEvents(){
+    if(current===0){
+      ['name','role','email','phone','location','linkedin'].forEach(k=>{
+        const el = document.getElementById('f_'+k);
+        el.addEventListener('input', ()=>{ state[k]=el.value; renderPreview(); });
+      });
+    }
+    if(current===1){
+      const el = document.getElementById('f_summary');
+      el.addEventListener('input', ()=>{ state.summary = el.value; renderPreview(); });
+    }
+    if(current===2){
+      document.querySelectorAll('[data-exp]').forEach(el=>{
+        el.addEventListener('input', ()=>{
+          const idx = +el.dataset.idx, key = el.dataset.exp;
+          state.experience[idx][key] = el.value;
+          renderPreview();
+        });
+      });
+      document.querySelectorAll('[data-remove="exp"]').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          state.experience.splice(+btn.dataset.idx,1);
+          renderStep();
+        });
+      });
+      document.getElementById('addExp').addEventListener('click', ()=>{
+        state.experience.push({title:"",company:"",dates:"",bullets:""});
+        renderStep();
+      });
+    }
+    if(current===3){
+      document.querySelectorAll('[data-edu]').forEach(el=>{
+        el.addEventListener('input', ()=>{
+          const idx = +el.dataset.idx, key = el.dataset.edu;
+          state.education[idx][key] = el.value;
+          renderPreview();
+        });
+      });
+      document.querySelectorAll('[data-remove="edu"]').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          state.education.splice(+btn.dataset.idx,1);
+          renderStep();
+        });
+      });
+      document.getElementById('addEdu').addEventListener('click', ()=>{
+        state.education.push({degree:"",school:"",dates:"",detail:""});
+        renderStep();
+      });
+    }
+    if(current===4){
+      const input = document.getElementById('f_skillInput');
+      input.addEventListener('keydown', (e)=>{
+        if(e.key==='Enter' && input.value.trim()){
+          e.preventDefault();
+          state.skills.push(input.value.trim());
+          input.value='';
+          renderStep();
+        }
+      });
+      document.querySelectorAll('[data-rmskill]').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          state.skills.splice(+btn.dataset.rmskill,1);
+          renderStep();
+        });
+      });
+    }
+    if(current===5){
+      const el = document.getElementById('f_extras');
+      el.addEventListener('input', ()=>{ state.extras = el.value; renderPreview(); });
+    }
+  }
+
+  function renderStep(){
+    document.getElementById('stepTag').textContent = 'Step '+(current+1);
+    document.getElementById('coachLine').textContent = coachLines[current];
+    document.getElementById('stepBody').innerHTML = stepRenderers[current]();
+    document.getElementById('backBtn').disabled = (current===0);
+    document.getElementById('nextBtn').textContent = (current===steps.length-1) ? "Reveal my résumé ✨" : "Next →";
+    renderStrip();
+    bindStepEvents();
+    renderPreview();
+
+    const lesson = lessons[current];
+    document.getElementById('lessonToggleText').textContent = lesson.title;
+    document.getElementById('lessonBox').innerHTML = `<h4>🎓 ${lesson.title}</h4>${lesson.body}`;
+    document.getElementById('lessonBox').classList.add('open');
+    document.getElementById('lessonToggle').classList.add('open');
+  }
+
+  document.getElementById('lessonToggle').addEventListener('click', ()=>{
+    document.getElementById('lessonBox').classList.toggle('open');
+    document.getElementById('lessonToggle').classList.toggle('open');
+  });
+
+  function bulletsToLi(text){
+    return (text||"").split("\n").map(l=>l.trim()).filter(Boolean).map(l=>`<li>${esc(l)}</li>`).join('');
+  }
+
+  function summaryBlock(){
+    return state.summary ? `<div class="r-section-title">Profile</div><div class="r-item">${esc(state.summary)}</div>` : '';
+  }
+
+  function experienceBlock(){
+    const exp = state.experience.filter(e=>e.title||e.company||e.bullets);
+    if(!exp.length) return '';
+    let h = `<div class="r-section-title">Experience &amp; Projects</div>`;
+    exp.forEach(e=>{
+      h += `<div class="r-item">
+        <div class="r-item-top"><span>${esc(e.title)||'&nbsp;'}${e.company? ' — '+esc(e.company):''}</span><span>${esc(e.dates)}</span></div>
+        <ul>${bulletsToLi(e.bullets)}</ul>
+      </div>`;
+    });
+    return h;
+  }
+
+  function educationBlock(){
+    const edu = state.education.filter(e=>e.degree||e.school);
+    if(!edu.length) return '';
+    let h = `<div class="r-section-title">Education</div>`;
+    edu.forEach(e=>{
+      h += `<div class="r-item">
+        <div class="r-item-top"><span>${esc(e.degree)}</span><span>${esc(e.dates)}</span></div>
+        <div class="r-item-sub">${esc(e.school)}${e.detail? ' · '+esc(e.detail):''}</div>
+      </div>`;
+    });
+    return h;
+  }
+
+  function skillsBlock(){
+    return state.skills.length ? `<div class="r-section-title">Skills</div><div class="r-skills">${state.skills.map(s=>esc(s)).join(' &nbsp;·&nbsp; ')}</div>` : '';
+  }
+
+  function extrasBlock(){
+    return state.extras ? `<div class="r-section-title">Additional</div><ul style="padding-left:18px;">${bulletsToLi(state.extras)}</ul>` : '';
+  }
+
+  function resumeIsEmpty(){
+    const exp = state.experience.some(e=>e.title||e.company||e.bullets);
+    const edu = state.education.some(e=>e.degree||e.school);
+    return !state.summary && !exp && !edu && !state.skills.length && !state.extras;
+  }
+
+  function renderTplPicker(){
+    const el = document.getElementById('tplPicker');
+    el.innerHTML = templates.map(t=>`
+      <button class="tpl-btn ${state.template===t.id?'active':''}" data-tpl="${t.id}" type="button">
+        <span class="tpl-swatch" style="background:${t.swatch}"></span>${t.label}
+      </button>
+    `).join('');
+    el.querySelectorAll('[data-tpl]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        state.template = btn.dataset.tpl;
+        renderTplPicker();
+        renderPreview();
+      });
+    });
+  }
+
+  function renderPreview(){
+    const p = document.getElementById('resumePaper');
+    p.className = 'resume-paper tpl-' + state.template;
+
+    const name = state.name || '<span class="placeholder-muted">Your Name</span>';
+    const role = state.role || '<span class="placeholder-muted">Target role</span>';
+    const contactBits = [state.email, state.phone, state.location, state.linkedin].filter(Boolean).map(esc);
+    const contact = contactBits.length ? contactBits.map(c=>`<span>${c}</span>`).join('') : '<span class="placeholder-muted">email · phone · city</span>';
+    const emptyNote = resumeIsEmpty() ? `<div class="placeholder-muted" style="margin-top:20px;">Your résumé fills in live as you type. Keep going — this is where the magic happens.</div>` : '';
+
+    if(state.template === 'modern'){
+      p.innerHTML = `
+        <div class="r-sidebar">
+          <div class="r-name">${name}</div>
+          <div class="r-role">${role}</div>
+          <div class="r-contact">${contact}</div>
+          ${educationBlock()}
+          ${skillsBlock()}
+        </div>
+        <div class="r-main">
+          ${summaryBlock()}
+          ${experienceBlock()}
+          ${extrasBlock()}
+          ${emptyNote}
+        </div>
+      `;
+    } else if(state.template === 'bold'){
+      p.innerHTML = `
+        <div class="r-header">
+          <div class="r-name">${name}</div>
+          <div class="r-role">${role}</div>
+          <div class="r-contact">${contact}</div>
+        </div>
+        <div class="r-body">
+          ${summaryBlock()}
+          ${experienceBlock()}
+          ${educationBlock()}
+          ${skillsBlock()}
+          ${extrasBlock()}
+          ${emptyNote}
+        </div>
+      `;
+    } else {
+      p.innerHTML = `
+        <div class="r-name">${name}</div>
+        <div class="r-role">${role}</div>
+        <div class="r-contact">${contact}</div>
+        ${summaryBlock()}
+        ${experienceBlock()}
+        ${educationBlock()}
+        ${skillsBlock()}
+        ${extrasBlock()}
+        ${emptyNote}
+      `;
+    }
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', ()=>{
+    if(current < steps.length-1){
+      current++;
+      renderStep();
+      document.getElementById('formPanel').scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      document.getElementById('formPanel').style.display='none';
+      document.querySelector('.steps-strip').style.display='none';
+      document.getElementById('finale').style.display='block';
+      document.getElementById('finale').scrollIntoView({behavior:'smooth'});
+    }
+  });
+  document.getElementById('backBtn').addEventListener('click', ()=>{
+    if(current>0){ current--; renderStep(); }
+  });
+  document.getElementById('downloadBtn').addEventListener('click', ()=>{ window.print(); });
+  document.getElementById('editAgainBtn').addEventListener('click', ()=>{
+    document.getElementById('finale').style.display='none';
+    document.getElementById('formPanel').style.display='block';
+    document.querySelector('.steps-strip').style.display='flex';
+  });
+
+  const shareUrl = 'https://www.snapskill.in/tools/resume-builder-en';
+  const shareText = "Just built my résumé in 5 minutes with SnapSkill's free Resume Builder — way less painful than I expected. Try it:";
+  document.getElementById('waShareBtn').href = 'https://wa.me/?text=' + encodeURIComponent(shareText + ' ' + shareUrl);
+  document.getElementById('copyLinkBtn').addEventListener('click', (e)=>{
+    const btn = e.currentTarget;
+    const done = ()=>{ const old = btn.textContent; btn.textContent = '✅ Copied!'; setTimeout(()=>{ btn.textContent = old; }, 1800); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(shareUrl).then(done).catch(()=>{ prompt('Copy this link:', shareUrl); });
+    } else {
+      prompt('Copy this link:', shareUrl);
+    }
+  });
+
+  renderTplPicker();
+  renderStep();
+})();
+
+</script>
