@@ -5,12 +5,14 @@ interface Props {
   title: string
   description?: string
   image?: string
+  fonts?: string[]
 }
 
 const {
   title,
   description = 'SnapSkill helps enterprises implement AI that actually works — from strategy through execution.',
   image = '/og-default.png',
+  fonts = [],
 } = Astro.props
 
 const canonical = new URL(Astro.url.pathname, Astro.site)
@@ -32,6 +34,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site)
 
   <title>{title} | SnapSkill</title>
   <meta name="description" content={description} />
+
+  {fonts.map((f) => <link rel="stylesheet" href={f} />)}
 
   <meta property="og:title"       content={`${title} | SnapSkill`} />
   <meta property="og:description" content={description} />
