@@ -7,7 +7,7 @@ import Footer from '../../components/Footer.astro'
 <BaseLayout
   title="Interview Confidence Coach"
   description="Practice interview English out loud, get honest feedback, build real confidence."
-  fonts={["https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"]}
+  fonts={["https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=Lora:ital@1&display=swap"]}
 >
   <Nav />
   <main>
@@ -83,11 +83,40 @@ import Footer from '../../components/Footer.astro'
 
   <div class="cert-wrap" id="certWrap">
     <div class="certificate">
-      <div class="ribbon">SnapSkill · Confidence Certified</div>
-      <h2>You spoke. You didn't freeze. 🎉</h2>
-      <div class="cname" id="certName">You</div>
-      <p class="cnote" id="certNote">Average confidence score: 0/100 across 0 questions.</p>
-      <p class="cnote">Your nerves have officially left the chat.</p>
+      <div class="cert-corner tl"></div>
+      <div class="cert-corner tr"></div>
+      <div class="cert-corner bl"></div>
+      <div class="cert-corner br"></div>
+
+      <svg class="cert-seal" viewBox="0 0 120 140" width="72" height="84" aria-hidden="true">
+        <polygon class="cs-ribbon" points="40,78 40,133 60,119 80,133 80,78"></polygon>
+        <circle class="cs-coin" cx="60" cy="54" r="42"></circle>
+        <circle class="cs-ring" cx="60" cy="54" r="33"></circle>
+        <path class="cs-check" d="M43 55 L55 67 L79 39"></path>
+      </svg>
+
+      <div class="cert-eyebrow">SnapSkill · Confidence Certified</div>
+      <h2 class="cert-title">You spoke. You didn't freeze. 🎉</h2>
+      <p class="cert-lead">This certifies that</p>
+      <div class="cert-name" id="certName">You</div>
+      <svg class="cert-swash" viewBox="0 0 220 20" width="180" height="16" aria-hidden="true">
+        <path class="cert-swash-path" d="M4 13 Q 40 3, 80 11 T 160 9 T 216 5" fill="none" stroke-width="2.5" stroke-linecap="round"></path>
+      </svg>
+      <p class="cert-note" id="certNote">Average confidence score: 0/100 across 0 questions.</p>
+      <p class="cert-note">Your nerves have officially left the chat.</p>
+
+      <div class="cert-footer">
+        <div class="cert-sig-block">
+          <div class="cert-sig-script">SnapSkill</div>
+          <div class="cert-sig-rule"></div>
+          <div class="cert-sig-label">Placement Prep Coach</div>
+        </div>
+        <div class="cert-sig-block">
+          <div class="cert-sig-script" id="certDate"></div>
+          <div class="cert-sig-rule"></div>
+          <div class="cert-sig-label">Date</div>
+        </div>
+      </div>
     </div>
     <div class="nav-row" style="justify-content:center;margin-top:18px;">
       <button class="btn primary no-print" id="downloadCertBtn">⬇ Download certificate</button>
@@ -225,15 +254,21 @@ import Footer from '../../components/Footer.astro'
   .tips li{margin-bottom:6px;font-size:0.92rem;}
 
   /* CERTIFICATE */
-  .cert-wrap{display:none;text-align:center;margin-top:30px;}
+  .cert-wrap{display:none; text-align:center; margin-top:30px;}
   .certificate{
-    background:#fff;border:4px double var(--ink);border-radius:6px;padding:40px 30px;max-width:520px;margin:0 auto;
-    font-family:'Inter',sans-serif;position:relative;
+    position:relative; background:var(--cream); border:2px solid var(--ink); border-radius:4px;
+    padding:46px 42px 34px; max-width:560px; margin:0 auto; font-family:'Inter',sans-serif;
+    box-shadow:0 1px 2px rgba(18,22,59,0.08), 0 24px 48px rgba(18,22,59,0.12);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
   }
-  .certificate .ribbon{font-family:'Baloo 2',sans-serif;font-weight:800;color:var(--coral);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;}
-  .certificate h2{font-family:'Baloo 2',sans-serif;font-size:1.6rem;color:var(--ink);margin:10px 0 4px;}
-  .certificate .cname{font-family:'Caveat',cursive;font-size:2.2rem;color:var(--ink);margin:14px 0;}
-  .certificate .cnote{font-size:0.9rem;color:#5a5f74;}
+  .certificate::before{
+    content:''; position:absolute; inset:9px; border:1px solid var(--ink); opacity:0.32; border-radius:2px; pointer-events:none;
+  }
+  .cert-corner{position:absolute; width:20px; height:20px; pointer-events:none;}
+  .cert-corner.tl{top:15px; left:15px; border-top:3px solid var(--ink); border-left:3px solid var(--ink);}
+  .cert-corner.tr{top:15px; right:15px; border-top:3px solid var(--ink); border-right:3px solid var(--ink);}
+  .cert-corner.bl{bottom:15px; left:15px; border-bottom:3px solid var(--ink); border-left:3px solid var(--ink);}
+  .cert-corner.br{bottom:15px; right:15px; border-bottom:3px solid var(--ink); border-right:3px solid var(--ink);}
 
   /* QUICK LESSON */
   .lesson-toggle{
@@ -615,6 +650,7 @@ import Footer from '../../components/Footer.astro'
     document.getElementById('certWrap').style.display = 'block';
     const avg = scores.length ? Math.round(scores.reduce((a,b)=>a+b,0)/scores.length) : 0;
     document.getElementById('certNote').textContent = `Average confidence score: ${avg}/100 across ${scores.length} question(s) in "${currentCat.name}".`;
+    document.getElementById('certDate').textContent = new Date().toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' });
     document.getElementById('certWrap').scrollIntoView({behavior:'smooth'});
   }
 
