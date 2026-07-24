@@ -375,9 +375,10 @@ import Footer from '../../components/Footer.astro'
 
   footer.site{text-align:center; padding:40px 0 30px; font-size:0.82rem; color:#8a8f9f;}
 
+  @page{ margin: 10mm; }
   @media print{
     body::before{display:none;}
-    header.site,.hero,.steps-strip,.builder > div:first-child, .finale, footer.site, .no-print, .tpl-picker, .tpl-hint, .fake-toolbar{display:none !important;}
+    header.site,.hero,.steps-strip,.builder > div:first-child, .finale, footer.site, .no-print, .tpl-picker, .tpl-hint, .fake-toolbar, .site-header, .site-footer{display:none !important;}
     .preview-frame{background:none;box-shadow:none;padding:0;border-radius:0;}
     .resume-paper{box-shadow:none; min-height:0;}
     .builder{display:block;}
