@@ -101,6 +101,43 @@ Every `git push` to `main` triggers an automatic redeploy.
 
 ---
 
+## Analytics
+
+The site is wired for [Umami](https://cloud.umami.is) — an open-source,
+privacy-focused alternative to Google Analytics. No cookies, no consent
+banner, and the numbers are readable without a course in GA4.
+
+**One-time setup.** In the Umami dashboard, add a website for `snapskill.in`,
+copy the website ID it gives you, and paste it into `src/layouts/BaseLayout.astro`:
+
+```js
+const UMAMI_WEBSITE_ID = ''   // ← paste the id between the quotes
+```
+
+That is the only place it appears. While it is blank the tracking script is
+left out of the page entirely, so nothing is being collected yet.
+
+**What gets tracked.** Pageviews on every page automatically, plus the thing a
+pageview counter would miss: this site has no forms, so every conversion is a
+link that leaves the page. A listener at the bottom of `BaseLayout.astro`
+catches those and sends an event:
+
+| Event | Fires on |
+| --- | --- |
+| `cta-whatsapp` | any `wa.me` link — the float button, the CTAs, the lead magnets |
+| `cta-call` | any `tel:` link |
+| `cta-email` | any `mailto:` link |
+
+Each carries the page it happened on and the label of the link, so in Umami
+you can see which lead magnet and which page actually pull. It is delegated
+from the document, so links added later are covered without editing anything.
+
+**A note on ad blockers.** Some block `cloud.umami.is`, so treat the numbers as
+a floor, not a census. Nothing breaks when it is blocked — the listener checks
+that the tracker loaded before it does anything.
+
+---
+
 ## Project Structure
 
 ```

@@ -16,6 +16,13 @@ const {
 } = Astro.props
 
 const canonical = new URL(Astro.url.pathname, Astro.site)
+
+// Analytics — Umami (cloud.umami.is). Privacy-first: no cookies, no
+// fingerprinting, so no consent banner is needed. Paste the website id from
+// the Umami dashboard here and every page picks it up, this layout being the
+// only <head> on the site. While it is empty the tag is left out entirely,
+// rather than shipping a script tag that 400s on every pageview.
+const UMAMI_WEBSITE_ID = 'fa997016-326a-4359-9b5d-6b649f1900e0'
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +54,16 @@ const canonical = new URL(Astro.url.pathname, Astro.site)
   <meta name="twitter:title"       content={`${title} | SnapSkill`} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image"       content={image} />
+
+  {UMAMI_WEBSITE_ID && (
+    <script
+      is:inline
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id={UMAMI_WEBSITE_ID}
+      data-domains="www.snapskill.in,snapskill.in"
+    />
+  )}
 </head>
 <body>
   <slot />
@@ -85,5 +102,43 @@ const canonical = new URL(Astro.url.pathname, Astro.site)
       .wa-float { bottom: 1.25rem; right: 1.25rem; width: 50px; height: 50px; }
     }
   </style>
+<!-- ── Conversion tracking ──
+     This site has no forms. Every conversion leaves the page: WhatsApp, the
+     phone number, the mailto lead magnets. A pageview-only tracker records
+     the visit and misses the outcome, which is the only part worth knowing.
+
+     Delegated from the document, in the capture phase, so it covers the
+     WhatsApp float above, every CTA on every page, and any link added later
+     without anyone remembering to come back here. It only ever observes —
+     no preventDefault — so a blocked or slow tracker cannot cost a lead. -->
+<script is:inline>
+  (function () {
+    var OUTBOUND = [
+      [/^https?:\/\/(wa\.me|api\.whatsapp\.com)\//i, 'whatsapp'],
+      [/^tel:/i, 'call'],
+      [/^mailto:/i, 'email']
+    ];
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest && e.target.closest('a[href]');
+      if (!a || !window.umami) return;
+      var href = a.getAttribute('href') || '', kind = null;
+      for (var i = 0; i < OUTBOUND.length; i++) {
+        if (OUTBOUND[i][0].test(href)) { kind = OUTBOUND[i][1]; break; }
+      }
+      if (!kind) return;
+      try {
+        window.umami.track('cta-' + kind, {
+          // Which page it came from — the lead magnets are per-page, so this
+          // is what says which one is actually pulling.
+          page: location.pathname,
+          // Which link. aria-label first, because the WhatsApp float has no
+          // text of its own.
+          cta: a.getAttribute('aria-label') ||
+               (a.textContent || '').trim().slice(0, 40) || 'unnamed'
+        });
+      } catch (err) {}
+    }, true);
+  })();
+</script>
 </body>
 </html>
